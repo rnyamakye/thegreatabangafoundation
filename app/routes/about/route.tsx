@@ -15,7 +15,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
             About Our Foundation
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -29,7 +29,7 @@ export default function About() {
         <div className="mb-16 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+              <h2 className="text-3xl font-bold text-black dark:text-white mb-6">
                 Our Founder's Vision
               </h2>
               <p className="text-lg text-gray-800 dark:text-gray-200 mb-6 leading-relaxed">
@@ -70,7 +70,7 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
                 Dedicated to Education
               </h3>
               <p className="text-gray-700 dark:text-gray-300">
@@ -83,7 +83,7 @@ export default function About() {
         {/* Mission & Impact */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl font-bold text-black dark:text-white mb-6">
               Our Mission
             </h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -99,7 +99,7 @@ export default function About() {
             </p>
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl font-bold text-black dark:text-white mb-6">
               Our Impact
             </h2>
             <div className="space-y-6">
@@ -108,7 +108,7 @@ export default function About() {
                   <span className="text-white font-bold text-lg">15+</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white text-lg">
+                  <h4 className="font-semibold text-black dark:text-white text-lg">
                     Students Sponsored
                   </h4>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -121,7 +121,7 @@ export default function About() {
                   <span className="text-white font-bold text-sm">₵45K</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white text-lg">
+                  <h4 className="font-semibold text-black dark:text-white text-lg">
                     Total Investment
                   </h4>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -134,7 +134,7 @@ export default function About() {
                   <span className="text-white font-bold text-lg">100%</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white text-lg">
+                  <h4 className="font-semibold text-black dark:text-white text-lg">
                     Success Rate
                   </h4>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -148,7 +148,7 @@ export default function About() {
 
         {/* Programs Overview */}
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12">
+          <h2 className="text-3xl font-bold text-black dark:text-white mb-12">
             Our Scholarship Programs
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -174,12 +174,12 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+              <h3 className="text-xl font-semibold text-black dark:text-white mb-4">
                 Full Tuition Support
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Complete tuition coverage for exceptional students
-                from disadvantaged backgrounds at university level.
+                Complete tuition coverage for exceptional students from
+                disadvantaged backgrounds at university level.
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700">
@@ -198,12 +198,12 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+              <h3 className="text-xl font-semibold text-black dark:text-white mb-4">
                 Partial Tuition Support
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Flexible financial support covering tuition fees and
-                educational expenses based on individual needs.
+                Flexible financial support covering tuition fees and educational
+                expenses based on individual needs.
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700">
@@ -222,12 +222,12 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                Mentorship Program
+              <h3 className="text-xl font-semibold text-black dark:text-white mb-4">
+                Academic Support
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Beyond financial support, we provide ongoing mentorship, career
-                guidance, and professional development opportunities.
+                Beyond tuition assistance, we provide academic guidance and
+                educational resources to help students succeed.
               </p>
             </div>
           </div>
@@ -235,7 +235,7 @@ export default function About() {
 
         {/* Values Section */}
         <div className="mt-20 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+          <h2 className="text-3xl font-bold text-black dark:text-white mb-8 text-center">
             Our Core Values
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -255,7 +255,7 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="font-semibold text-black dark:text-white mb-2">
                 Integrity
               </h3>
               <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -278,7 +278,7 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="font-semibold text-black dark:text-white mb-2">
                 Compassion
               </h3>
               <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -301,7 +301,7 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="font-semibold text-black dark:text-white mb-2">
                 Excellence
               </h3>
               <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -324,7 +324,7 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="font-semibold text-black dark:text-white mb-2">
                 Collaboration
               </h3>
               <p className="text-sm text-gray-700 dark:text-gray-300">
