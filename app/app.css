@@ -1,15 +1,139 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* TGAF Color Variables */
+:root {
+  /* Light mode colors - TGAF orange/golden theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fef7ed;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b7280;
+  --border-color: #fed7aa;
+  --accent-color: #ea580c; /* TGAF Orange */
+  --accent-hover: #dc2626; /* Darker orange */
+  --accent-secondary: #fb923c; /* Lighter orange */
+  --accent-gradient: linear-gradient(135deg, #ea580c 0%, #fb923c 100%);
+}
+
+.dark {
+  /* Dark mode colors - TGAF theme */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --border-color: #374151;
+  --accent-color: #fb923c; /* Lighter orange for dark mode */
+  --accent-hover: #ea580c; /* TGAF Orange */
+  --accent-secondary: #fed7aa; /* Light orange accent */
+  --accent-gradient: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  /* Light mode: white background, dark text */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+}
+
+/* Dark mode: dark background, light text */
+.dark html,
+.dark body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Navigation link underline animation with TGAF colors */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent-gradient);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* TGAF Utility Classes */
+.tgaf-orange {
+  color: var(--accent-color);
+}
+
+.tgaf-orange-light {
+  color: var(--accent-secondary);
+}
+
+.tgaf-bg-orange {
+  background-color: var(--accent-color);
+}
+
+.tgaf-bg-gradient {
+  background: var(--accent-gradient);
+}
+
+.tgaf-border-orange {
+  border-color: var(--accent-color);
+}
+
+/* Enhanced button styles with TGAF colors */
+.btn-tgaf-primary {
+  background: var(--accent-gradient);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-tgaf-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(234, 88, 12, 0.3);
+}
+
+.btn-tgaf-secondary {
+  background: transparent;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-tgaf-secondary:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }

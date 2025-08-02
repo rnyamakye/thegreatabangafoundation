@@ -8,6 +8,8 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
@@ -25,14 +27,39 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const savedTheme = localStorage.getItem('theme');
+                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  const shouldBeDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+                  
+                  console.log('Root script - Theme initialization:', { savedTheme, prefersDark, shouldBeDark });
+                  
+                  if (shouldBeDark) {
+                    document.documentElement.classList.add('dark');
+                    console.log('Root script - Applied dark theme to html');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                    console.log('Root script - Applied light theme to html');
+                  }
+                } catch (e) {
+                  console.warn('Theme initialization failed:', e);
+                }
+              })();
+            `,
+          }}
+        />
       </head>
-      <body>
+      <body className="h-full bg-white dark:bg-gray-900 transition-colors duration-200">
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -42,7 +69,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
