@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router";
 import { useState, useEffect, useRef } from "react";
-import { ThemeToggle } from "./ThemeToggle";
 
 // Custom NavLink component with animated underline
 function NavLink({
@@ -26,9 +25,7 @@ function NavLink({
     >
       <span
         className={`transition-colors duration-200 ${
-          isActive
-            ? "text-orange-600 dark:text-orange-400"
-            : "text-gray-700 hover:text-orange-600 dark:text-gray-300 dark:hover:text-orange-400"
+          isActive ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
         }`}
       >
         {children}
@@ -36,7 +33,7 @@ function NavLink({
 
       {/* Animated underline */}
       <span
-        className={`absolute bottom-0 left-0 h-0.5 bg-orange-600 dark:bg-orange-400 transition-all duration-300 ease-out ${
+        className={`absolute bottom-0 left-0 h-0.5 bg-orange-600 transition-all duration-300 ease-out ${
           isActive ? "w-full" : "w-0 group-hover:w-full"
         }`}
       ></span>
@@ -73,7 +70,7 @@ export function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-orange-200 dark:border-gray-800 sticky top-0 z-50 transition-colors duration-200">
+    <nav className="sticky top-0 left-0 right-0 z-50 bg-gray-200/95 backdrop-blur-md border-b border-gray-300">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
@@ -84,7 +81,7 @@ export function Navbar() {
                 alt="The Great Abanga Foundation"
                 className="h-10 w-auto"
               />
-              <span className="text-lg font-semibold text-gray-900 dark:text-white hidden sm:block">
+              <span className="text-lg font-semibold text-black hidden sm:block">
                 TGAF
               </span>
             </Link>
@@ -94,18 +91,19 @@ export function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/about">About</NavLink>
-            <NavLink to="/programs">Programs</NavLink>
+            <NavLink to="/impact">Impact</NavLink>
             <NavLink to="/contact">Contact</NavLink>
-
-            {/* Theme Toggle - Desktop */}
-            <ThemeToggle variant="icon" size="md" />
+            <Link
+              to="/donate"
+              className="relative overflow-hidden bg-orange-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 group"
+            >
+              <span className="relative z-10">Donate</span>
+              <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+            </Link>
           </div>
 
           {/* Mobile Controls */}
           <div className="md:hidden flex items-center space-x-3">
-            {/* Theme Toggle - Mobile */}
-            <ThemeToggle variant="icon" size="sm" />
-
             {/* Hamburger Menu Button */}
             <button
               type="button"
@@ -159,7 +157,7 @@ export function Navbar() {
         }`}
         id="mobile-menu"
       >
-        <div className="px-6 py-4 space-y-2 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+        <div className="px-6 py-4 space-y-2 bg-gray-200 border-t border-gray-300">
           <NavLink
             to="/"
             onClick={() => setIsMenuOpen(false)}
@@ -175,11 +173,11 @@ export function Navbar() {
             About
           </NavLink>
           <NavLink
-            to="/programs"
+            to="/impact"
             onClick={() => setIsMenuOpen(false)}
             className="block py-2"
           >
-            Programs
+            Impact
           </NavLink>
           <NavLink
             to="/contact"
@@ -188,6 +186,14 @@ export function Navbar() {
           >
             Contact
           </NavLink>
+          <Link
+            to="/donate"
+            onClick={() => setIsMenuOpen(false)}
+            className="relative overflow-hidden block py-2 px-4 bg-orange-600 text-white rounded-lg font-medium text-center transition-all duration-300 group"
+          >
+            <span className="relative z-10">Donate</span>
+            <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+          </Link>
         </div>
       </div>
     </nav>

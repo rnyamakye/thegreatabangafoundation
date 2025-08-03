@@ -10,14 +10,14 @@ export function meta() {
 
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
+    <main className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100 transition-colors duration-200">
       <div className="max-w-4xl mx-auto px-6 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Contact Us
           </h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             We'd love to hear from you. Send us a message and we'll respond as
             soon as possible.
           </p>
@@ -27,12 +27,12 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Get in Touch
               </h2>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-3 mt-1">
+                  <div className="w-6 h-6 text-orange-600 mr-3">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
@@ -43,17 +43,18 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 dark:text-white">
-                      Email
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      info@abangafoundation.org
-                    </p>
+                    <p className="font-medium text-gray-900 mb-1">Email</p>
+                    <a
+                      href="mailto:greatabangafoundation@gmail.com"
+                      className="text-gray-600 hover:text-orange-600 transition-colors duration-200"
+                    >
+                      greatabangafoundation@gmail.com
+                    </a>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-3 mt-1">
+                  <div className="w-6 h-6 text-orange-600 mr-3">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
@@ -64,17 +65,18 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 dark:text-white">
-                      Phone
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      +234 (0) 123 456 7890
-                    </p>
+                    <p className="font-medium text-gray-900 mb-1">Phone</p>
+                    <a
+                      href="tel:0544902900"
+                      className="text-gray-600 hover:text-orange-600 transition-colors duration-200"
+                    >
+                      0544902900
+                    </a>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-3 mt-1">
+                  <div className="w-6 h-6 text-orange-600 mr-3">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
@@ -91,29 +93,10 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 dark:text-white">
-                      Address
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      123 Foundation Avenue
-                      <br />
-                      Abuja, Federal Capital Territory
-                      <br />
-                      Nigeria
-                    </p>
+                    <p className="font-medium text-gray-900 mb-1">Address</p>
+                    <p className="text-gray-600">Sunyani, Ghana</p>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                Office Hours
-              </h3>
-              <div className="space-y-2 text-gray-600 dark:text-gray-400">
-                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                <p>Saturday: 10:00 AM - 2:00 PM</p>
-                <p>Sunday: Closed</p>
               </div>
             </div>
           </div>
@@ -121,41 +104,25 @@ export default function Contact() {
           {/* Contact Form */}
           <div>
             <form className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="firstName"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-                  >
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors duration-200"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="lastName"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-                  >
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors duration-200"
-                  />
-                </div>
+              <div>
+                <label
+                  htmlFor="fullName"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent transition-colors duration-200"
+                />
               </div>
 
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Email
                 </label>
@@ -163,29 +130,14 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors duration-200"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent transition-colors duration-200"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Message
                 </label>
@@ -193,15 +145,16 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent transition-colors duration-200 resize-none"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium rounded-lg transition-colors duration-200"
+                className="relative overflow-hidden w-full px-6 py-3 bg-orange-600 text-white font-semibold rounded-md transition-all duration-300 group"
               >
-                Send Message
+                <span className="relative z-10">Send Message</span>
+                <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
               </button>
             </form>
           </div>

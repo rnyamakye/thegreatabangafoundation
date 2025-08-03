@@ -11,14 +11,14 @@ export function meta() {
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
+    <main className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100 transition-colors duration-200">
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-6">
             About Our Foundation
           </h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Founded by a visionary philanthropist with a deep commitment to
             education, TGAF has been transforming lives through scholarship
             opportunities and educational support for over 2 years.
@@ -26,32 +26,31 @@ export default function About() {
         </div>
 
         {/* Founder's Story Section */}
-        <div className="mb-16 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-12">
+        <div className="mb-16 bg-transparent rounded-2xl p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-black dark:text-white mb-6">
+              <h2 className="text-3xl font-bold text-black mb-6">
                 Our Founder's Vision
               </h2>
-              <p className="text-lg text-gray-800 dark:text-gray-200 mb-6 leading-relaxed">
+              <p className="text-lg text-black mb-4">
                 Born from the belief that education is the most powerful tool
                 for social change, The Great Abanga Foundation was established
                 by a passionate philanthropist who understood firsthand the
                 barriers that financial constraints can create for aspiring
                 students.
               </p>
-              <p className="text-lg text-gray-800 dark:text-gray-200 mb-6 leading-relaxed">
+              <p className="text-lg text-black mb-6">
                 Having witnessed countless talented young minds unable to pursue
                 higher education due to financial limitations, our founder
                 dedicated their life to removing these barriers and creating
                 pathways to academic excellence.
               </p>
-              <div className="bg-gradient-to-r from-orange-600 to-orange-500 text-white p-6 rounded-lg shadow-lg">
+              <div className="bg-gradient-to-r from-orange-600 to-orange-500 text-white p-6 rounded-lg">
                 <p className="text-lg font-medium italic">
-                  "Education is not just about degrees and certificates. It's
-                  about empowering individuals to transform their communities
-                  and build a brighter future for Africa."
+                  "Creating a future where no one is left behind — empowered,
+                  uplifted, and cared for."
                 </p>
-                <p className="mt-4 font-semibold">- Founder, TGAF</p>
+                <p className="mt-4 font-semibold">- Vision, TGAF</p>
               </div>
             </div>
             <div className="text-center">
@@ -70,10 +69,10 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
+              <h3 className="text-xl font-semibold text-black mb-4">
                 Dedicated to Education
               </h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <p className="text-black">
                 Over 2 years of unwavering commitment to educational excellence
               </p>
             </div>
@@ -83,37 +82,31 @@ export default function About() {
         {/* Mission & Impact */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           <div>
-            <h2 className="text-3xl font-bold text-black dark:text-white mb-6">
-              Our Mission
-            </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+            <h2 className="text-3xl font-bold text-black mb-6">Our Mission</h2>
+            <p className="text-lg text-black mb-4">
               To break the cycle of educational inequality by providing
               comprehensive scholarship programs that enable talented students
               to pursue higher education, regardless of their financial
               background.
             </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg text-black mb-6">
               We believe that investing in education is investing in Africa's
               future. Every scholarship we provide creates a ripple effect that
               transforms not just individual lives, but entire communities.
             </p>
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-black dark:text-white mb-6">
-              Our Impact
-            </h2>
+            <h2 className="text-3xl font-bold text-black mb-6">Our Impact</h2>
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
                   <span className="text-white font-bold text-lg">15+</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-black dark:text-white text-lg">
+                  <h4 className="font-semibold text-black mb-2">
                     Students Sponsored
                   </h4>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    At 1 university
-                  </p>
+                  <p className="text-black">At 1 university</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -121,12 +114,10 @@ export default function About() {
                   <span className="text-white font-bold text-sm">₵45K</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-black dark:text-white text-lg">
+                  <h4 className="font-semibold text-black mb-2">
                     Total Investment
                   </h4>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    In student tuition
-                  </p>
+                  <p className="text-black">In student tuition</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -134,12 +125,10 @@ export default function About() {
                   <span className="text-white font-bold text-lg">100%</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-black dark:text-white text-lg">
+                  <h4 className="font-semibold text-black mb-2">
                     Success Rate
                   </h4>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Of tuition assistance
-                  </p>
+                  <p className="text-black">Of tuition assistance</p>
                 </div>
               </div>
             </div>
@@ -148,11 +137,11 @@ export default function About() {
 
         {/* Programs Overview */}
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-black dark:text-white mb-12">
+          <h2 className="text-3xl font-bold text-black mb-12">
             Our Scholarship Programs
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700">
+            <div className="bg-transparent p-8 rounded-xl">
               <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
                 <svg
                   className="w-10 h-10 text-white"
@@ -174,15 +163,15 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-black dark:text-white mb-4">
+              <h3 className="text-xl font-semibold text-black mb-4">
                 Full Tuition Support
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-black">
                 Complete tuition coverage for exceptional students from
                 disadvantaged backgrounds at university level.
               </p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700">
+            <div className="bg-transparent p-8 rounded-xl">
               <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
                 <svg
                   className="w-10 h-10 text-white"
@@ -198,15 +187,15 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-black dark:text-white mb-4">
+              <h3 className="text-xl font-semibold text-black mb-4">
                 Partial Tuition Support
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-black">
                 Flexible financial support covering tuition fees and educational
                 expenses based on individual needs.
               </p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700">
+            <div className="bg-transparent p-8 rounded-xl">
               <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
                 <svg
                   className="w-10 h-10 text-white"
@@ -222,10 +211,10 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-black dark:text-white mb-4">
+              <h3 className="text-xl font-semibold text-black mb-4">
                 Academic Support
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-black">
                 Beyond tuition assistance, we provide academic guidance and
                 educational resources to help students succeed.
               </p>
@@ -234,8 +223,8 @@ export default function About() {
         </div>
 
         {/* Values Section */}
-        <div className="mt-20 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-12">
-          <h2 className="text-3xl font-bold text-black dark:text-white mb-8 text-center">
+        <div className="mt-20 bg-transparent rounded-2xl p-12">
+          <h2 className="text-3xl font-bold text-black mb-12">
             Our Core Values
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -255,10 +244,8 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-black dark:text-white mb-2">
-                Integrity
-              </h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300">
+              <h3 className="font-semibold text-black mb-2">Integrity</h3>
+              <p className="text-sm text-black">
                 Transparency in all our operations and decisions
               </p>
             </div>
@@ -278,10 +265,8 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-black dark:text-white mb-2">
-                Compassion
-              </h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300">
+              <h3 className="font-semibold text-black mb-2">Compassion</h3>
+              <p className="text-sm text-black">
                 Understanding and addressing real community needs
               </p>
             </div>
@@ -301,10 +286,8 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-black dark:text-white mb-2">
-                Excellence
-              </h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300">
+              <h3 className="font-semibold text-black mb-2">Excellence</h3>
+              <p className="text-sm text-black">
                 Striving for the highest quality in everything we do
               </p>
             </div>
@@ -324,10 +307,8 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-black dark:text-white mb-2">
-                Collaboration
-              </h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300">
+              <h3 className="font-semibold text-black mb-2">Collaboration</h3>
+              <p className="text-sm text-black">
                 Working together with communities and partners
               </p>
             </div>
