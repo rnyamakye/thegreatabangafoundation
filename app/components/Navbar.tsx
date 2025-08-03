@@ -70,7 +70,7 @@ export function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="sticky top-0 left-0 right-0 z-50 bg-gray-200/95 backdrop-blur-md border-b border-gray-300">
+    <nav className="sticky top-0 left-0 right-0 z-50 bg-gray-200/70 backdrop-blur-sm border-b border-gray-300/50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
@@ -108,16 +108,17 @@ export function Navbar() {
             <button
               type="button"
               onClick={toggleMenu}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+              className="relative overflow-hidden p-2 rounded-md bg-orange-600 text-white transition-all duration-300 group"
               aria-controls="mobile-menu"
               aria-expanded={isMenuOpen}
             >
               <span className="sr-only">
                 {isMenuOpen ? "Close main menu" : "Open main menu"}
               </span>
+              <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
               {isMenuOpen ? (
                 <svg
-                  className="w-6 h-6"
+                  className="w-6 h-6 relative z-10"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -131,7 +132,7 @@ export function Navbar() {
                 </svg>
               ) : (
                 <svg
-                  className="w-6 h-6"
+                  className="w-6 h-6 relative z-10"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
