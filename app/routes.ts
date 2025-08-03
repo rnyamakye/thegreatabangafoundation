@@ -5,5 +5,5 @@ export default [
   route("about", "routes/about/route.tsx"),
   route("impact", "routes/impact/route.tsx"),
   route("contact", "routes/contact/route.tsx"),
-  route("donate", "routes/donate/route.tsx"),
+  // route("donate", "routes/donate/route.tsx"),
 ] satisfies RouteConfig;

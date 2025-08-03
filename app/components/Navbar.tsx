@@ -93,13 +93,13 @@ export function Navbar() {
             <NavLink to="/about">About</NavLink>
             <NavLink to="/impact">Impact</NavLink>
             <NavLink to="/contact">Contact</NavLink>
-            <Link
+            {/* <Link
               to="/donate"
               className="relative overflow-hidden bg-orange-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 group"
             >
               <span className="relative z-10">Donate</span>
               <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile Controls */}
@@ -187,14 +187,14 @@ export function Navbar() {
           >
             Contact
           </NavLink>
-          <Link
+          {/* <Link
             to="/donate"
             onClick={() => setIsMenuOpen(false)}
             className="relative overflow-hidden block py-2 px-4 bg-orange-600 text-white rounded-lg font-medium text-center transition-all duration-300 group"
           >
             <span className="relative z-10">Donate</span>
             <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>
