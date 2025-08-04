@@ -253,17 +253,17 @@ export default function Impact() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"
+                      d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4M8 7h8M8 7l-2 9a2 2 0 002 2h8a2 2 0 002-2L16 7M9 11v6m6-6v6"
                     />
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  Career Success
+                  Sponsoring School Events
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  85% of our graduates secure meaningful employment within 6
-                  months, building successful careers in technology, healthcare,
-                  and business.
+                  We support educational institutions by sponsoring academic events,
+                  conferences, and competitions that promote learning and excellence
+                  in various fields of study.
                 </p>
               </div>
             </div>
@@ -280,31 +280,38 @@ export default function Impact() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="order-2 lg:order-1">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    Water Donation
+                    BIOSSA Week Celebration Sponsorship
                   </h3>
-                  {/* <p className="text-gray-600 leading-relaxed mb-4">
-                    Sarah, a first-generation college student from a rural
-                    community, dreamed of becoming a doctor. With TGAF's
-                    scholarship support covering her tuition and living
-                    expenses, she graduated summa cum laude with a degree in
-                    Biology and is now pursuing her medical degree.
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    The BIOSSA Family would like to extend our sincerest
+                    appreciation to <strong>Abanga's Foundation</strong> for
+                    their generous sponsorship of our BIOSSA Week Celebration!
                   </p>
-                  <p className="text-gray-600 leading-relaxed">
-                    "TGAF didn't just give me financial support; they gave me
-                    hope and showed me that someone believed in my dreams.
-                    Today, I'm one step closer to serving my community as a
-                    doctor."
-                  </p> */}
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    Your support has enabled us to make this event a success,
+                    and we are grateful for your commitment to promoting
+                    biological sciences in our community.
+                  </p>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    Thank you, Abanga's Foundation, for your kindness and
+                    investment in our future!
+                  </p>
+                  <p className="text-gray-600 leading-relaxed italic">
+                    <strong>
+                      Together, Let's Continue to Nurture Excellence in
+                      Biological Sciences
+                    </strong>
+                  </p>
                   <div className="mt-4 text-orange-600 font-semibold">
-                    — Sarah K., Medical Student
+                    — BIOSSA Family
                   </div>
                 </div>
                 <div className="order-1 lg:order-2">
                   <div className="rounded-lg overflow-hidden h-80">
                     <img
-                      src="/donation_img.jpg"
-                      alt="Sarah's medical journey - TGAF scholarship recipient"
-                      className="w-full h-full object-cover"
+                      src="/biossasponserflyer_img.jpg"
+                      alt="BIOSSA Week Celebration sponsorship by Abanga's Foundation"
+                      className="w-full h-full object-cover object-top"
                     />
                   </div>
                 </div>

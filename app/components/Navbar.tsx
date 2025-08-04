@@ -44,17 +44,25 @@ function NavLink({
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
       if (
         mobileMenuRef.current &&
-        !mobileMenuRef.current.contains(event.target as Node)
+        buttonRef.current &&
+        !mobileMenuRef.current.contains(target) &&
+        !buttonRef.current.contains(target)
       ) {
         setIsMenuOpen(false);
       }
@@ -70,7 +78,7 @@ export function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="sticky top-0 left-0 right-0 z-50 bg-gray-200/70 backdrop-blur-sm border-b border-gray-300/50">
+    <nav className="sticky top-0 left-0 right-0 z-50 bg-gray-200 backdrop-blur-sm ">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
@@ -106,6 +114,7 @@ export function Navbar() {
           <div className="md:hidden flex items-center space-x-3">
             {/* Hamburger Menu Button */}
             <button
+              ref={buttonRef}
               type="button"
               onClick={toggleMenu}
               className="relative overflow-hidden p-2 rounded-md bg-orange-600 text-white transition-all duration-300 group"
@@ -159,37 +168,21 @@ export function Navbar() {
         id="mobile-menu"
       >
         <div className="px-6 py-4 space-y-2 bg-gray-200 border-t border-gray-300">
-          <NavLink
-            to="/"
-            onClick={() => setIsMenuOpen(false)}
-            className="block py-2"
-          >
+          <NavLink to="/" onClick={closeMenu} className="block py-2">
             Home
           </NavLink>
-          <NavLink
-            to="/about"
-            onClick={() => setIsMenuOpen(false)}
-            className="block py-2"
-          >
+          <NavLink to="/about" onClick={closeMenu} className="block py-2">
             About
           </NavLink>
-          <NavLink
-            to="/impact"
-            onClick={() => setIsMenuOpen(false)}
-            className="block py-2"
-          >
+          <NavLink to="/impact" onClick={closeMenu} className="block py-2">
             Impact
           </NavLink>
-          <NavLink
-            to="/contact"
-            onClick={() => setIsMenuOpen(false)}
-            className="block py-2"
-          >
+          <NavLink to="/contact" onClick={closeMenu} className="block py-2">
             Contact
           </NavLink>
           {/* <Link
             to="/donate"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={closeMenu}
             className="relative overflow-hidden block py-2 px-4 bg-orange-600 text-white rounded-lg font-medium text-center transition-all duration-300 group"
           >
             <span className="relative z-10">Donate</span>

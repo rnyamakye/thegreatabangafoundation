@@ -283,17 +283,17 @@ export default function Home() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"
+                      d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4M8 7h8M8 7l-2 9a2 2 0 002 2h8a2 2 0 002-2L16 7M9 11v6m6-6v6"
                     />
                   </svg>
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-4">
-                  Career Success
+                  Sponsoring School Events
                 </h4>
                 <p className="text-gray-600 leading-relaxed">
-                  85% of our graduates secure employment within 6 months of
-                  graduation, with many starting successful careers in
-                  technology, healthcare, and business.
+                  We support educational institutions by sponsoring academic events,
+                  conferences, and competitions that promote learning and excellence
+                  in various fields of study.
                 </p>
               </div>
             </div>
