@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { Analytics } from "@vercel/analytics/react";
 
 import type { Route } from "./+types/root";
 import { Navbar } from "./components/Navbar";
@@ -76,6 +77,7 @@ export default function App() {
         <Outlet />
       </main>
       <Footer />
+      <Analytics />
     </>
   );
 }
