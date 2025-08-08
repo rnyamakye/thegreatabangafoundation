@@ -70,15 +70,40 @@ export default function Contact() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
+    // Get EmailJS credentials from environment variables
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // Debug: Log environment variables
+    // console.log("Environment variables:");
+    // console.log("serviceId:", serviceId);
+    // console.log("templateId:", templateId);
+    // console.log("publicKey:", publicKey ? "Present" : "Missing");
+
+    // Debug: Log form data to ensure it's captured correctly
+    const formData = new FormData(form.current);
+    // console.log("Form data being sent:");
+    // console.log("user_name:", formData.get("user_name"));
+    // console.log("user_email:", formData.get("user_email"));
+    // console.log("message:", formData.get("message"));
+    // console.log("reply_to:", formData.get("reply_to"));
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("EmailJS configuration missing", {
+        serviceId: !!serviceId,
+        templateId: !!templateId,
+        publicKey: !!publicKey,
+      });
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+      return;
+    }
+
     emailjs
-      .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        form.current,
-        {
-          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-        }
-      )
+      .sendForm(serviceId, templateId, form.current, {
+        publicKey: publicKey,
+      })
       .then(
         () => {
           console.log("SUCCESS!");
@@ -86,10 +111,19 @@ export default function Contact() {
           setIsSubmitting(false);
           if (form.current) {
             form.current.reset();
+            // Also reset the hidden reply_to field
+            const replyToField = form.current.querySelector(
+              'input[name="reply_to"]'
+            ) as HTMLInputElement;
+            if (replyToField) {
+              replyToField.value = "";
+            }
           }
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          console.error("EmailJS Error Details:", error);
+          console.error("Error text:", error.text);
+          console.error("Error status:", error.status);
           setSubmitStatus("error");
           setIsSubmitting(false);
         }
@@ -286,6 +320,9 @@ export default function Contact() {
             {/* Contact Form */}
             <div>
               <form ref={form} onSubmit={sendEmail} className="space-y-6">
+                {/* Hidden field for reply-to functionality */}
+                <input type="hidden" name="reply_to" value="" />
+
                 <div>
                   <label
                     htmlFor="fullName"
@@ -315,6 +352,15 @@ export default function Contact() {
                     name="user_email"
                     required
                     className="w-full px-4 py-3 bg-transparent border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent transition-colors duration-200 shadow-sm"
+                    onChange={(e) => {
+                      // Set the reply_to field to the user's email
+                      const replyToField = form.current?.querySelector(
+                        'input[name="reply_to"]'
+                      ) as HTMLInputElement;
+                      if (replyToField) {
+                        replyToField.value = e.target.value;
+                      }
+                    }}
                   />
                 </div>
 

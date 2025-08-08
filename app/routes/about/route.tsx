@@ -226,21 +226,22 @@ export default function About() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="order-2 lg:order-1">
                   <h3 className="text-2xl font-bold text-black mb-4">
-                    Osman Hakim Abdul
+                    Osman Abdul Hakim Abanga
                   </h3>
                   <p className="text-orange-600 font-semibold mb-4">
                     Chief Executive Officer
                   </p>
                   <p className="text-black leading-relaxed">
-                    Osman Abdul Hakim, born on May 3rd, 2001, a visionary CEO
-                    and dedicated philanthropist. As the driving force behind
-                    The Great Abanga Foundation, he leads with a deep commitment
-                    to empowering communities and creating lasting social
-                    impact. Osman’s leadership is characterized by his passion
-                    for advancing education, improving healthcare, and promoting
-                    sustainable development initiatives. His philanthropic
-                    activities focus on uplifting underprivileged individuals
-                    and fostering opportunities for growth and resilience.
+                    Osman Abdul Hakim Abanga, born on May 3rd, 2001, a visionary
+                    CEO and dedicated philanthropist. As the driving force
+                    behind The Great Abanga Foundation, he leads with a deep
+                    commitment to empowering communities and creating lasting
+                    social impact. Osman’s leadership is characterized by his
+                    passion for advancing education, improving healthcare, and
+                    promoting sustainable development initiatives. His
+                    philanthropic activities focus on uplifting underprivileged
+                    individuals and fostering opportunities for growth and
+                    resilience.
                   </p>
                 </div>
                 <div className="order-1 lg:order-2">
@@ -304,32 +305,64 @@ export default function About() {
                     programs. With exceptional organizational skills and a
                     passion for community development, she coordinates our
                     educational, healthcare, and sustainable development
-                    initiatives.
+                    initiatives. Martha brings valuable experience from her
+                    background as a former teacher and is currently a student
+                    pursuing further education. She holds a Diploma in Basic
+                    Education (DBE), which enhances her understanding of
+                    educational needs and community development.
                   </p>
                 </div>
-                <div className="order-1 lg:order-2 rounded-lg overflow-hidden h-80 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
-                  <span className="text-white font-bold text-6xl">MGR</span>
+                <div className="order-1 lg:order-2 rounded-lg overflow-hidden h-80">
+                  <img
+                    src="/martha_img.jpg"
+                    alt="Amanfo Martha Simaa - Manager"
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                 </div>
               </div>
 
               {/* Publicity */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="rounded-lg overflow-hidden h-80 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
-                  <span className="text-white font-bold text-6xl">PUB</span>
+                  <img
+                    src="/ruth_img.jpg"
+                    alt="Amoah Gideon - Public Relations Officer"
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-black mb-4">Ruth</h3>
+                  <h3 className="text-2xl font-bold text-black mb-4">
+                    Ruth Abena Amankwah
+                  </h3>
                   <p className="text-orange-600 font-semibold mb-4">
                     Publicity
                   </p>
                   <p className="text-black leading-relaxed">
-                    Ruth leads our publicity efforts, crafting compelling
-                    narratives that showcase the foundation's impact and mission
-                    to the wider community. With expertise in communications and
-                    community engagement, she ensures our message of hope,
-                    empowerment, and positive change reaches those who need it
-                    most and those who can contribute to our cause.
+                    Ruth Abena Amankwah, an entrepreneur, podcaster, social
+                    media content creator, philanthropist, and a dedicated
+                    student pursuing a degree in Biological Sciences at the
+                    University of Energy and Natural Resources. She founded and
+                    manages Elora Wigs and Perfumes, excels in building client
+                    relationships, and develops effective marketing strategies.
+                    Ruth contributes as a panelist on Earth Dreams
+                    Entertainment, creating and editing engaging podcast
+                    content. She also creates and manages social media content
+                    for various organizations, building and nurturing online
+                    communities. Passionate about giving back, she volunteers
+                    with The Great Abanga Foundation, organizing fundraising
+                    campaigns and mentoring those in need.
                   </p>
+                  <div className="mt-4 space-y-2 text-black">
+                    <p>
+                      <strong>Social Media:</strong> Miss_Ruth
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
