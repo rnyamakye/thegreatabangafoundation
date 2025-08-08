@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export function meta() {
   return [
@@ -55,6 +56,45 @@ function useRevealOnScroll() {
 
 export default function Contact() {
   const addToRefs = useRevealOnScroll();
+  const form = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        }
+      )
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          setSubmitStatus("success");
+          setIsSubmitting(false);
+          if (form.current) {
+            form.current.reset();
+          }
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+          setSubmitStatus("error");
+          setIsSubmitting(false);
+        }
+      );
+  };
 
   return (
     <>
@@ -245,7 +285,7 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div>
-              <form className="space-y-6">
+              <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div>
                   <label
                     htmlFor="fullName"
@@ -256,8 +296,9 @@ export default function Contact() {
                   <input
                     type="text"
                     id="fullName"
-                    name="fullName"
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent transition-colors duration-200 shadow-sm"
+                    name="user_name"
+                    required
+                    className="w-full px-4 py-3 bg-transparent border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent transition-colors duration-200 shadow-sm"
                   />
                 </div>
 
@@ -271,8 +312,9 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
-                    name="email"
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent transition-colors duration-200 shadow-sm"
+                    name="user_email"
+                    required
+                    className="w-full px-4 py-3 bg-transparent border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent transition-colors duration-200 shadow-sm"
                   />
                 </div>
 
@@ -287,16 +329,41 @@ export default function Contact() {
                     id="message"
                     name="message"
                     rows={5}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent transition-colors duration-200 resize-none shadow-sm"
+                    required
+                    className="w-full px-4 py-3 bg-transparent border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent transition-colors duration-200 resize-none shadow-sm"
                   ></textarea>
                 </div>
 
+                {/* Status Messages */}
+                {submitStatus === "success" && (
+                  <div className="p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
+                    Thank you! Your message has been sent successfully. We'll
+                    get back to you soon.
+                  </div>
+                )}
+
+                {submitStatus === "error" && (
+                  <div className="p-4 bg-red-100 border border-red-400 text-red-700 rounded-md">
+                    Sorry, there was an error sending your message. Please try
+                    again or contact us directly.
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="relative overflow-hidden w-full px-6 py-3 bg-orange-600 text-white font-semibold rounded-md transition-all duration-300 group"
+                  disabled={isSubmitting}
+                  className={`relative overflow-hidden w-full px-6 py-3 font-semibold rounded-md transition-all duration-300 group ${
+                    isSubmitting
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-orange-600 hover:bg-orange-700"
+                  } text-white`}
                 >
-                  <span className="relative z-10">Send Message</span>
-                  <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+                  <span className="relative z-10">
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </span>
+                  {!isSubmitting && (
+                    <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+                  )}
                 </button>
               </form>
             </div>

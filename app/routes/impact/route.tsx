@@ -179,7 +179,7 @@ export default function Impact() {
                 className="text-5xl font-bold text-orange-600 mb-2 reveal-scale"
                 ref={addToRefs}
               >
-                ₵45K+
+                ₵25K+
               </div>
               <div className="text-xl font-semibold text-gray-900 mb-2">
                 Total Investment
@@ -261,9 +261,9 @@ export default function Impact() {
                   Sponsoring School Events
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  We support educational institutions by sponsoring academic events,
-                  conferences, and competitions that promote learning and excellence
-                  in various fields of study.
+                  We support educational institutions by sponsoring academic
+                  events, conferences, and competitions that promote learning
+                  and excellence in various fields of study.
                 </p>
               </div>
             </div>
@@ -322,28 +322,27 @@ export default function Impact() {
                 <div className="rounded-lg overflow-hidden h-80">
                   <img
                     src="/soboloparty_img.jpg"
-                    alt="Sarah's medical journey - TGAF scholarship recipient"
+                    alt="Biossa Aponkye Cup - TGAF sponsored football event"
                     className="w-full h-full object-cover "
                   />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    Sobolo Party
+                    Biossa Aponkye Cup Sponsorship
                   </h3>
-                  {/* <p className="text-gray-600 leading-relaxed mb-4">
-                    Emmanuel came from a family where technology seemed out of
-                    reach. Through TGAF's support, he pursued Computer Science
-                    and developed a mobile app that helps farmers connect with
-                    buyers directly, increasing their income by 40%.
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    The Great Abanga Foundation proudly sponsored the Biossa
+                    Aponkye Cup, a thrilling showcase of talent, unity, and
+                    departmental spirit. From the electrifying kickoff to the
+                    final whistle, the event was nothing short of a masterpiece
+                    — filled with passion, energy, and unforgettable moments.
                   </p>
-                  <p className="text-gray-600 leading-relaxed">
-                    "The foundation taught me that with education and
-                    determination, I could not only change my life but also
-                    impact my entire community. My app now serves over 500
-                    farmers."
-                  </p> */}
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    A celebration of grassroots sports at its finest! ⚽️🔥
+                  </p>
                   <div className="mt-4 text-orange-600 font-semibold">
-                    — Emmanuel O., Software Developer & Entrepreneur
+                    #BiossaAponkyeCup #GreatAbangaFoundation #CommunityMatters
+                    #Football
                   </div>
                 </div>
               </div>
