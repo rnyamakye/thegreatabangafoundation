@@ -78,56 +78,57 @@ export function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="sticky top-0 left-0 right-0 z-50 bg-gray-200 backdrop-blur-sm ">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex justify-between items-center h-16">
+    <nav className="sticky top-0 left-0 right-0 z-50 bg-gray-100 backdrop-blur-md ">
+      <div className="max-w-6xl px-6 mx-auto">
+        <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-3">
               <img
                 src="/logo.png"
                 alt="The Great Abanga Foundation"
-                className="h-10 w-auto"
+                className="w-auto h-10"
               />
-              <span className="text-lg font-semibold text-black hidden sm:block">
+              <span className="hidden text-lg font-semibold text-black sm:block">
                 TGAF
               </span>
             </Link>
           </div>
 
           {/* Navigation Links - Desktop */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="items-center hidden space-x-8 md:flex">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/impact">Impact</NavLink>
+            <NavLink to="/blog">Blog</NavLink>
             <NavLink to="/contact">Contact</NavLink>
             {/* <Link
               to="/donate"
-              className="relative overflow-hidden bg-orange-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 group"
+              className="relative px-4 py-2 overflow-hidden font-medium text-white transition-all duration-300 bg-orange-600 rounded-lg group"
             >
               <span className="relative z-10">Donate</span>
-              <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+              <div className="absolute inset-0 transition-transform duration-500 ease-out transform -translate-x-full bg-black group-hover:translate-x-0"></div>
             </Link> */}
           </div>
 
           {/* Mobile Controls */}
-          <div className="md:hidden flex items-center space-x-3">
+          <div className="flex items-center space-x-3 md:hidden">
             {/* Hamburger Menu Button */}
             <button
               ref={buttonRef}
               type="button"
               onClick={toggleMenu}
-              className="relative overflow-hidden p-2 rounded-md bg-orange-600 text-white transition-all duration-300 group"
+              className="relative p-2 overflow-hidden text-white transition-all duration-300 bg-orange-600 rounded-md group"
               aria-controls="mobile-menu"
               aria-expanded={isMenuOpen}
             >
               <span className="sr-only">
                 {isMenuOpen ? "Close main menu" : "Open main menu"}
               </span>
-              <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+              <div className="absolute inset-0 transition-transform duration-500 ease-out transform -translate-x-full bg-black group-hover:translate-x-0"></div>
               {isMenuOpen ? (
                 <svg
-                  className="w-6 h-6 relative z-10"
+                  className="relative z-10 w-6 h-6"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -141,7 +142,7 @@ export function Navbar() {
                 </svg>
               ) : (
                 <svg
-                  className="w-6 h-6 relative z-10"
+                  className="relative z-10 w-6 h-6"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -177,16 +178,19 @@ export function Navbar() {
           <NavLink to="/impact" onClick={closeMenu} className="block py-2">
             Impact
           </NavLink>
+          <NavLink to="/blog" onClick={closeMenu} className="block py-2">
+            Blog
+          </NavLink>
           <NavLink to="/contact" onClick={closeMenu} className="block py-2">
             Contact
           </NavLink>
           {/* <Link
             to="/donate"
             onClick={closeMenu}
-            className="relative overflow-hidden block py-2 px-4 bg-orange-600 text-white rounded-lg font-medium text-center transition-all duration-300 group"
+            className="relative block px-4 py-2 overflow-hidden font-medium text-center text-white transition-all duration-300 bg-orange-600 rounded-lg group"
           >
             <span className="relative z-10">Donate</span>
-            <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+            <div className="absolute inset-0 transition-transform duration-500 ease-out transform -translate-x-full bg-black group-hover:translate-x-0"></div>
           </Link> */}
         </div>
       </div>
