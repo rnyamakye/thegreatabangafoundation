@@ -185,7 +185,7 @@ export function Footer() {
                     </svg>
                   </a>
                   <a
-                    href="https://vm.tiktok.com/ZMSKrg6dh/"
+                    href="https://www.tiktok.com/@the.great.foundat6?is_from_webapp=1&sender_device=pc"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-orange-500 transition-colors duration-200"

@@ -128,69 +128,68 @@ export default function About() {
         `,
         }}
       />
-      <main className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100 transition-colors duration-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <main className="min-h-screen transition-colors duration-200 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100">
+        <div className="max-w-6xl px-4 py-12 mx-auto sm:px-6 sm:py-16">
           {/* Header */}
-          <div className="text-center mb-16 reveal-fade-in" ref={addToRefs}>
+          <div className="mb-16 text-center reveal-fade-in" ref={addToRefs}>
             <h1
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 reveal-slide-up"
+              className="mb-6 text-3xl font-bold text-black sm:text-4xl md:text-5xl reveal-slide-up"
               ref={addToRefs}
             >
               About The Great Abanga Foundation
             </h1>
             <div className="mb-6">
-              <p className="text-2xl font-semibold text-orange-600 mb-2">
+              <p className="mb-2 text-2xl font-semibold text-orange-600">
                 "Helping Hands Brighter Tomorrow"
               </p>
-              <p className="text-lg text-black font-medium">
+              <p className="text-lg font-medium text-black">
                 Creating a future where no one is left behind — empowered,
                 uplifted, and cared for
               </p>
             </div>
             <p
-              className="text-lg sm:text-xl text-black max-w-3xl mx-auto leading-relaxed reveal-slide-up"
+              className="max-w-3xl mx-auto text-lg leading-relaxed text-black sm:text-xl reveal-slide-up"
               ref={addToRefs}
             >
               Founded by visionary leaders with a deep commitment to education
               and community development, The Great Abanga Foundation has been
               transforming lives through comprehensive programs spanning
-              education, healthcare, and sustainable development for over 2
-              years.
+              education, healthcare, and sustainable development for 2 years.
             </p>
           </div>
 
           {/* Foundation Overview */}
           <div
-            className="mb-16 bg-transparent rounded-2xl p-6 sm:p-8 md:p-12 reveal-fade-in"
+            className="p-6 mb-16 bg-transparent rounded-2xl sm:p-8 md:p-12 reveal-fade-in"
             ref={addToRefs}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="grid items-center grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-black mb-4 sm:mb-6">
+                <h2 className="mb-4 text-2xl font-bold text-black sm:text-3xl sm:mb-6">
                   Our Global Presence
                 </h2>
-                <div className="space-y-4 mb-6">
+                <div className="mb-6 space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-                    <span className="text-lg text-black font-semibold">
+                    <span className="text-lg font-semibold text-black">
                       Ghana - Sunyani
                     </span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-                    <span className="text-lg text-black font-semibold">
+                    <span className="text-lg font-semibold text-black">
                       Canada
                     </span>
                   </div>
                 </div>
-                <p className="text-base sm:text-lg text-black mb-4">
+                <p className="mb-4 text-base text-black sm:text-lg">
                   Operating across two continents, we bring together diverse
                   perspectives and resources to create meaningful impact in
                   communities where it's needed most.
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-64 h-64 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-2xl">
+                <div className="flex items-center justify-center w-64 h-64 mx-auto mb-6 rounded-full shadow-2xl bg-gradient-to-br from-orange-500 to-orange-600">
                   <svg
                     className="w-32 h-32 text-white"
                     fill="none"
@@ -205,7 +204,7 @@ export default function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-4">
+                <h3 className="mb-4 text-xl font-semibold text-black">
                   Global Impact, Local Touch
                 </h3>
                 <p className="text-black">
@@ -218,20 +217,20 @@ export default function About() {
 
           {/* Leadership Team */}
           <div className="mb-16 reveal-fade-in" ref={addToRefs}>
-            <h2 className="text-2xl sm:text-3xl font-bold text-black mb-8 sm:mb-12 text-center">
+            <h2 className="mb-8 text-2xl font-bold text-center text-black sm:text-3xl sm:mb-12">
               Our Leadership Team
             </h2>
             <div className="space-y-16">
               {/* CEO */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
                 <div className="order-2 lg:order-1">
-                  <h3 className="text-2xl font-bold text-black mb-4">
+                  <h3 className="mb-4 text-2xl font-bold text-black">
                     Osman Abdul Hakim Abanga
                   </h3>
-                  <p className="text-orange-600 font-semibold mb-4">
+                  <p className="mb-4 font-semibold text-orange-600">
                     Chief Executive Officer
                   </p>
-                  <p className="text-black leading-relaxed">
+                  <p className="leading-relaxed text-black">
                     Osman Abdul Hakim Abanga, born on May 3rd, 2001, a visionary
                     CEO and dedicated philanthropist. As the driving force
                     behind The Great Abanga Foundation, he leads with a deep
@@ -245,11 +244,11 @@ export default function About() {
                   </p>
                 </div>
                 <div className="order-1 lg:order-2">
-                  <div className="rounded-lg overflow-hidden h-80">
+                  <div className="overflow-hidden rounded-lg h-80">
                     <img
                       src="/abanga_img.jpg"
                       alt="Osman Hakim Abdul - Chief Executive Officer"
-                      className="w-full h-full object-cover object-top"
+                      className="object-cover object-top w-full h-full"
                       loading="lazy"
                       decoding="async"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -259,13 +258,13 @@ export default function About() {
               </div>
 
               {/* Manager */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
                 <div className="order-1 lg:order-1">
-                  <div className="rounded-lg overflow-hidden h-80">
+                  <div className="overflow-hidden rounded-lg h-80">
                     <img
                       src="/giden_img.jpg"
                       alt="Amoah Gideon - Public Relations Officer"
-                      className="w-full h-full object-cover object-top"
+                      className="object-cover object-top w-full h-full"
                       loading="lazy"
                       decoding="async"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -273,13 +272,13 @@ export default function About() {
                   </div>
                 </div>
                 <div className="order-2 lg:order-2">
-                  <h3 className="text-2xl font-bold text-black mb-4">
+                  <h3 className="mb-4 text-2xl font-bold text-black">
                     Amoah Gideon
                   </h3>
-                  <p className="text-orange-600 font-semibold mb-4">
+                  <p className="mb-4 font-semibold text-orange-600">
                     Public Relations Officer
                   </p>
-                  <p className="text-black leading-relaxed">
+                  <p className="leading-relaxed text-black">
                     Gideon Amoah is a dedicated philanthropist, passionate
                     entrepreneur, and a committed student currently pursuing his
                     studies at the University of Energy and Natural Resources.
@@ -292,13 +291,13 @@ export default function About() {
               </div>
 
               {/* PRO */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
                 <div className="order-2 lg:order-1">
-                  <h3 className="text-2xl font-bold text-black mb-4">
+                  <h3 className="mb-4 text-2xl font-bold text-black">
                     Amanfo Martha Simaa
                   </h3>
-                  <p className="text-orange-600 font-semibold mb-4">Manager</p>
-                  <p className="text-black leading-relaxed">
+                  <p className="mb-4 font-semibold text-orange-600">Manager</p>
+                  <p className="leading-relaxed text-black">
                     Amanfo Martha Simaa serves as the Manager of The Great
                     Abanga Foundation, overseeing the day-to-day operations and
                     ensuring the effective implementation of our charitable
@@ -312,11 +311,11 @@ export default function About() {
                     educational needs and community development.
                   </p>
                 </div>
-                <div className="order-1 lg:order-2 rounded-lg overflow-hidden h-80">
+                <div className="order-1 overflow-hidden rounded-lg lg:order-2 h-80">
                   <img
                     src="/martha_img.jpg"
                     alt="Amanfo Martha Simaa - Manager"
-                    className="w-full h-full object-cover object-top"
+                    className="object-cover object-top w-full h-full"
                     loading="lazy"
                     decoding="async"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -325,25 +324,25 @@ export default function About() {
               </div>
 
               {/* Publicity */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="rounded-lg overflow-hidden h-80 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+              <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+                <div className="flex items-center justify-center overflow-hidden rounded-lg h-80 bg-gradient-to-br from-orange-500 to-orange-600">
                   <img
                     src="/ruth_img.jpg"
                     alt="Amoah Gideon - Public Relations Officer"
-                    className="w-full h-full object-cover object-top"
+                    className="object-cover object-top w-full h-full"
                     loading="lazy"
                     decoding="async"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-black mb-4">
+                  <h3 className="mb-4 text-2xl font-bold text-black">
                     Ruth Abena Amankwah
                   </h3>
-                  <p className="text-orange-600 font-semibold mb-4">
+                  <p className="mb-4 font-semibold text-orange-600">
                     Publicity
                   </p>
-                  <p className="text-black leading-relaxed">
+                  <p className="leading-relaxed text-black">
                     Ruth Abena Amankwah, an entrepreneur, podcaster, social
                     media content creator, philanthropist, and a dedicated
                     student pursuing a degree in Biological Sciences at the
@@ -369,18 +368,18 @@ export default function About() {
           </div>
 
           {/* Mission & Vision */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div className="grid grid-cols-1 gap-12 mb-16 md:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-bold text-black mb-6">
+              <h2 className="mb-6 text-3xl font-bold text-black">
                 Our Mission
               </h2>
-              <p className="text-lg text-black mb-4">
+              <p className="mb-4 text-lg text-black">
                 A commitment to empowering communities by promoting access to
                 quality education, improving healthcare for the sick and
                 underprivileged, and fostering sustainable development
                 initiatives.
               </p>
-              <p className="text-lg text-black mb-6">
+              <p className="mb-6 text-lg text-black">
                 We emphasize our dedication to partnerships, advocacy, and
                 targeted programs aimed at creating a healthier, more educated,
                 and resilient society where every individual has the opportunity
@@ -388,9 +387,9 @@ export default function About() {
               </p>
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-black mb-6">Our Vision</h2>
-              <div className="bg-gradient-to-r from-orange-600 to-orange-500 text-white p-6 rounded-lg mb-6">
-                <p className="text-lg font-medium italic mb-4">
+              <h2 className="mb-6 text-3xl font-bold text-black">Our Vision</h2>
+              <div className="p-6 mb-6 text-white rounded-lg bg-gradient-to-r from-orange-600 to-orange-500">
+                <p className="mb-4 text-lg italic font-medium">
                   "Creating a future where no one is left behind — empowered,
                   uplifted, and cared for."
                 </p>
@@ -406,23 +405,23 @@ export default function About() {
 
           {/* Foundation Objectives */}
           <div
-            className="mb-16 bg-transparent rounded-2xl p-8 reveal-fade-in"
+            className="p-8 mb-16 bg-transparent rounded-2xl reveal-fade-in"
             ref={addToRefs}
           >
-            <h2 className="text-3xl font-bold text-black mb-8 text-center">
+            <h2 className="mb-8 text-3xl font-bold text-center text-black">
               Our Foundation Objectives
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white font-bold text-sm">1</span>
+                  <div className="flex items-center justify-center flex-shrink-0 w-8 h-8 mt-1 bg-orange-500 rounded-full">
+                    <span className="text-sm font-bold text-white">1</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-black mb-2">
+                    <h3 className="mb-2 text-xl font-semibold text-black">
                       Education
                     </h3>
-                    <p className="text-black leading-relaxed">
+                    <p className="leading-relaxed text-black">
                       Provide scholarships, educational resources, and
                       infrastructure support to underprivileged students and
                       schools.
@@ -430,14 +429,14 @@ export default function About() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white font-bold text-sm">2</span>
+                  <div className="flex items-center justify-center flex-shrink-0 w-8 h-8 mt-1 bg-orange-500 rounded-full">
+                    <span className="text-sm font-bold text-white">2</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-black mb-2">
+                    <h3 className="mb-2 text-xl font-semibold text-black">
                       Healthcare
                     </h3>
-                    <p className="text-black leading-relaxed">
+                    <p className="leading-relaxed text-black">
                       Support medical aid, health awareness programs, and
                       treatment for the sick and vulnerable.
                     </p>
@@ -446,52 +445,52 @@ export default function About() {
               </div>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white font-bold text-sm">3</span>
+                  <div className="flex items-center justify-center flex-shrink-0 w-8 h-8 mt-1 bg-orange-500 rounded-full">
+                    <span className="text-sm font-bold text-white">3</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-black mb-2">
+                    <h3 className="mb-2 text-xl font-semibold text-black">
                       Community Development
                     </h3>
-                    <p className="text-black leading-relaxed">
+                    <p className="leading-relaxed text-black">
                       Initiate and fund projects aimed at improving living
                       standards, including access to clean water, food security,
                       and livelihood programs.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white font-bold text-sm">4</span>
+                {/* <div className="flex items-start space-x-4">
+                  <div className="flex items-center justify-center flex-shrink-0 w-8 h-8 mt-1 bg-orange-500 rounded-full">
+                    <span className="text-sm font-bold text-white">4</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-black mb-2">
+                    <h3 className="mb-2 text-xl font-semibold text-black">
                       Advocacy & Empowerment
                     </h3>
-                    <p className="text-black leading-relaxed">
+                    <p className="leading-relaxed text-black">
                       Promote social welfare policies and empower marginalized
                       groups through skills training and mentorship programs.
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
 
           {/* Our Impact Stats */}
           <div
-            className="mb-16 bg-transparent rounded-2xl p-6 sm:p-8 md:p-12 reveal-fade-in"
+            className="p-6 mb-16 bg-transparent rounded-2xl sm:p-8 md:p-12 reveal-fade-in"
             ref={addToRefs}
           >
-            <h2 className="text-2xl sm:text-3xl font-bold text-black mb-8 sm:mb-12 text-center">
+            <h2 className="mb-8 text-2xl font-bold text-center text-black sm:text-3xl sm:mb-12">
               Our Impact by the Numbers
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-lg">15+</span>
+                <div className="flex items-center justify-center w-20 h-20 mx-auto mb-4 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-orange-600">
+                  <span className="text-lg font-bold text-white">15+</span>
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-2">
+                <h3 className="mb-2 text-xl font-semibold text-black">
                   Students Supported
                 </h3>
                 <p className="text-black">
@@ -499,10 +498,10 @@ export default function About() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">₵45K+</span>
+                <div className="flex items-center justify-center w-20 h-20 mx-auto mb-4 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-orange-600">
+                  <span className="text-sm font-bold text-white">₵25K+</span>
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-2">
+                <h3 className="mb-2 text-xl font-semibold text-black">
                   Total Investment
                 </h3>
                 <p className="text-black">
@@ -510,10 +509,10 @@ export default function About() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-lg">100%</span>
+                <div className="flex items-center justify-center w-20 h-20 mx-auto mb-4 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-orange-600">
+                  <span className="text-lg font-bold text-white">100%</span>
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-2">
+                <h3 className="mb-2 text-xl font-semibold text-black">
                   Success Rate
                 </h3>
                 <p className="text-black">
@@ -525,12 +524,12 @@ export default function About() {
 
           {/* Core Focus Areas */}
           <div className="mb-16 reveal-fade-in" ref={addToRefs}>
-            <h2 className="text-2xl sm:text-3xl font-bold text-black mb-8 sm:mb-12 text-center">
+            <h2 className="mb-8 text-2xl font-bold text-center text-black sm:text-3xl sm:mb-12">
               Our Core Focus Areas
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center bg-transparent p-6 rounded-xl">
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div className="p-6 text-center bg-transparent rounded-xl">
+                <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-orange-600">
                   <svg
                     className="w-8 h-8 text-white"
                     fill="none"
@@ -545,17 +544,17 @@ export default function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-black mb-4">
+                <h3 className="mb-4 text-xl font-bold text-black">
                   Quality Education
                 </h3>
-                <p className="text-black leading-relaxed">
+                <p className="leading-relaxed text-black">
                   Promoting access to quality education through scholarships,
                   academic support, and educational partnerships that break down
                   barriers to learning.
                 </p>
               </div>
-              <div className="text-center bg-transparent p-6 rounded-xl">
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+              <div className="p-6 text-center bg-transparent rounded-xl">
+                <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-orange-600">
                   <svg
                     className="w-8 h-8 text-white"
                     fill="none"
@@ -570,17 +569,17 @@ export default function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-black mb-4">
+                <h3 className="mb-4 text-xl font-bold text-black">
                   Healthcare Support
                 </h3>
-                <p className="text-black leading-relaxed">
+                <p className="leading-relaxed text-black">
                   Improving healthcare for the sick and underprivileged through
                   targeted medical assistance, health education, and community
                   wellness programs.
                 </p>
               </div>
-              <div className="text-center bg-transparent p-6 rounded-xl">
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+              <div className="p-6 text-center bg-transparent rounded-xl">
+                <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-orange-600">
                   <svg
                     className="w-8 h-8 text-white"
                     fill="none"
@@ -595,10 +594,10 @@ export default function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-black mb-4">
+                <h3 className="mb-4 text-xl font-bold text-black">
                   Sustainable Development
                 </h3>
-                <p className="text-black leading-relaxed">
+                <p className="leading-relaxed text-black">
                   Fostering sustainable development initiatives that create
                   lasting positive change and build resilient communities for
                   future generations.
@@ -609,13 +608,13 @@ export default function About() {
 
           {/* Governance & Operations */}
           <div className="mb-16 reveal-fade-in" ref={addToRefs}>
-            <h2 className="text-2xl sm:text-3xl font-bold text-black mb-8 sm:mb-12 text-center">
+            <h2 className="mb-8 text-2xl font-bold text-center text-black sm:text-3xl sm:mb-12">
               Our Governance & Operations
             </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-transparent p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-black mb-4 flex items-center">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+              <div className="p-6 bg-transparent rounded-xl">
+                <h3 className="flex items-center mb-4 text-xl font-bold text-black">
+                  <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                     <svg
                       className="w-4 h-4 text-white"
                       fill="none"
@@ -646,9 +645,9 @@ export default function About() {
                   </p>
                 </div>
               </div>
-              <div className="bg-transparent p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-black mb-4 flex items-center">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+              <div className="p-6 bg-transparent rounded-xl">
+                <h3 className="flex items-center mb-4 text-xl font-bold text-black">
+                  <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                     <svg
                       className="w-4 h-4 text-white"
                       fill="none"
@@ -675,10 +674,10 @@ export default function About() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-              <div className="bg-transparent p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-black mb-4 flex items-center">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+            <div className="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-2">
+              <div className="p-6 bg-transparent rounded-xl">
+                <h3 className="flex items-center mb-4 text-xl font-bold text-black">
+                  <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                     <svg
                       className="w-4 h-4 text-white"
                       fill="none"
@@ -710,9 +709,9 @@ export default function About() {
                   </p>
                 </div>
               </div>
-              <div className="bg-transparent p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-black mb-4 flex items-center">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+              <div className="p-6 bg-transparent rounded-xl">
+                <h3 className="flex items-center mb-4 text-xl font-bold text-black">
+                  <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                     <svg
                       className="w-4 h-4 text-white"
                       fill="none"
@@ -749,13 +748,13 @@ export default function About() {
 
           {/* Foundation Establishment */}
           <div
-            className="mb-16 bg-gradient-to-r from-orange-600 to-orange-500 text-white p-8 rounded-2xl text-center reveal-fade-in"
+            className="p-8 mb-16 text-center text-white bg-gradient-to-r from-orange-600 to-orange-500 rounded-2xl reveal-fade-in"
             ref={addToRefs}
           >
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="mb-4 text-2xl font-bold">
               Foundation Establishment
             </h2>
-            <p className="text-lg mb-2">
+            <p className="mb-2 text-lg">
               The Great Abanga Foundation was officially established for
               charitable purposes in July 2025
             </p>
@@ -766,15 +765,15 @@ export default function About() {
           </div>
 
           {/* Values Section */}
-          <div className="mt-16 sm:mt-20 bg-transparent rounded-2xl p-6 sm:p-8 md:p-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-black mb-8 sm:mb-12 text-center">
+          <div className="p-6 mt-16 bg-transparent sm:mt-20 rounded-2xl sm:p-8 md:p-12">
+            <h2 className="mb-8 text-2xl font-bold text-center text-black sm:text-3xl sm:mb-12">
               Our Core Values
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 sm:gap-8">
               <div className="text-center">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 bg-orange-500 rounded-full flex items-center justify-center">
+                <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 bg-orange-500 rounded-full sm:w-16 sm:h-16 sm:mb-4">
                   <svg
-                    className="w-6 h-6 sm:w-8 sm:h-8 text-white"
+                    className="w-6 h-6 text-white sm:w-8 sm:h-8"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -787,17 +786,17 @@ export default function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-base sm:text-lg font-semibold text-black mb-2">
+                <h3 className="mb-2 text-base font-semibold text-black sm:text-lg">
                   Integrity
                 </h3>
-                <p className="text-xs sm:text-sm text-black leading-relaxed">
+                <p className="text-xs leading-relaxed text-black sm:text-sm">
                   Transparency in all our operations and decisions
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 bg-orange-500 rounded-full flex items-center justify-center">
+                <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 bg-orange-500 rounded-full sm:w-16 sm:h-16 sm:mb-4">
                   <svg
-                    className="w-6 h-6 sm:w-8 sm:h-8 text-white"
+                    className="w-6 h-6 text-white sm:w-8 sm:h-8"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -810,17 +809,17 @@ export default function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-base sm:text-lg font-semibold text-black mb-2">
+                <h3 className="mb-2 text-base font-semibold text-black sm:text-lg">
                   Compassion
                 </h3>
-                <p className="text-xs sm:text-sm text-black leading-relaxed">
+                <p className="text-xs leading-relaxed text-black sm:text-sm">
                   Understanding and addressing real community needs
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 bg-orange-500 rounded-full flex items-center justify-center">
+                <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 bg-orange-500 rounded-full sm:w-16 sm:h-16 sm:mb-4">
                   <svg
-                    className="w-6 h-6 sm:w-8 sm:h-8 text-white"
+                    className="w-6 h-6 text-white sm:w-8 sm:h-8"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -833,17 +832,17 @@ export default function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-base sm:text-lg font-semibold text-black mb-2">
+                <h3 className="mb-2 text-base font-semibold text-black sm:text-lg">
                   Excellence
                 </h3>
-                <p className="text-xs sm:text-sm text-black leading-relaxed">
+                <p className="text-xs leading-relaxed text-black sm:text-sm">
                   Striving for the highest quality in everything we do
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 bg-orange-500 rounded-full flex items-center justify-center">
+                <div className="flex items-center justify-center w-12 h-12 mx-auto mb-3 bg-orange-500 rounded-full sm:w-16 sm:h-16 sm:mb-4">
                   <svg
-                    className="w-6 h-6 sm:w-8 sm:h-8 text-white"
+                    className="w-6 h-6 text-white sm:w-8 sm:h-8"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -856,10 +855,10 @@ export default function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-base sm:text-lg font-semibold text-black mb-2">
+                <h3 className="mb-2 text-base font-semibold text-black sm:text-lg">
                   Collaboration
                 </h3>
-                <p className="text-xs sm:text-sm text-black leading-relaxed">
+                <p className="text-xs leading-relaxed text-black sm:text-sm">
                   Working together with communities and partners
                 </p>
               </div>
