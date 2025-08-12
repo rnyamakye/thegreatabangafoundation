@@ -1,7 +1,7 @@
 // Impact stories data for the blog page
 
 export interface ImpactStory {
-  id: number;
+  id: string;
   title: string;
   slug: string;
   category: string;
@@ -27,7 +27,7 @@ export interface Category {
 
 export const impactStories: ImpactStory[] = [
   {
-    id: 1,
+    id: "biossa_week_celebration_20240715",
     title: "BIOSSA Week Celebration Success",
     slug: "biossa-week-celebration-2024",
     category: "education",
@@ -52,7 +52,7 @@ Together, Let's Continue to Nurture Excellence in Biological Sciences.`,
     tags: ["education", "partnership", "scientific-excellence", "community"],
   },
   {
-    id: 2,
+    id: "biossa_aponkye_cup_20240628",
     title: "Biossa Aponkye Cup: Unity Through Sports",
     slug: "biossa-aponkye-cup-2024",
     category: "sports",

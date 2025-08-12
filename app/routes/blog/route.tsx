@@ -26,15 +26,42 @@ function LoadingSpinner() {
 
 // Article card component
 function ArticleCard({ story }: { story: any }) {
+  const [isImageLoading, setIsImageLoading] = useState(true);
+  const [isNavigating, setIsNavigating] = useState(false);
+
+  const handleImageLoad = () => {
+    setIsImageLoading(false);
+  };
+
+  const handleImageError = () => {
+    setIsImageLoading(false);
+  };
+
+  const handleNavigate = () => {
+    setIsNavigating(true);
+  };
+
   const renderMedia = () => {
     if (story.media.type === "image" && story.media.url) {
       return (
-        <img
-          src={story.media.url}
-          alt={story.media.alt}
-          className="object-cover w-full h-48 transition-transform duration-300 hover:scale-110"
-          loading="lazy"
-        />
+        <div className="relative">
+          {isImageLoading && (
+            <div className="absolute inset-0 z-10 flex items-center justify-center bg-gray-100">
+              <div className="relative">
+                <div className="w-8 h-8 border-2 border-orange-200 rounded-full animate-spin"></div>
+                <div className="absolute top-0 left-0 w-8 h-8 border-2 border-orange-600 rounded-full animate-spin border-t-transparent"></div>
+              </div>
+            </div>
+          )}
+          <img
+            src={story.media.url}
+            alt={story.media.alt}
+            className="object-cover w-full h-48 transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+            onLoad={handleImageLoad}
+            onError={handleImageError}
+          />
+        </div>
       );
     } else if (story.media.type === "video") {
       return (
@@ -108,16 +135,26 @@ function ArticleCard({ story }: { story: any }) {
   };
 
   return (
-    <article className="overflow-hidden transition-transform duration-300 bg-white rounded-lg shadow-lg hover:scale-105">
+    <article className="relative overflow-hidden transition-transform duration-300 bg-white rounded-lg shadow-lg group">
+      {/* Navigation Loading Overlay */}
+      {isNavigating && (
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-white/90 backdrop-blur-sm">
+          <div className="relative">
+            <div className="w-12 h-12 border-orange-200 rounded-full border-3 animate-spin"></div>
+            <div className="absolute top-0 left-0 w-12 h-12 border-orange-600 rounded-full border-3 animate-spin border-t-transparent"></div>
+          </div>
+        </div>
+      )}
+
       <div className="overflow-hidden">{renderMedia()}</div>
-      <div className="p-6">
+      <div className="p-4">
         <div
           className={`mb-2 text-xs font-semibold uppercase tracking-wide ${getCategoryColor(story.category)}`}
         >
           {story.category.replace("-", " ")}
         </div>
         <h3 className="mb-3 text-xl font-bold text-gray-900">{story.title}</h3>
-        <p className="mb-4 text-gray-600 truncate">{story.excerpt}</p>
+        <p className="mb-3 text-gray-600 truncate">{story.excerpt}</p>
         <div className="flex items-center justify-between text-sm text-gray-500">
           <span>
             {new Date(story.date).toLocaleDateString("en-US", {
@@ -128,6 +165,7 @@ function ArticleCard({ story }: { story: any }) {
           </span>
           <Link
             to={`/blog/${story.id}`}
+            onClick={handleNavigate}
             className="text-orange-600 transition-colors duration-200 hover:text-orange-700"
           >
             Read More →
@@ -209,65 +247,77 @@ export default function Blog() {
 
           {/* Featured Story */}
           {featuredStory && (
-            <div className="p-8 mb-12 shadow-xs rounded-2xl">
-              <div className="grid items-center grid-cols-1 gap-8 lg:grid-cols-2">
-                <div className="overflow-hidden rounded-lg">
-                  {featuredStory.media.url ? (
-                    <img
-                      src={featuredStory.media.url}
-                      alt={featuredStory.media.alt}
-                      className="object-cover w-full h-64 transition-transform duration-300 hover:scale-105"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="flex items-center justify-center h-64 bg-gradient-to-br from-orange-100 to-orange-200">
-                      <svg
-                        className="w-16 h-16 text-orange-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+            <Link to={`/blog/${featuredStory.id}`} className="block">
+              <div className="p-8 mb-12 transition-transform duration-300 shadow-xs rounded-2xl hover:scale-[1.01]">
+                <div className="grid items-center grid-cols-1 gap-8 lg:grid-cols-2">
+                  <div className="overflow-hidden rounded-lg">
+                    {featuredStory.media.url ? (
+                      <div className="relative">
+                        <img
+                          src={featuredStory.media.url}
+                          alt={featuredStory.media.alt}
+                          className="object-cover w-full h-64 transition-transform duration-300 hover:scale-105"
+                          loading="lazy"
                         />
-                      </svg>
-                    </div>
-                  )}
-                </div>
-                <div>
-                  <div className="mb-3 text-sm font-semibold tracking-wide text-orange-600 uppercase">
-                    Featured Story
+                      </div>
+                    ) : (
+                      <div className="flex items-center justify-center h-64 bg-gradient-to-br from-orange-100 to-orange-200">
+                        <svg
+                          className="w-16 h-16 text-orange-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                          />
+                        </svg>
+                      </div>
+                    )}
                   </div>
-                  <h2 className="mb-4 text-3xl font-bold text-gray-900">
-                    {featuredStory.title}
-                  </h2>
-                  <p className="mb-4 leading-relaxed text-gray-600">
-                    {featuredStory.excerpt}
-                  </p>
-                  <div className="flex items-center text-sm text-gray-500">
-                    <svg
-                      className="w-4 h-4 mr-2"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    {new Date(featuredStory.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
+                  <div>
+                    <div className="mb-3 text-sm font-semibold tracking-wide text-orange-600 uppercase">
+                      Featured Story
+                    </div>
+                    <h2 className="mb-4 text-3xl font-bold text-gray-900 transition-colors duration-200 hover:text-orange-600">
+                      {featuredStory.title}
+                    </h2>
+                    <p className="mb-4 leading-relaxed text-gray-600">
+                      {featuredStory.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center text-sm text-gray-500">
+                        <svg
+                          className="w-4 h-4 mr-2"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        {new Date(featuredStory.date).toLocaleDateString(
+                          "en-US",
+                          {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          }
+                        )}
+                      </div>
+                      <span className="font-medium text-orange-600">
+                        Read Full Story →
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           )}
 
           {/* Blog Categories */}

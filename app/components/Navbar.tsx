@@ -168,7 +168,7 @@ export function Navbar() {
         }`}
         id="mobile-menu"
       >
-        <div className="px-6 py-4 space-y-2 bg-gray-200 border-t border-gray-300">
+        <div className="px-6 py-4 space-y-2 bg-gray-100 border-t border-gray-300">
           <NavLink to="/" onClick={closeMenu} className="block py-2">
             Home
           </NavLink>

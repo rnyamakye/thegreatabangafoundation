@@ -28,7 +28,7 @@ function RelatedStories({
   currentStoryId,
   currentCategory,
 }: {
-  currentStoryId: number;
+  currentStoryId: string;
   currentCategory: string;
 }) {
   const [relatedStories, setRelatedStories] = useState<any[]>([]);
@@ -183,9 +183,9 @@ export default function BlogDetail() {
         // Dynamic import from the .ts file
         const dataModule = await import("../data/impactStories");
 
-        // Find the story by ID (convert storyId to number)
+        // Find the story by ID (now using string comparison)
         const foundStory = dataModule.impactStories.find(
-          (s: any) => s.id === parseInt(storyId || "0", 10)
+          (s: any) => s.id === storyId
         );
 
         console.log("Looking for story ID:", storyId);

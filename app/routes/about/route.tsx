@@ -189,9 +189,9 @@ export default function About() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="flex items-center justify-center w-64 h-64 mx-auto mb-6 rounded-full shadow-2xl bg-gradient-to-br from-orange-500 to-orange-600">
+                <div className="flex items-center justify-center w-32 h-32 mx-auto mb-6 rounded-full shadow-2xl md:h-64 md:w-64 bg-gradient-to-br from-orange-500 to-orange-600">
                   <svg
-                    className="w-32 h-32 text-white"
+                    className="w-24 h-24 text-white md:h-32 md:w-32"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -746,26 +746,8 @@ export default function About() {
             </div>
           </div>
 
-          {/* Foundation Establishment */}
-          <div
-            className="p-8 mb-16 text-center text-white bg-gradient-to-r from-orange-600 to-orange-500 rounded-2xl reveal-fade-in"
-            ref={addToRefs}
-          >
-            <h2 className="mb-4 text-2xl font-bold">
-              Foundation Establishment
-            </h2>
-            <p className="mb-2 text-lg">
-              The Great Abanga Foundation was officially established for
-              charitable purposes in July 2025
-            </p>
-            <p className="text-base opacity-90">
-              Committed to transparent, accountable, and impactful community
-              service
-            </p>
-          </div>
-
           {/* Values Section */}
-          <div className="p-6 mt-16 bg-transparent sm:mt-20 rounded-2xl sm:p-8 md:p-12">
+          <div className="p-6 mt-1 bg-transparent sm:mt-20 rounded-2xl sm:p-8 md:p-12">
             <h2 className="mb-8 text-2xl font-bold text-center text-black sm:text-3xl sm:mb-12">
               Our Core Values
             </h2>
@@ -862,6 +844,24 @@ export default function About() {
                   Working together with communities and partners
                 </p>
               </div>
+            </div>
+
+            {/* Foundation Establishment */}
+            <div
+              className="p-8 mt-20 text-center text-white bg-gradient-to-r from-orange-600 to-orange-500 rounded-2xl reveal-fade-in"
+              ref={addToRefs}
+            >
+              <h2 className="mb-4 text-2xl font-bold">
+                Foundation Establishment
+              </h2>
+              <p className="mb-2 text-lg">
+                The Great Abanga Foundation was officially established for
+                charitable purposes in July 2025
+              </p>
+              <p className="text-base opacity-90">
+                Committed to transparent, accountable, and impactful community
+                service
+              </p>
             </div>
           </div>
         </div>
