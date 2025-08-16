@@ -278,11 +278,11 @@ export default function About() {
                         decoding="async"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
-                      <div className="absolute px-3 py-2 bg-white rounded-lg shadow-lg bottom-3 right-3">
+                      {/* <div className="absolute px-3 py-2 bg-white rounded-lg shadow-lg bottom-3 right-3">
                         <p className="text-sm font-semibold text-gray-800">
                           CEO
                         </p>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -299,11 +299,11 @@ export default function About() {
                         decoding="async"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
-                      <div className="absolute px-3 py-2 bg-white rounded-lg shadow-lg bottom-3 right-3">
+                      {/* <div className="absolute px-3 py-2 bg-white rounded-lg shadow-lg bottom-3 right-3">
                         <p className="text-sm font-semibold text-gray-800">
                           PRO
                         </p>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   <div className="order-2 lg:order-2">
@@ -358,11 +358,11 @@ export default function About() {
                         decoding="async"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
-                      <div className="absolute px-3 py-2 bg-white rounded-lg shadow-lg bottom-3 right-3">
+                      {/* <div className="absolute px-3 py-2 bg-white rounded-lg shadow-lg bottom-3 right-3">
                         <p className="text-sm font-semibold text-gray-800">
                           Manager
                         </p>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -378,11 +378,11 @@ export default function About() {
                       decoding="async"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute px-3 py-2 bg-white rounded-lg shadow-lg bottom-3 right-3">
+                    {/* <div className="absolute px-3 py-2 bg-white rounded-lg shadow-lg bottom-3 right-3">
                       <p className="text-sm font-semibold text-gray-800">
                         Publicity
                       </p>
-                    </div>
+                    </div> */}
                   </div>
                   <div>
                     <h3 className="mb-4 text-2xl font-bold text-black">
