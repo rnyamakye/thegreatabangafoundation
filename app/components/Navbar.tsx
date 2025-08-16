@@ -78,7 +78,7 @@ export function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="sticky left-0 right-0 z-50 bg-transparent bg-gray-200 -top-3 backdrop-blur-2xl">
+    <nav className="sticky left-0 right-0 z-50 bg-white -top-3 backdrop-blur-2xl">
       <div className="max-w-6xl px-6 mx-auto">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}

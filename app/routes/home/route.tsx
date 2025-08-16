@@ -229,14 +229,14 @@ export default function Home() {
               ref={addToRefs}
             >
               <div
-                className="p-6 text-center bg-transparent rounded-lg reveal-slide-up"
+                className="p-6 text-center rounded-lg bg-gray-200/50 reveal-slide-up"
                 ref={addToRefs}
               >
                 <div className="mb-2 text-4xl font-bold tgaf-orange">3+</div>
                 <div className="font-medium text-black">Community Programs</div>
               </div>
               <div
-                className="p-6 text-center bg-transparent rounded-lg reveal-slide-up"
+                className="p-6 text-center rounded-lg bg-gray-200/50 reveal-slide-up"
                 ref={addToRefs}
               >
                 <div className="mb-2 text-4xl font-bold tgaf-orange">₵25K+</div>
@@ -245,7 +245,7 @@ export default function Home() {
                 </div>
               </div>
               <div
-                className="p-6 text-center bg-transparent rounded-lg reveal-slide-up"
+                className="p-6 text-center rounded-lg bg-gray-200/50 reveal-slide-up"
                 ref={addToRefs}
               >
                 <div className="mb-2 text-4xl font-bold tgaf-orange">1</div>
@@ -254,7 +254,7 @@ export default function Home() {
                 </div>
               </div>
               <div
-                className="p-6 text-center bg-transparent rounded-lg reveal-slide-up"
+                className="p-6 text-center rounded-lg bg-gray-200/50 reveal-slide-up"
                 ref={addToRefs}
               >
                 <div className="mb-2 text-4xl font-bold tgaf-orange">2</div>
@@ -264,7 +264,7 @@ export default function Home() {
 
             {/* Foundation Goals Section */}
             <div
-              className="p-8 mb-20 bg-transparent rounded-2xl sm:p-12 reveal-fade-in"
+              className="p-8 mb-20 bg- roun2ed/-2xgray-50050l sm:p-12 reveal-fade-in"
               ref={addToRefs}
             >
               <h2
@@ -434,7 +434,7 @@ export default function Home() {
 
             {/* Impact Stories Section */}
             <div
-              className="p-12 mb-20 bg-transparent rounded-2xl reveal-fade-in"
+              className="p-12 mb-20 bg- roun2ed/-2xgray-50050l reveal-fade-in"
               ref={addToRefs}
             >
               <h3

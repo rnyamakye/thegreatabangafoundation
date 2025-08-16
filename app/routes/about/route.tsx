@@ -468,7 +468,7 @@ export default function About() {
 
             {/* Foundation Objectives */}
             <div
-              className="p-8 mb-16 bg-transparent rounded-2xl reveal-fade-in"
+              className="p-8 mb-16 bg-gray-200/50 rounded-2xl reveal-fade-in"
               ref={addToRefs}
             >
               <h2 className="mb-8 text-3xl font-bold text-center text-black">
@@ -542,7 +542,7 @@ export default function About() {
 
             {/* Our Impact Stats */}
             <div
-              className="p-6 mb-16 bg-transparent rounded-2xl sm:p-8 md:p-12 reveal-fade-in"
+              className="p-6 mb-16 bg-gray-200/50 rounded-2xl sm:p-8 md:p-12 reveal-fade-in"
               ref={addToRefs}
             >
               <h2 className="mb-8 text-2xl font-bold text-center text-black sm:text-3xl sm:mb-12">
@@ -591,7 +591,7 @@ export default function About() {
                 Our Core Focus Areas
               </h2>
               <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-                <div className="p-6 text-center bg-transparent rounded-xl">
+                <div className="p-6 text-center bg-gray-200/50 rounded-xl">
                   <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-orange-600">
                     <svg
                       className="w-8 h-8 text-white"
@@ -616,7 +616,7 @@ export default function About() {
                     down barriers to learning.
                   </p>
                 </div>
-                <div className="p-6 text-center bg-transparent rounded-xl">
+                <div className="p-6 text-center bg-gray-200/50 rounded-xl">
                   <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-orange-600">
                     <svg
                       className="w-8 h-8 text-white"
@@ -641,7 +641,7 @@ export default function About() {
                     community wellness programs.
                   </p>
                 </div>
-                <div className="p-6 text-center bg-transparent rounded-xl">
+                <div className="p-6 text-center bg-gray-200/50 rounded-xl">
                   <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-orange-600">
                     <svg
                       className="w-8 h-8 text-white"
@@ -675,7 +675,7 @@ export default function About() {
                 Our Governance & Operations
               </h2>
               <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-                <div className="p-6 bg-transparent rounded-xl">
+                <div className="p-6 bg-gray-200/50 rounded-xl">
                   <h3 className="flex items-center mb-4 text-xl font-bold text-black">
                     <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                       <svg
@@ -708,7 +708,7 @@ export default function About() {
                     </p>
                   </div>
                 </div>
-                <div className="p-6 bg-transparent rounded-xl">
+                <div className="p-6 bg-gray-200/50 rounded-xl">
                   <h3 className="flex items-center mb-4 text-xl font-bold text-black">
                     <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                       <svg
@@ -738,7 +738,7 @@ export default function About() {
               </div>
 
               <div className="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-2">
-                <div className="p-6 bg-transparent rounded-xl">
+                <div className="p-6 bg-gray-200/50 rounded-xl">
                   <h3 className="flex items-center mb-4 text-xl font-bold text-black">
                     <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                       <svg
@@ -772,7 +772,7 @@ export default function About() {
                     </p>
                   </div>
                 </div>
-                <div className="p-6 bg-transparent rounded-xl">
+                <div className="p-6 bg-gray-200/50 rounded-xl">
                   <h3 className="flex items-center mb-4 text-xl font-bold text-black">
                     <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                       <svg
@@ -810,7 +810,7 @@ export default function About() {
             </div>
 
             {/* Values Section */}
-            <div className="p-6 mt-1 bg-transparent sm:mt-20 rounded-2xl sm:p-8 md:p-12">
+            <div className="p-6 mt-1 bg-gray-200/50 sm:mt-20 rounded-2xl sm:p-8 md:p-12">
               <h2 className="mb-8 text-2xl font-bold text-center text-black sm:text-3xl sm:mb-12">
                 Our Core Values
               </h2>
