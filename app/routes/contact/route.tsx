@@ -201,18 +201,18 @@ export default function Contact() {
         `,
         }}
       />
-      <main className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100 transition-colors duration-200">
-        <div className="max-w-4xl mx-auto px-6 py-16">
+      <main className="min-h-screen transition-colors duration-200 bg-gradient-to-br from-gray-50 via-white to-white">
+        <div className="max-w-4xl px-6 py-16 mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 reveal-fade-in" ref={addToRefs}>
+          <div className="mb-16 text-center reveal-fade-in" ref={addToRefs}>
             <h1
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 reveal-slide-up"
+              className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl reveal-slide-up"
               ref={addToRefs}
             >
               Contact Us
             </h1>
             <p
-              className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed reveal-slide-up"
+              className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-700 reveal-slide-up"
               ref={addToRefs}
             >
               We'd love to hear from you. Send us a message and we'll respond as
@@ -220,19 +220,19 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid gap-12 lg:grid-cols-2">
             {/* Contact Information */}
             <div className="space-y-8 reveal-slide-left" ref={addToRefs}>
               <div className="reveal-fade-in" ref={addToRefs}>
                 <h2
-                  className="text-2xl font-bold text-gray-900 mb-6 reveal-slide-up"
+                  className="mb-6 text-2xl font-bold text-gray-900 reveal-slide-up"
                   ref={addToRefs}
                 >
                   Get in Touch
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="w-6 h-6 text-orange-600 mr-3">
+                    <div className="w-6 h-6 mr-3 text-orange-600">
                       <svg
                         fill="none"
                         stroke="currentColor"
@@ -247,10 +247,10 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900 mb-1">Email</p>
+                      <p className="mb-1 font-medium text-gray-900">Email</p>
                       <a
                         href="mailto:greatabangafoundation@gmail.com"
-                        className="text-gray-600 hover:text-orange-600 transition-colors duration-200"
+                        className="text-gray-600 transition-colors duration-200 hover:text-orange-600"
                       >
                         greatabangafoundation@gmail.com
                       </a>
@@ -258,7 +258,7 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-6 h-6 text-orange-600 mr-3">
+                    <div className="w-6 h-6 mr-3 text-orange-600">
                       <svg
                         fill="none"
                         stroke="currentColor"
@@ -273,10 +273,10 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900 mb-1">Phone</p>
+                      <p className="mb-1 font-medium text-gray-900">Phone</p>
                       <a
                         href="tel:0544902900"
-                        className="text-gray-600 hover:text-orange-600 transition-colors duration-200"
+                        className="text-gray-600 transition-colors duration-200 hover:text-orange-600"
                       >
                         0544902900
                       </a>
@@ -284,7 +284,7 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-6 h-6 text-orange-600 mr-3">
+                    <div className="w-6 h-6 mr-3 text-orange-600">
                       <svg
                         fill="none"
                         stroke="currentColor"
@@ -305,9 +305,9 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900 mb-1">Address</p>
+                      <p className="mb-1 font-medium text-gray-900">Address</p>
                       <p className="text-gray-600">
-                        Kumasi, Ashanti Region
+                        Sunyani
                         <br />
                         Ghana, West Africa
                       </p>
@@ -326,7 +326,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="fullName"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block mb-2 text-sm font-medium text-gray-700"
                   >
                     Full Name
                   </label>
@@ -335,14 +335,14 @@ export default function Contact() {
                     id="fullName"
                     name="user_name"
                     required
-                    className="w-full px-4 py-3 bg-transparent border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent transition-colors duration-200 shadow-sm"
+                    className="w-full px-4 py-3 transition-colors duration-200 bg-transparent border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block mb-2 text-sm font-medium text-gray-700"
                   >
                     Email
                   </label>
@@ -351,7 +351,7 @@ export default function Contact() {
                     id="email"
                     name="user_email"
                     required
-                    className="w-full px-4 py-3 bg-transparent border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent transition-colors duration-200 shadow-sm"
+                    className="w-full px-4 py-3 transition-colors duration-200 bg-transparent border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent"
                     onChange={(e) => {
                       // Set the reply_to field to the user's email
                       const replyToField = form.current?.querySelector(
@@ -367,7 +367,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block mb-2 text-sm font-medium text-gray-700"
                   >
                     Message
                   </label>
@@ -376,20 +376,20 @@ export default function Contact() {
                     name="message"
                     rows={5}
                     required
-                    className="w-full px-4 py-3 bg-transparent border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent transition-colors duration-200 resize-none shadow-sm"
+                    className="w-full px-4 py-3 transition-colors duration-200 bg-transparent border border-gray-300 rounded-md shadow-sm resize-none focus:ring-2 focus:ring-orange-500 focus:ring-orange-400 focus:border-transparent"
                   ></textarea>
                 </div>
 
                 {/* Status Messages */}
                 {submitStatus === "success" && (
-                  <div className="p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
+                  <div className="p-4 text-green-700 bg-green-100 border border-green-400 rounded-md">
                     Thank you! Your message has been sent successfully. We'll
                     get back to you soon.
                   </div>
                 )}
 
                 {submitStatus === "error" && (
-                  <div className="p-4 bg-red-100 border border-red-400 text-red-700 rounded-md">
+                  <div className="p-4 text-red-700 bg-red-100 border border-red-400 rounded-md">
                     Sorry, there was an error sending your message. Please try
                     again or contact us directly.
                   </div>
@@ -408,7 +408,7 @@ export default function Contact() {
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </span>
                   {!isSubmitting && (
-                    <div className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+                    <div className="absolute inset-0 transition-transform duration-500 ease-out transform -translate-x-full bg-black group-hover:translate-x-0"></div>
                   )}
                 </button>
               </form>

@@ -46,7 +46,7 @@ function ArticleCard({ story }: { story: any }) {
       return (
         <div className="relative">
           {isImageLoading && (
-            <div className="absolute inset-0 z-10 flex items-center justify-center bg-gray-100">
+            <div className="absolute inset-0 z-10 flex items-center justify-center bg-gray-50">
               <div className="relative">
                 <div className="w-8 h-8 border-2 border-orange-200 rounded-full animate-spin"></div>
                 <div className="absolute top-0 left-0 w-8 h-8 border-2 border-orange-600 rounded-full animate-spin border-t-transparent"></div>

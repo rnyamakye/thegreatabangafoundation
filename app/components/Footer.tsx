@@ -4,40 +4,40 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-100 border-t border-gray-300">
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-white border-t border-gray-100">
+      <div className="max-w-6xl px-6 py-12 mx-auto">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Logo and Mission */}
           <div className="md:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex items-center mb-6 space-x-3">
               <img
                 src="/logo.png"
                 alt="The Great Abanga Foundation"
-                className="h-12 w-auto"
+                className="w-auto h-12"
               />
               <span className="text-xl font-bold text-gray-900">TGAF</span>
             </div>
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="mb-4 leading-relaxed text-gray-600">
               Creating a future where no one is left behind — empowered,
               uplifted, and cared for. We provide scholarships, tuition
               assistance, and educational support to help deserving students
               achieve their dreams of higher education across Africa.
             </p>
-            <p className="text-orange-500 font-semibold italic">
+            <p className="italic font-semibold text-orange-500">
               "Helping Hands, Brighter Tomorrow"
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-orange-500">
+            <h3 className="mb-4 text-lg font-semibold text-orange-500">
               Quick Links
             </h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/"
-                  className="text-gray-600 hover:text-orange-500 transition-colors duration-200"
+                  className="text-gray-600 transition-colors duration-200 hover:text-orange-500"
                 >
                   Home
                 </Link>
@@ -45,7 +45,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/about"
-                  className="text-gray-600 hover:text-orange-500 transition-colors duration-200"
+                  className="text-gray-600 transition-colors duration-200 hover:text-orange-500"
                 >
                   About Us
                 </Link>
@@ -53,7 +53,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/impact"
-                  className="text-gray-600 hover:text-orange-500 transition-colors duration-200"
+                  className="text-gray-600 transition-colors duration-200 hover:text-orange-500"
                 >
                   Impact
                 </Link>
@@ -61,7 +61,7 @@ export function Footer() {
               {/* <li>
                 <Link
                   to="/donate"
-                  className="text-gray-600 hover:text-orange-500 transition-colors duration-200"
+                  className="text-gray-600 transition-colors duration-200 hover:text-orange-500"
                 >
                   Donate
                 </Link>
@@ -69,9 +69,17 @@ export function Footer() {
               <li>
                 <Link
                   to="/contact"
-                  className="text-gray-600 hover:text-orange-500 transition-colors duration-200"
+                  className="text-gray-600 transition-colors duration-200 hover:text-orange-500"
                 >
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/blog"
+                  className="text-gray-600 transition-colors duration-200 hover:text-orange-500"
+                >
+                  Blog
                 </Link>
               </li>
             </ul>
@@ -79,7 +87,7 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-orange-500">
+            <h3 className="mb-4 text-lg font-semibold text-orange-500">
               Contact Info
             </h3>
             <div className="space-y-3 text-gray-600">
@@ -121,7 +129,7 @@ export function Footer() {
                 </svg>
                 <a
                   href="tel:0544902900"
-                  className="text-sm hover:text-orange-500 transition-colors duration-200"
+                  className="text-sm transition-colors duration-200 hover:text-orange-500"
                 >
                   0544902900
                 </a>
@@ -142,7 +150,7 @@ export function Footer() {
                 </svg>
                 <a
                   href="mailto:greatabangafoundation@gmail.com"
-                  className="text-sm hover:text-orange-500 transition-colors duration-200"
+                  className="text-sm transition-colors duration-200 hover:text-orange-500"
                 >
                   greatabangafoundation@gmail.com
                 </a>
@@ -150,7 +158,7 @@ export function Footer() {
 
               {/* Social Media Links */}
               <div className="pt-2">
-                <h4 className="text-sm font-medium mb-2 text-gray-700">
+                <h4 className="mb-2 text-sm font-medium text-gray-700">
                   Follow Us:
                 </h4>
                 <div className="flex space-x-3">
@@ -158,7 +166,7 @@ export function Footer() {
                     href="https://www.facebook.com/abanga.osman.397"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-orange-500 transition-colors duration-200"
+                    className="text-gray-600 transition-colors duration-200 hover:text-orange-500"
                     aria-label="Facebook"
                   >
                     <svg
@@ -173,7 +181,7 @@ export function Footer() {
                     href="https://www.instagram.com/the_great_abanga_foundation?igsh=MXVwb2VwaTI4bDdqOA=="
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-orange-500 transition-colors duration-200"
+                    className="text-gray-600 transition-colors duration-200 hover:text-orange-500"
                     aria-label="Instagram"
                   >
                     <svg
@@ -188,7 +196,7 @@ export function Footer() {
                     href="https://www.tiktok.com/@the.great.foundat6?is_from_webapp=1&sender_device=pc"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-orange-500 transition-colors duration-200"
+                    className="text-gray-600 transition-colors duration-200 hover:text-orange-500"
                     aria-label="TikTok"
                   >
                     <svg
@@ -206,9 +214,9 @@ export function Footer() {
         </div>
 
         {/* Bottom section */}
-        <div className="border-t border-gray-300 pt-8 mt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-600 text-sm mb-4 md:mb-0">
+        <div className="pt-8 mt-8 border-t border-gray-300">
+          <div className="flex flex-col items-center justify-between md:flex-row">
+            <p className="mb-4 text-sm text-gray-600 md:mb-0">
               © {currentYear} The Great Abanga Foundation. All rights reserved.
             </p>
           </div>

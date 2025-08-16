@@ -128,24 +128,41 @@ export default function Impact() {
         `,
         }}
       />
-      <main className="min-h-screen transition-colors duration-200 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100">
+      <main className="min-h-screen transition-colors duration-200 bg-gradient-to-br from-gray-50 via-white to-white">
         <div className="max-w-6xl px-6 py-16 mx-auto">
           {/* Header */}
-          <div className="mb-16 text-center reveal-fade-in" ref={addToRefs}>
-            <h1
-              className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl reveal-slide-up"
-              ref={addToRefs}
-            >
-              Our Impact
-            </h1>
-            <p
-              className="max-w-4xl mx-auto text-xl leading-relaxed text-gray-700 reveal-slide-up"
-              ref={addToRefs}
-            >
-              See how The Great Abanga Foundation is transforming lives through
-              education and creating lasting change in communities across
-              Africa.
-            </p>
+          <div className="mb-16 reveal-fade-in" ref={addToRefs}>
+            <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+              {/* Text Content */}
+              <div className="text-center lg:text-left">
+                <h1
+                  className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl reveal-slide-up"
+                  ref={addToRefs}
+                >
+                  Our Impact
+                </h1>
+                <p
+                  className="text-xl leading-relaxed text-gray-700 reveal-slide-up"
+                  ref={addToRefs}
+                >
+                  See how The Great Abanga Foundation is transforming lives
+                  through education and creating lasting change in communities
+                  across Africa.
+                </p>
+              </div>
+
+              {/* Image Content */}
+              <div className="reveal-slide-right" ref={addToRefs}>
+                <div className="relative overflow-hidden shadow-2xl rounded-2xl">
+                  <img
+                    src="/donation_img.jpg"
+                    alt="Foundation Impact"
+                    className="object-cover w-full h-80 md:h-96"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Impact Stats Grid */}

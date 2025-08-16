@@ -78,7 +78,7 @@ export function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="sticky top-0 left-0 right-0 z-50 bg-gray-100 backdrop-blur-md ">
+    <nav className="sticky top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-xl">
       <div className="max-w-6xl px-6 mx-auto">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
@@ -100,7 +100,7 @@ export function Navbar() {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/impact">Impact</NavLink>
-            <NavLink to="/blog">Blog</NavLink>
+            {/* <NavLink to="/blog">Blog</NavLink> */}
             <NavLink to="/contact">Contact</NavLink>
             {/* <Link
               to="/donate"
