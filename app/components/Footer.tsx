@@ -15,7 +15,7 @@ export function Footer() {
                 alt="The Great Abanga Foundation"
                 className="w-auto h-12"
               />
-              <span className="text-xl font-bold text-gray-900">TGAF</span>
+              <span className="text-xl font-bold text-gray-700">TGAF</span>
             </div>
             <p className="mb-4 leading-relaxed text-gray-600">
               Creating a future where no one is left behind — empowered,
@@ -150,7 +150,7 @@ export function Footer() {
                 </svg>
                 <a
                   href="mailto:greatabangafoundation@gmail.com"
-                  className="text-sm transition-colors duration-200 hover:text-orange-500"
+                  className="text-sm transition-colors duration-200 hover:text-orange-500 text-wrap"
                 >
                   greatabangafoundation@gmail.com
                 </a>
