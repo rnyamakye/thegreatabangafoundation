@@ -78,7 +78,7 @@ export function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="sticky top-0 left-0 right-0 z-50 bg-white md:-top-3 backdrop-blur-2xl">
+    <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent md:-top-3 backdrop-blur-3xl">
       <div className="max-w-6xl px-6 mx-auto">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
@@ -89,14 +89,14 @@ export function Navbar() {
                 alt="The Great Abanga Foundation"
                 className="w-auto h-10"
               />
-              <span className="hidden text-lg font-semibold text-black sm:block">
+              <span className="hidden text-lg font-semibold text-white sm:block">
                 TGAF
               </span>
             </Link>
           </div>
 
           {/* Navigation Links - Desktop */}
-          <div className="items-center hidden space-x-8 md:flex">
+          <div className="items-center hidden space-x-8 text-white md:flex">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/impact">Impact</NavLink>

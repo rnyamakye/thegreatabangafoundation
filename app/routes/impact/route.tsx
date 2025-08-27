@@ -171,7 +171,7 @@ export default function Impact() {
             ref={addToRefs}
           >
             <div
-              className="p-8 text-center bg-transparent rounded-xl reveal-slide-up"
+              className="p-8 text-center bg-gradient-to-br from-white to-gray-100 rounded-xl reveal-slide-up"
               ref={addToRefs}
             >
               <div
@@ -189,7 +189,7 @@ export default function Impact() {
             </div>
 
             <div
-              className="p-8 text-center bg-transparent rounded-xl reveal-slide-up"
+              className="p-8 text-center bg-gradient-to-br from-white to-gray-100 rounded-xl reveal-slide-up"
               ref={addToRefs}
             >
               <div
@@ -207,7 +207,7 @@ export default function Impact() {
             </div>
 
             <div
-              className="p-8 text-center bg-transparent rounded-xl reveal-slide-up"
+              className="p-8 text-center bg-gradient-to-br from-white to-gray-100 rounded-xl reveal-slide-up"
               ref={addToRefs}
             >
               <div
@@ -226,7 +226,7 @@ export default function Impact() {
           </div>
 
           {/* Impact Stories */}
-          <div className="p-12 bg-transparent rounded-2xl">
+          <div className="p-12 bg-gradient-to-br from-white to-gray-100 rounded-2xl">
             <h2 className="mb-12 text-3xl font-bold text-center text-gray-900">
               Stories of Transformation
             </h2>

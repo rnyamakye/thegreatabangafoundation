@@ -185,7 +185,7 @@ export default function About() {
           <div className="max-w-6xl px-6 py-20 mx-auto">
             {/* Foundation Overview */}
             <div
-              className="p-6 mb-16 bg-white rounded-2xl sm:p-8 md:p-12 reveal-fade-in"
+              className="p-6 mb-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl sm:p-8 md:p-12 reveal-fade-in"
               ref={addToRefs}
             >
               <div className="grid items-center grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">

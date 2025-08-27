@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router";
 import ImageSlider from "../../components/ImageSlider";
+import LeadershipDesign from "../../components/LeadershipDesign";
 
 // Loader function for the home route
 export async function loader() {
@@ -126,8 +127,8 @@ export default function Home() {
         }}
       />
       <main className="min-h-screen overflow-x-hidden transition-colors duration-200 min-w-screen">
-        {/* Hero Section with Background Image */}
-        <div className="relative min-h-screen">
+        {/* SECTION 1: Hero Section with Background Image */}
+        <section id="hero-section" className="relative min-h-screen">
           {/* Background Image */}
           <div className="absolute inset-0 bg-center bg-no-repeat bg-cover bg-[url('/donation_img.jpg')]">
             {/* Overlay for better text readability */}
@@ -149,21 +150,21 @@ export default function Home() {
               </div>
 
               <h1
-                className="mb-6 text-5xl font-bold text-white md:text-6xl reveal-slide-up drop-shadow-lg"
+                className="mb-6 text-3xl font-bold text-white md:text-6xl reveal-slide-up drop-shadow-lg"
                 ref={addToRefs}
               >
                 The Great Abanga Foundation
               </h1>
 
               <p
-                className="mb-6 text-2xl font-semibold text-orange-400 md:text-3xl reveal-slide-up drop-shadow-lg"
+                className="mb-6 text-lg font-semibold text-orange-400 md:text-3xl reveal-slide-up drop-shadow-lg"
                 ref={addToRefs}
               >
                 Helping Hands Brighter Tomorrow
               </p>
 
               <p
-                className="max-w-4xl mx-auto mb-6 text-xl leading-relaxed text-gray-100 reveal-slide-up drop-shadow-lg"
+                className="max-w-4xl mx-auto mb-6 text-base leading-relaxed text-gray-100 md:text-xl reveal-slide-up drop-shadow-lg"
                 ref={addToRefs}
               >
                 Creating a future where no one is left behind — empowered,
@@ -220,11 +221,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Content Section with Light Background */}
-        <div className="bg-gradient-to-br from-gray-50 via-white to-white">
-          <div className="mx-auto md:py-20 md:px-6 md:max-w-6xl">
+        {/* SECTION 2: Our Commitment to Communities */}
+        <section id="commitment-section" style={{ backgroundColor: "#F7F2ED" }}>
+          <div className="px-4 py-16 mx-auto md:py-20 md:px-6 md:max-w-6xl">
             {/* Stats Section */}
             {/* <div
               className="grid grid-cols-1 gap-8 mb-20 md:grid-cols-4 reveal-fade-in"
@@ -264,18 +265,23 @@ export default function Home() {
               </div>
             </div> */}
 
-            {/* Foundation Goals Section */}
+            {/* SUBSECTION 2A: Foundation Goals */}
             <div
-              className="p-8 mb-20 rounded-lg sm:p-12 reveal-fade-in"
+              id="foundation-goals"
+              className="p-6 mb-16 rounded-lg md:p-12 md:mb-20 reveal-fade-in"
               ref={addToRefs}
             >
               <h2
-                className="mb-8 text-3xl font-bold text-center text-gray-900 sm:text-4xl reveal-slide-up"
+                className="mb-8 text-2xl font-bold text-center sm:text-4xl reveal-slide-up"
+                style={{ color: "#3E2723" }}
                 ref={addToRefs}
               >
                 Our Commitment to Communities
               </h2>
-              <p className="max-w-3xl mx-auto mb-8 text-center text-gray-700">
+              <p
+                className="max-w-3xl mx-auto mb-8 text-center"
+                style={{ color: "#3E2723" }}
+              >
                 Established for charitable purposes in July 2025, our foundation
                 operates as a non-profit organization dedicated to transparent
                 and impactful community service.
@@ -288,7 +294,7 @@ export default function Home() {
                       alt="Education programs"
                       className="object-cover w-full h-full"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-orange-600/80 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-200/80 to-transparent"></div>
                     <div className="absolute bottom-3 left-3">
                       <div className="flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-white/20 backdrop-blur-sm">
                         <svg
@@ -307,10 +313,16 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <h3 className="mb-3 text-lg font-bold text-gray-900">
+                  <h3
+                    className="mb-3 text-lg font-bold"
+                    style={{ color: "#3E2723" }}
+                  >
                     Education
                   </h3>
-                  <p className="text-sm leading-relaxed text-gray-700">
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ color: "#3E2723" }}
+                  >
                     Scholarships, educational resources, and infrastructure
                     support for underprivileged students.
                   </p>
@@ -322,7 +334,7 @@ export default function Home() {
                       alt="Healthcare services"
                       className="object-cover w-full h-full"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-orange-600/80 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-200/80 to-transparent"></div>
                     <div className="absolute bottom-3 left-3">
                       <div className="flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-white/20 backdrop-blur-sm">
                         <svg
@@ -341,10 +353,16 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <h3 className="mb-3 text-lg font-bold text-gray-900">
+                  <h3
+                    className="mb-3 text-lg font-bold"
+                    style={{ color: "#3E2723" }}
+                  >
                     Healthcare
                   </h3>
-                  <p className="text-sm leading-relaxed text-gray-700">
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ color: "#3E2723" }}
+                  >
                     Medical aid, health awareness programs, and treatment for
                     the sick and vulnerable.
                   </p>
@@ -356,7 +374,7 @@ export default function Home() {
                       alt="Community development"
                       className="object-cover w-full h-full"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-orange-600/80 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-200/80 to-transparent"></div>
                     <div className="absolute bottom-3 left-3">
                       <div className="flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-white/20 backdrop-blur-sm">
                         <svg
@@ -375,10 +393,16 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <h3 className="mb-3 text-lg font-bold text-gray-900">
+                  <h3
+                    className="mb-3 text-lg font-bold"
+                    style={{ color: "#3E2723" }}
+                  >
                     Community Development
                   </h3>
-                  <p className="text-sm leading-relaxed text-gray-700">
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ color: "#3E2723" }}
+                  >
                     Clean water access, food security, and livelihood
                     improvement programs.
                   </p>
@@ -410,10 +434,15 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Leadership Highlight */}
-            <div className="mx-5 mb-20 reveal-fade-in" ref={addToRefs}>
+            {/* SUBSECTION 2B: Leadership Highlight */}
+            <div
+              id="leadership-highlight"
+              className="mx-4 mb-16 md:mx-5 md:mb-20 reveal-fade-in"
+              ref={addToRefs}
+            >
               <h2
-                className="mb-8 text-3xl font-bold text-center text-gray-900 reveal-slide-up"
+                className="mb-8 text-2xl font-bold text-center md:text-3xl md:mb-12 reveal-slide-up"
+                style={{ color: "#3E2723" }}
                 ref={addToRefs}
               >
                 Led by Visionary Leaders
@@ -428,56 +457,72 @@ export default function Home() {
                       transform: "rotate(1deg)",
                     }}
                   />
-                  {/* Main content div */}
-                  <div className="p-8 text-center text-white bg-gradient-to-r from-orange-500 to-orange-400 rounded-2xl">
-                    <p className="mb-6 text-lg">
-                      Under the leadership of CEO Osman Hakim Abdul, along with
-                      Manager Amanfo Martha Simaa, PRO Amoah Gideon, and
-                      Publicity Ruth, our foundation continues to expand its
-                      impact across communities.
-                    </p>
-                    <p className="mb-6 text-lg font-medium">
-                      Together, we're building bridges of opportunity and hope.
-                    </p>
-                    <Link
-                      to="/about"
-                      className="relative inline-flex items-center px-6 py-3 overflow-hidden font-semibold text-orange-500 transition-all duration-500 bg-white rounded-lg hover:text-white hover:scale-105 group"
-                    >
-                      <span className="absolute inset-0 w-0 transition-all duration-500 ease-out bg-black group-hover:w-full"></span>
-                      <span className="relative z-10">Meet Our Leaders</span>
-                      <svg
-                        className="relative z-10 w-5 h-5 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    </Link>
+                  {/* Main content div with flex layout */}
+                  <div className="p-8 bg-gradient-to-r from-orange-400 to-orange-300 rounded-2xl">
+                    <div className="flex flex-col items-center gap-8 lg:flex-row">
+                      {/* Leadership Design Component */}
+                      <div className="flex justify-center flex-1 lg:justify-start">
+                        <LeadershipDesign />
+                      </div>
+
+                      {/* Text Content */}
+                      <div className="flex-1 text-center text-white lg:text-left">
+                        <p className="mb-6 text-lg">
+                          Under the leadership of CEO Osman Hakim Abdul, along
+                          with Manager Amanfo Martha Simaa, PRO Amoah Gideon,
+                          and Publicity Ruth, our foundation continues to expand
+                          its impact across communities.
+                        </p>
+                        <p className="mb-6 text-lg font-medium">
+                          Together, we're building bridges of opportunity and
+                          hope.
+                        </p>
+                        <Link
+                          to="/about"
+                          className="relative inline-flex items-center px-6 py-3 overflow-hidden font-semibold text-orange-500 transition-all duration-500 bg-white rounded-lg hover:text-white hover:scale-105 group"
+                        >
+                          <span className="absolute inset-0 w-0 transition-all duration-500 ease-out bg-black group-hover:w-full"></span>
+                          <span className="relative z-10">
+                            Meet Our Leaders
+                          </span>
+                          <svg
+                            className="relative z-10 w-5 h-5 ml-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Mission Statement */}
-            <section className="">
-              <div className="p-5 mb-16 md:p-12 bg-gradient-to-br from-gray-50 to-gray-100">
-                <div className="flex flex-col mx-auto md:flex-row md:items-center md:gap-12 max-w-7xl">
+            {/* SUBSECTION 2C: Education Mission Statement */}
+            <section
+              id="education-mission"
+              className="w-screen h-[100vh] relative left-1/2 right-1/2 -mx-[50vw]"
+            >
+              <div className="flex flex-col justify-center h-full p-5 mb-16 md:p-12 bg-gradient-to-br from-gray-50 to-gray-100">
+                <div className="flex flex-col mx-auto md:flex-row md:items-center md:gap-12">
                   {/* Text Content */}
                   <div className="text-center md:w-1/2 md:text-left">
                     <h2
-                      className="mb-6 text-4xl font-bold text-gray-900 reveal-slide-up"
+                      className="mb-6 text-2xl font-bold text-gray-900 md:text-4xl reveal-slide-up"
                       ref={addToRefs}
                     >
                       Transforming Lives Through Education
                     </h2>
                     <p
-                      className="text-xl leading-relaxed text-gray-600 reveal-slide-up"
+                      className="text-base leading-relaxed text-gray-600 md:text-xl reveal-slide-up"
                       ref={addToRefs}
                     >
                       Every student deserves the opportunity to pursue higher
@@ -499,10 +544,14 @@ export default function Home() {
                 </div>
               </div>
             </section>
-            {/* Impact Stories Section */}
-            <div className="p-5 mb-20 md:p-12 reveal-fade-in" ref={addToRefs}>
+            {/* SUBSECTION 2D: Impact Stories */}
+            <div
+              id="impact-stories"
+              className="p-4 mb-16 md:p-12 md:mb-20 reveal-fade-in"
+              ref={addToRefs}
+            >
               <h3
-                className="mb-12 text-3xl font-bold text-center text-gray-900 reveal-slide-up"
+                className="mb-8 text-2xl font-bold text-center text-gray-900 md:text-3xl md:mb-12 reveal-slide-up"
                 ref={addToRefs}
               >
                 Our Impact Stories
@@ -515,8 +564,8 @@ export default function Home() {
                       alt="Academic Excellence"
                       className="object-cover w-full h-full"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-orange-600/80 to-transparent"></div>
-                    <div className="absolute bottom-3 left-3">
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-400/80 to-transparent"></div>
+                    {/* <div className="absolute bottom-3 left-3">
                       <div className="flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-white/20 backdrop-blur-sm">
                         <svg
                           className="w-6 h-6 text-white"
@@ -532,12 +581,12 @@ export default function Home() {
                           />
                         </svg>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
-                  <h4 className="mb-4 text-xl font-semibold text-gray-900">
+                  <h4 className="mb-4 text-lg font-semibold text-gray-900 md:text-xl">
                     Academic Excellence
                   </h4>
-                  <p className="leading-relaxed text-gray-600">
+                  <p className="text-sm leading-relaxed text-gray-600 md:text-base">
                     Our scholarship recipients maintain an average GPA of 3.8+
                     and have a 95% graduation rate, demonstrating the power of
                     removing financial barriers to education.
@@ -550,8 +599,8 @@ export default function Home() {
                       alt="Sponsoring School Events"
                       className="object-cover w-full h-full"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-orange-600/80 to-transparent"></div>
-                    <div className="absolute bottom-3 left-3">
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-400/80 to-transparent"></div>
+                    {/* <div className="absolute bottom-3 left-3">
                       <div className="flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-white/20 backdrop-blur-sm">
                         <svg
                           className="w-6 h-6 text-white"
@@ -567,12 +616,12 @@ export default function Home() {
                           />
                         </svg>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
-                  <h4 className="mb-4 text-xl font-semibold text-gray-900">
+                  <h4 className="mb-4 text-lg font-semibold text-gray-900 md:text-xl">
                     Sponsoring School Events
                   </h4>
-                  <p className="leading-relaxed text-gray-600">
+                  <p className="text-sm leading-relaxed text-gray-600 md:text-base">
                     We support educational institutions by sponsoring academic
                     events, conferences, and competitions that promote learning
                     and excellence in various fields of study.
@@ -585,8 +634,8 @@ export default function Home() {
                       alt="Financial Aid"
                       className="object-cover w-full h-full"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-orange-600/80 to-transparent"></div>
-                    <div className="absolute bottom-3 left-3">
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-400/80 to-transparent"></div>
+                    {/* <div className="absolute bottom-3 left-3">
                       <div className="flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-white/20 backdrop-blur-sm">
                         <svg
                           className="w-6 h-6 text-white"
@@ -602,12 +651,12 @@ export default function Home() {
                           />
                         </svg>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
-                  <h4 className="mb-4 text-xl font-semibold text-gray-900">
+                  <h4 className="mb-4 text-lg font-semibold text-gray-900 md:text-xl">
                     Financial Aid
                   </h4>
-                  <p className="leading-relaxed text-gray-600">
+                  <p className="text-sm leading-relaxed text-gray-600 md:text-base">
                     Direct financial assistance to families in need, helping
                     cover essential expenses like tuition fees, medical bills,
                     and basic living costs during challenging times.
@@ -643,13 +692,13 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Follow Us Section */}
+            {/* SUBSECTION 2E: Social Media Follow Us */}
             <div
-              className="p-12 text-center bg-gradient-to-br from-gray-50 to-gray-100 "
-              
+              id="social-media"
+              className="p-6 text-center md:p-12 bg-gradient-to-br from-gray-50 to-gray-100 "
             >
               <h3
-                className="mb-8 text-3xl font-extrabold text-gray-700 reveal-slide-up"
+                className="mb-6 text-xl font-extrabold text-gray-700 md:text-3xl md:mb-8 reveal-slide-up"
                 ref={addToRefs}
               >
                 Follow The great Abanga Foundation
@@ -727,7 +776,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
+        </section>
       </main>
     </>
   );
