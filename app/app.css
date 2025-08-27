@@ -18,6 +18,7 @@
   --accent-hover: #dc2626; /* Darker orange */
   --accent-secondary: #fb923c; /* Lighter orange */
   --accent-gradient: linear-gradient(135deg, #ea580c 0%, #fb923c 100%);
+  overflow-x: hidden;
 }
 
 .dark {
@@ -131,9 +132,4 @@ body {
   background: var(--accent-color);
   color: white;
   transform: translateY(-2px);
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
 }

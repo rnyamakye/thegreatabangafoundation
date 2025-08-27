@@ -3,7 +3,7 @@ import React from "react";
 const LeadershipDesign: React.FC = () => {
   return (
     <div className="relative items-center justify-center hidden w-full md:flex h-96">
-      {/* Background circles with colors */}
+      {/* Background circles with colors
       <div className="absolute w-16 h-16 bg-orange-500 rounded-full top-8 left-16"></div>
       <div className="absolute w-12 h-12 bg-orange-500 rounded-full top-4 left-48"></div>
       <div className="absolute w-8 h-8 bg-orange-500 rounded-full top-12 left-32"></div>
@@ -13,7 +13,7 @@ const LeadershipDesign: React.FC = () => {
       <div
         className="absolute w-6 h-6 rounded-full bg-brown-600 bottom-32 left-48"
         style={{ backgroundColor: "#8B4513" }}
-      ></div>
+      ></div> */}
 
       {/* Leader images in circular frames */}
       {/* CEO - Center large image */}

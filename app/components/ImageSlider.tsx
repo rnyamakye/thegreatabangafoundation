@@ -140,49 +140,6 @@ export default function ImageSlider({
         </svg>
       </button>
 
-      {/* Mobile navigation - bottom center */}
-      <div className="absolute flex space-x-4 transform -translate-x-1/2 -right-5 md:hidden bottom-3">
-        <button
-          onClick={prevSlide}
-          className="p-2 text-white transition-all duration-200 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30"
-          aria-label="Previous slide"
-        >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-
-        <button
-          onClick={nextSlide}
-          className="p-2 text-white transition-all duration-200 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30"
-          aria-label="Next slide"
-        >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
-      </div>
-
       {/* Dot indicators */}
       <div className="absolute flex space-x-2 transform -translate-x-1/2 bottom-4 left-1/2 md:bottom-4">
         {slides.map((_, index) => (

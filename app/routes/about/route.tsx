@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function meta() {
   return [
@@ -54,8 +54,67 @@ function useRevealOnScroll() {
   return addToRefs;
 }
 
+// Custom hook for counter animation
+function useCountUp(endValue: number, duration: number = 2000) {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef<HTMLSpanElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let startTime: number;
+    const startValue = 0;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Easing function for smooth animation
+      const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+      const easedProgress = easeOutCubic(progress);
+
+      const currentCount = Math.floor(
+        startValue + (endValue - startValue) * easedProgress
+      );
+      setCount(currentCount);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [isVisible, endValue, duration]);
+
+  return { count, elementRef };
+}
+
 export default function About() {
   const addToRefs = useRevealOnScroll();
+
+  // Initialize counters for about page stats
+  const studentsCounter = useCountUp(15);
+  const investmentCounter = useCountUp(25000);
+  const successRateCounter = useCountUp(100);
 
   return (
     <>
@@ -181,7 +240,7 @@ export default function About() {
         </div>
 
         {/* Content Section with Light Background */}
-        <main className="bg-gradient-to-br from-gray-50 via-white to-white">
+        <main className="bg-[#F7F2ED]">
           <div className="max-w-6xl px-6 py-20 mx-auto">
             {/* Foundation Overview */}
             <div
@@ -190,24 +249,24 @@ export default function About() {
             >
               <div className="grid items-center grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
                 <div>
-                  <h2 className="mb-4 text-2xl font-bold text-black sm:text-3xl sm:mb-6">
+                  <h2 className="mb-4 text-2xl font-bold text-[#3E2723] sm:text-3xl sm:mb-6">
                     Our Global Presence
                   </h2>
                   <div className="mb-6 space-y-4">
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-                      <span className="text-lg font-semibold text-black">
+                      <span className="text-lg font-semibold text-[#3E2723]">
                         Ghana - Sunyani
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-                      <span className="text-lg font-semibold text-black">
+                      <span className="text-lg font-semibold text-[#3E2723]">
                         Canada
                       </span>
                     </div>
                   </div>
-                  <p className="mb-4 text-base text-black sm:text-lg">
+                  <p className="mb-4 text-base text-[#3E2723] sm:text-lg">
                     Operating across two continents, we bring together diverse
                     perspectives and resources to create meaningful impact in
                     communities where it's needed most.
@@ -229,10 +288,10 @@ export default function About() {
                       />
                     </svg>
                   </div>
-                  <h3 className="mb-4 text-xl font-semibold text-black">
+                  <h3 className="mb-4 text-xl font-semibold text-[#3E2723]">
                     Global Impact, Local Touch
                   </h3>
-                  <p className="text-black">
+                  <p className="text-[#3E2723]">
                     Connecting communities across continents for sustainable
                     development
                   </p>
@@ -242,20 +301,20 @@ export default function About() {
 
             {/* Leadership Team */}
             <div className="mb-16 reveal-fade-in" ref={addToRefs}>
-              <h2 className="mb-8 text-2xl font-bold text-center text-black sm:text-3xl sm:mb-12">
+              <h2 className="mb-8 text-2xl font-bold text-center text-[#3E2723] sm:text-3xl sm:mb-12">
                 Our Leadership Team
               </h2>
               <div className="space-y-16">
                 {/* CEO */}
                 <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
                   <div className="order-2 lg:order-1">
-                    <h3 className="mb-4 text-2xl font-bold text-black">
+                    <h3 className="mb-4 text-2xl font-bold text-[#3E2723]">
                       Osman Abdul Hakim Abanga
                     </h3>
                     <p className="mb-4 font-semibold text-orange-600">
                       Chief Executive Officer
                     </p>
-                    <p className="leading-relaxed text-black">
+                    <p className="leading-relaxed text-[#3E2723]">
                       Osman Abdul Hakim Abanga, born on May 3rd, 2001, a
                       visionary CEO and dedicated philanthropist. As the driving
                       force behind The Great Abanga Foundation, he leads with a
@@ -279,7 +338,7 @@ export default function About() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                       {/* <div className="absolute px-3 py-2 bg-white rounded-lg shadow-lg bottom-3 right-3">
-                        <p className="text-sm font-semibold text-gray-800">
+                        <p className="text-sm font-semibold text-[#3E2723]">
                           CEO
                         </p>
                       </div> */}
@@ -300,20 +359,20 @@ export default function About() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                       {/* <div className="absolute px-3 py-2 bg-white rounded-lg shadow-lg bottom-3 right-3">
-                        <p className="text-sm font-semibold text-gray-800">
+                        <p className="text-sm font-semibold text-[#3E2723]">
                           PRO
                         </p>
                       </div> */}
                     </div>
                   </div>
                   <div className="order-2 lg:order-2">
-                    <h3 className="mb-4 text-2xl font-bold text-black">
+                    <h3 className="mb-4 text-2xl font-bold text-[#3E2723]">
                       Amoah Gideon
                     </h3>
                     <p className="mb-4 font-semibold text-orange-600">
                       Public Relations Officer
                     </p>
-                    <p className="leading-relaxed text-black">
+                    <p className="leading-relaxed text-[#3E2723]">
                       Gideon Amoah is a dedicated philanthropist, passionate
                       entrepreneur, and a committed student currently pursuing
                       his studies at the University of Energy and Natural
@@ -328,13 +387,13 @@ export default function About() {
                 {/* PRO */}
                 <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
                   <div className="order-2 lg:order-1">
-                    <h3 className="mb-4 text-2xl font-bold text-black">
+                    <h3 className="mb-4 text-2xl font-bold text-[#3E2723]">
                       Amanfo Martha Simaa
                     </h3>
                     <p className="mb-4 font-semibold text-orange-600">
                       Manager
                     </p>
-                    <p className="leading-relaxed text-black">
+                    <p className="leading-relaxed text-[#3E2723]">
                       Amanfo Martha Simaa serves as the Manager of The Great
                       Abanga Foundation, overseeing the day-to-day operations
                       and ensuring the effective implementation of our
@@ -359,7 +418,7 @@ export default function About() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                       {/* <div className="absolute px-3 py-2 bg-white rounded-lg shadow-lg bottom-3 right-3">
-                        <p className="text-sm font-semibold text-gray-800">
+                        <p className="text-sm font-semibold text-[#3E2723]">
                           Manager
                         </p>
                       </div> */}
@@ -379,19 +438,19 @@ export default function About() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     {/* <div className="absolute px-3 py-2 bg-white rounded-lg shadow-lg bottom-3 right-3">
-                      <p className="text-sm font-semibold text-gray-800">
+                      <p className="text-sm font-semibold text-[#3E2723]">
                         Publicity
                       </p>
                     </div> */}
                   </div>
                   <div>
-                    <h3 className="mb-4 text-2xl font-bold text-black">
+                    <h3 className="mb-4 text-2xl font-bold text-[#3E2723]">
                       Ruth Abena Amankwah
                     </h3>
                     <p className="mb-4 font-semibold text-orange-600">
                       Publicity
                     </p>
-                    <p className="leading-relaxed text-black">
+                    <p className="leading-relaxed text-[#3E2723]">
                       Ruth Abena Amankwah, an entrepreneur, podcaster, social
                       media content creator, philanthropist, and a dedicated
                       student pursuing a degree in Biological Sciences at the
@@ -406,7 +465,7 @@ export default function About() {
                       with The Great Abanga Foundation, organizing fundraising
                       campaigns and mentoring those in need.
                     </p>
-                    <div className="mt-4 space-y-2 text-black">
+                    <div className="mt-4 space-y-2 text-[#3E2723]">
                       <p>
                         <strong>Social Media:</strong> Miss_Ruth
                       </p>
@@ -419,16 +478,16 @@ export default function About() {
             {/* Mission & Vision */}
             <div className="grid grid-cols-1 gap-12 mb-16 md:grid-cols-2">
               <div>
-                <h2 className="mb-6 text-3xl font-bold text-black">
+                <h2 className="mb-6 text-3xl font-bold text-[#3E2723]">
                   Our Mission
                 </h2>
-                <p className="mb-4 text-lg text-black">
+                <p className="mb-4 text-lg text-[#3E2723]">
                   A commitment to empowering communities by promoting access to
                   quality education, improving healthcare for the sick and
                   underprivileged, and fostering sustainable development
                   initiatives.
                 </p>
-                <p className="mb-6 text-lg text-black">
+                <p className="mb-6 text-lg text-[#3E2723]">
                   We emphasize our dedication to partnerships, advocacy, and
                   targeted programs aimed at creating a healthier, more
                   educated, and resilient society where every individual has the
@@ -436,7 +495,7 @@ export default function About() {
                 </p>
               </div>
               <div>
-                <h2 className="mb-6 text-3xl font-bold text-black">
+                <h2 className="mb-6 text-3xl font-bold text-[#3E2723]">
                   Our Vision
                 </h2>
                 <div className="relative mb-6">
@@ -457,7 +516,7 @@ export default function About() {
                     </p>
                   </div>
                 </div>
-                <p className="text-lg text-black">
+                <p className="text-lg text-[#3E2723]">
                   We envision a world where barriers to education, healthcare,
                   and opportunity are eliminated, and every person has the tools
                   and support they need to reach their full potential and
@@ -471,7 +530,7 @@ export default function About() {
               className="p-8 mb-16 bg-gray-200/50 rounded-2xl reveal-fade-in"
               ref={addToRefs}
             >
-              <h2 className="mb-8 text-3xl font-bold text-center text-black">
+              <h2 className="mb-8 text-3xl font-bold text-center text-[#3E2723]">
                 Our Foundation Objectives
               </h2>
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -481,10 +540,10 @@ export default function About() {
                       <span className="text-sm font-bold text-white">1</span>
                     </div>
                     <div>
-                      <h3 className="mb-2 text-xl font-semibold text-black">
+                      <h3 className="mb-2 text-xl font-semibold text-[#3E2723]">
                         Education
                       </h3>
-                      <p className="leading-relaxed text-black">
+                      <p className="leading-relaxed text-[#3E2723]">
                         Provide scholarships, educational resources, and
                         infrastructure support to underprivileged students and
                         schools.
@@ -496,10 +555,10 @@ export default function About() {
                       <span className="text-sm font-bold text-white">2</span>
                     </div>
                     <div>
-                      <h3 className="mb-2 text-xl font-semibold text-black">
+                      <h3 className="mb-2 text-xl font-semibold text-[#3E2723]">
                         Healthcare
                       </h3>
-                      <p className="leading-relaxed text-black">
+                      <p className="leading-relaxed text-[#3E2723]">
                         Support medical aid, health awareness programs, and
                         treatment for the sick and vulnerable.
                       </p>
@@ -512,10 +571,10 @@ export default function About() {
                       <span className="text-sm font-bold text-white">3</span>
                     </div>
                     <div>
-                      <h3 className="mb-2 text-xl font-semibold text-black">
+                      <h3 className="mb-2 text-xl font-semibold text-[#3E2723]">
                         Community Development
                       </h3>
-                      <p className="leading-relaxed text-black">
+                      <p className="leading-relaxed text-[#3E2723]">
                         Initiate and fund projects aimed at improving living
                         standards, including access to clean water, food
                         security, and livelihood programs.
@@ -527,10 +586,10 @@ export default function About() {
                     <span className="text-sm font-bold text-white">4</span>
                   </div>
                   <div>
-                    <h3 className="mb-2 text-xl font-semibold text-black">
+                    <h3 className="mb-2 text-xl font-semibold text-[#3E2723]">
                       Advocacy & Empowerment
                     </h3>
-                    <p className="leading-relaxed text-black">
+                    <p className="leading-relaxed text-[#3E2723]">
                       Promote social welfare policies and empower marginalized
                       groups through skills training and mentorship programs.
                     </p>
@@ -545,40 +604,55 @@ export default function About() {
               className="p-6 mb-16 bg-gray-200/50 rounded-2xl sm:p-8 md:p-12 reveal-fade-in"
               ref={addToRefs}
             >
-              <h2 className="mb-8 text-2xl font-bold text-center text-black sm:text-3xl sm:mb-12">
+              <h2 className="mb-8 text-2xl font-bold text-center text-[#3E2723] sm:text-3xl sm:mb-12">
                 Our Impact by the Numbers
               </h2>
               <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                 <div className="text-center">
                   <div className="flex items-center justify-center w-20 h-20 mx-auto mb-4 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-orange-600">
-                    <span className="text-lg font-bold text-white">15+</span>
+                    <span
+                      className="text-lg font-bold text-white"
+                      ref={studentsCounter.elementRef}
+                    >
+                      {studentsCounter.count}+
+                    </span>
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold text-black">
+                  <h3 className="mb-2 text-xl font-semibold text-[#3E2723]">
                     Students Supported
                   </h3>
-                  <p className="text-black">
+                  <p className="text-[#3E2723]">
                     Scholarships and educational assistance provided
                   </p>
                 </div>
                 <div className="text-center">
                   <div className="flex items-center justify-center w-20 h-20 mx-auto mb-4 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-orange-600">
-                    <span className="text-sm font-bold text-white">₵25K+</span>
+                    <span
+                      className="text-sm font-bold text-white"
+                      ref={investmentCounter.elementRef}
+                    >
+                      ₵{investmentCounter.count.toLocaleString()}+
+                    </span>
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold text-black">
+                  <h3 className="mb-2 text-xl font-semibold text-[#3E2723]">
                     Total Investment
                   </h3>
-                  <p className="text-black">
+                  <p className="text-[#3E2723]">
                     Financial support in education and development
                   </p>
                 </div>
                 <div className="text-center">
                   <div className="flex items-center justify-center w-20 h-20 mx-auto mb-4 rounded-full shadow-lg bg-gradient-to-br from-orange-500 to-orange-600">
-                    <span className="text-lg font-bold text-white">100%</span>
+                    <span
+                      className="text-lg font-bold text-white"
+                      ref={successRateCounter.elementRef}
+                    >
+                      {successRateCounter.count}%
+                    </span>
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold text-black">
+                  <h3 className="mb-2 text-xl font-semibold text-[#3E2723]">
                     Success Rate
                   </h3>
-                  <p className="text-black">
+                  <p className="text-[#3E2723]">
                     Students completing their educational goals
                   </p>
                 </div>
@@ -587,7 +661,7 @@ export default function About() {
 
             {/* Core Focus Areas */}
             <div className="mb-16 reveal-fade-in" ref={addToRefs}>
-              <h2 className="mb-8 text-2xl font-bold text-center text-black sm:text-3xl sm:mb-12">
+              <h2 className="mb-8 text-2xl font-bold text-center text-[#3E2723] sm:text-3xl sm:mb-12">
                 Our Core Focus Areas
               </h2>
               <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -607,10 +681,10 @@ export default function About() {
                       />
                     </svg>
                   </div>
-                  <h3 className="mb-4 text-xl font-bold text-black">
+                  <h3 className="mb-4 text-xl font-bold text-[#3E2723]">
                     Quality Education
                   </h3>
-                  <p className="leading-relaxed text-black">
+                  <p className="leading-relaxed text-[#3E2723]">
                     Promoting access to quality education through scholarships,
                     academic support, and educational partnerships that break
                     down barriers to learning.
@@ -632,10 +706,10 @@ export default function About() {
                       />
                     </svg>
                   </div>
-                  <h3 className="mb-4 text-xl font-bold text-black">
+                  <h3 className="mb-4 text-xl font-bold text-[#3E2723]">
                     Healthcare Support
                   </h3>
-                  <p className="leading-relaxed text-black">
+                  <p className="leading-relaxed text-[#3E2723]">
                     Improving healthcare for the sick and underprivileged
                     through targeted medical assistance, health education, and
                     community wellness programs.
@@ -657,10 +731,10 @@ export default function About() {
                       />
                     </svg>
                   </div>
-                  <h3 className="mb-4 text-xl font-bold text-black">
+                  <h3 className="mb-4 text-xl font-bold text-[#3E2723]">
                     Sustainable Development
                   </h3>
-                  <p className="leading-relaxed text-black">
+                  <p className="leading-relaxed text-[#3E2723]">
                     Fostering sustainable development initiatives that create
                     lasting positive change and build resilient communities for
                     future generations.
@@ -671,12 +745,12 @@ export default function About() {
 
             {/* Governance & Operations */}
             <div className="mb-16 reveal-fade-in" ref={addToRefs}>
-              <h2 className="mb-8 text-2xl font-bold text-center text-black sm:text-3xl sm:mb-12">
+              <h2 className="mb-8 text-2xl font-bold text-center text-[#3E2723] sm:text-3xl sm:mb-12">
                 Our Governance & Operations
               </h2>
               <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
                 <div className="p-6 bg-gray-200/50 rounded-xl">
-                  <h3 className="flex items-center mb-4 text-xl font-bold text-black">
+                  <h3 className="flex items-center mb-4 text-xl font-bold text-[#3E2723]">
                     <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                       <svg
                         className="w-4 h-4 text-white"
@@ -694,7 +768,7 @@ export default function About() {
                     </div>
                     Board of Trustees
                   </h3>
-                  <div className="space-y-3 text-black">
+                  <div className="space-y-3 text-[#3E2723]">
                     <p>
                       <strong>Composition:</strong> Between 1 and 2 trustees
                     </p>
@@ -709,7 +783,7 @@ export default function About() {
                   </div>
                 </div>
                 <div className="p-6 bg-gray-200/50 rounded-xl">
-                  <h3 className="flex items-center mb-4 text-xl font-bold text-black">
+                  <h3 className="flex items-center mb-4 text-xl font-bold text-[#3E2723]">
                     <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                       <svg
                         className="w-4 h-4 text-white"
@@ -727,7 +801,7 @@ export default function About() {
                     </div>
                     Non-Profit Status
                   </h3>
-                  <div className="space-y-3 text-black">
+                  <div className="space-y-3 text-[#3E2723]">
                     <p>Operates as a charitable non-profit organization</p>
                     <p>
                       No member or trustee receives personal financial benefit
@@ -739,7 +813,7 @@ export default function About() {
 
               <div className="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-2">
                 <div className="p-6 bg-gray-200/50 rounded-xl">
-                  <h3 className="flex items-center mb-4 text-xl font-bold text-black">
+                  <h3 className="flex items-center mb-4 text-xl font-bold text-[#3E2723]">
                     <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                       <svg
                         className="w-4 h-4 text-white"
@@ -757,7 +831,7 @@ export default function About() {
                     </div>
                     Membership
                   </h3>
-                  <div className="space-y-3 text-black">
+                  <div className="space-y-3 text-[#3E2723]">
                     <p>
                       <strong>Eligibility:</strong> Open to individuals and
                       organizations supporting our mission
@@ -773,7 +847,7 @@ export default function About() {
                   </div>
                 </div>
                 <div className="p-6 bg-gray-200/50 rounded-xl">
-                  <h3 className="flex items-center mb-4 text-xl font-bold text-black">
+                  <h3 className="flex items-center mb-4 text-xl font-bold text-[#3E2723]">
                     <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                       <svg
                         className="w-4 h-4 text-white"
@@ -791,7 +865,7 @@ export default function About() {
                     </div>
                     Financial Management
                   </h3>
-                  <div className="space-y-3 text-black">
+                  <div className="space-y-3 text-[#3E2723]">
                     <p>
                       <strong>Funding:</strong> Donations, grants, and
                       fundraising activities
@@ -811,7 +885,7 @@ export default function About() {
 
             {/* Values Section */}
             <div className="p-6 mt-1 bg-gray-200/50 sm:mt-20 rounded-2xl sm:p-8 md:p-12">
-              <h2 className="mb-8 text-2xl font-bold text-center text-black sm:text-3xl sm:mb-12">
+              <h2 className="mb-8 text-2xl font-bold text-center text-[#3E2723] sm:text-3xl sm:mb-12">
                 Our Core Values
               </h2>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 sm:gap-8">
@@ -831,10 +905,10 @@ export default function About() {
                       />
                     </svg>
                   </div>
-                  <h3 className="mb-2 text-base font-semibold text-black sm:text-lg">
+                  <h3 className="mb-2 text-base font-semibold text-[#3E2723] sm:text-lg">
                     Integrity
                   </h3>
-                  <p className="text-xs leading-relaxed text-black sm:text-sm">
+                  <p className="text-xs leading-relaxed text-[#3E2723] sm:text-sm">
                     Transparency in all our operations and decisions
                   </p>
                 </div>
@@ -854,10 +928,10 @@ export default function About() {
                       />
                     </svg>
                   </div>
-                  <h3 className="mb-2 text-base font-semibold text-black sm:text-lg">
+                  <h3 className="mb-2 text-base font-semibold text-[#3E2723] sm:text-lg">
                     Compassion
                   </h3>
-                  <p className="text-xs leading-relaxed text-black sm:text-sm">
+                  <p className="text-xs leading-relaxed text-[#3E2723] sm:text-sm">
                     Understanding and addressing real community needs
                   </p>
                 </div>
@@ -877,10 +951,10 @@ export default function About() {
                       />
                     </svg>
                   </div>
-                  <h3 className="mb-2 text-base font-semibold text-black sm:text-lg">
+                  <h3 className="mb-2 text-base font-semibold text-[#3E2723] sm:text-lg">
                     Excellence
                   </h3>
-                  <p className="text-xs leading-relaxed text-black sm:text-sm">
+                  <p className="text-xs leading-relaxed text-[#3E2723] sm:text-sm">
                     Striving for the highest quality in everything we do
                   </p>
                 </div>
@@ -900,41 +974,41 @@ export default function About() {
                       />
                     </svg>
                   </div>
-                  <h3 className="mb-2 text-base font-semibold text-black sm:text-lg">
+                  <h3 className="mb-2 text-base font-semibold text-[#3E2723] sm:text-lg">
                     Collaboration
                   </h3>
-                  <p className="text-xs leading-relaxed text-black sm:text-sm">
+                  <p className="text-xs leading-relaxed text-[#3E2723] sm:text-sm">
                     Working together with communities and partners
                   </p>
                 </div>
               </div>
 
               {/* Foundation Establishment */}
-                <div className="relative mt-20 reveal-fade-in" ref={addToRefs}>
+              <div className="relative mt-20 reveal-fade-in" ref={addToRefs}>
                 {/* Black rotated background */}
                 <div
                   className="absolute inset-0 rounded-2xl"
                   style={{
-                  background: "black",
-                  transform: "rotate(1deg)",
-                  zIndex: 0,
+                    background: "black",
+                    transform: "rotate(1deg)",
+                    zIndex: 0,
                   }}
                 />
                 {/* Orange foreground */}
                 <div className="relative z-10 p-8 text-center text-white bg-gradient-to-r from-orange-600 to-orange-500 rounded-2xl">
                   <h2 className="mb-4 text-2xl font-bold">
-                  Foundation Establishment
+                    Foundation Establishment
                   </h2>
                   <p className="mb-2 text-lg">
-                  The Great Abanga Foundation was officially established for
-                  charitable purposes in July 2025
+                    The Great Abanga Foundation was officially established for
+                    charitable purposes in July 2025
                   </p>
                   <p className="text-base opacity-90">
-                  Committed to transparent, accountable, and impactful community
-                  service
+                    Committed to transparent, accountable, and impactful
+                    community service
                   </p>
                 </div>
-                </div>
+              </div>
             </div>
           </div>
         </main>

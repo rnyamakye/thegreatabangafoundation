@@ -201,18 +201,35 @@ export default function Contact() {
         `,
         }}
       />
-      <main className="min-h-screen transition-colors duration-200 bg-gradient-to-br from-gray-50 via-white to-white">
-        <div className="max-w-4xl px-6 py-16 mx-auto">
+      <main className="min-h-screen transition-colors duration-200 bg-[#F7F2ED]">
+        <div className="max-w-4xl px-6 py-16 mx-auto md:py-24">
           {/* Header */}
           <div className="mb-16 text-center reveal-fade-in" ref={addToRefs}>
-            <h1
-              className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl reveal-slide-up"
-              ref={addToRefs}
-            >
-              Contact Us
-            </h1>
+            {/* Logo and Heading Container */}
+            <div className="flex flex-col items-center justify-center mb-6 md:flex-row md:gap-6">
+              {/* Logo */}
+              <div
+                className="flex items-center justify-center w-20 h-20 mb-4 md:w-24 md:h-24 md:mb-0 reveal-scale"
+                ref={addToRefs}
+              >
+                <img
+                  src="/logo.png"
+                  alt="The Great Abanga Foundation"
+                  className="object-contain w-full h-full drop-shadow-lg"
+                />
+              </div>
+
+              {/* Heading */}
+              <h1
+                className="text-4xl font-bold text-[#3E2723] md:text-5xl reveal-slide-up"
+                ref={addToRefs}
+              >
+                Contact Us
+              </h1>
+            </div>
+
             <p
-              className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-700 reveal-slide-up"
+              className="max-w-3xl mx-auto text-xl leading-relaxed text-[#3E2723] reveal-slide-up"
               ref={addToRefs}
             >
               We'd love to hear from you. Send us a message and we'll respond as
@@ -225,7 +242,7 @@ export default function Contact() {
             <div className="space-y-8 reveal-slide-left" ref={addToRefs}>
               <div className="reveal-fade-in" ref={addToRefs}>
                 <h2
-                  className="mb-6 text-2xl font-bold text-gray-900 reveal-slide-up"
+                  className="mb-6 text-2xl font-bold text-[#3E2723] reveal-slide-up"
                   ref={addToRefs}
                 >
                   Get in Touch
@@ -247,10 +264,10 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <p className="mb-1 font-medium text-gray-900">Email</p>
+                      <p className="mb-1 font-medium text-[#3E2723]">Email</p>
                       <a
                         href="mailto:greatabangafoundation@gmail.com"
-                        className="text-gray-600 transition-colors duration-200 hover:text-orange-600"
+                        className="text-[#3E2723] transition-colors duration-200 hover:text-orange-600"
                       >
                         greatabangafoundation@gmail.com
                       </a>
@@ -273,10 +290,10 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <p className="mb-1 font-medium text-gray-900">Phone</p>
+                      <p className="mb-1 font-medium text-[#3E2723]">Phone</p>
                       <a
                         href="tel:0544902900"
-                        className="text-gray-600 transition-colors duration-200 hover:text-orange-600"
+                        className="text-[#3E2723] transition-colors duration-200 hover:text-orange-600"
                       >
                         0544902900
                       </a>
@@ -305,8 +322,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <p className="mb-1 font-medium text-gray-900">Address</p>
-                      <p className="text-gray-600">
+                      <p className="mb-1 font-medium text-[#3E2723]">Address</p>
+                      <p className="text-[#3E2723]">
                         Sunyani
                         <br />
                         Ghana, West Africa
@@ -326,7 +343,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="fullName"
-                    className="block mb-2 text-sm font-medium text-gray-700"
+                    className="block mb-2 text-sm font-medium text-[#3E2723]"
                   >
                     Full Name
                   </label>
@@ -342,7 +359,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-700"
+                    className="block mb-2 text-sm font-medium text-[#3E2723]"
                   >
                     Email
                   </label>
@@ -367,7 +384,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block mb-2 text-sm font-medium text-gray-700"
+                    className="block mb-2 text-sm font-medium text-[#3E2723]"
                   >
                     Message
                   </label>

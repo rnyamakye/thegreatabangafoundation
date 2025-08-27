@@ -10,22 +10,22 @@ export function meta() {
 
 export default function Donate() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100 transition-colors duration-200">
+    <main className="min-h-screen bg-[#F7F2ED] transition-colors duration-200">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">
+        <h1 className="text-3xl font-bold text-[#3E2723] mb-6">
           Support Our Mission
         </h1>
         <div className="max-w-2xl mx-auto">
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-[#3E2723] mb-6">
             Your donation helps us continue our important work in the community.
             Every contribution, no matter the size, makes a difference.
           </p>
 
           <div className="bg-transparent p-6 rounded-lg mb-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#3E2723] mb-4">
               How Your Donation Helps
             </h2>
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-2 text-[#3E2723]">
               <li>• ₵90 can provide school supplies for one student</li>
               <li>• ₵180 can fund a health screening for a family</li>
               <li>• ₵360 can support a community development project</li>
@@ -34,20 +34,20 @@ export default function Donate() {
           </div>
 
           <div className="bg-transparent p-6 rounded-lg">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl font-semibold text-[#3E2723] mb-4">
               Make a Donation
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-              <button className="bg-gray-100 hover:bg-orange-100 border border-gray-300 hover:border-orange-300 px-4 py-2 rounded text-center transition-colors text-gray-900">
+              <button className="bg-gray-100 hover:bg-orange-100 border border-gray-300 hover:border-orange-300 px-4 py-2 rounded text-center transition-colors text-[#3E2723]">
                 ₵90
               </button>
-              <button className="bg-gray-100 hover:bg-orange-100 border border-gray-300 hover:border-orange-300 px-4 py-2 rounded text-center transition-colors text-gray-900">
+              <button className="bg-gray-100 hover:bg-orange-100 border border-gray-300 hover:border-orange-300 px-4 py-2 rounded text-center transition-colors text-[#3E2723]">
                 ₵180
               </button>
-              <button className="bg-gray-100 hover:bg-orange-100 border border-gray-300 hover:border-orange-300 px-4 py-2 rounded text-center transition-colors text-gray-900">
+              <button className="bg-gray-100 hover:bg-orange-100 border border-gray-300 hover:border-orange-300 px-4 py-2 rounded text-center transition-colors text-[#3E2723]">
                 ₵360
               </button>
-              <button className="bg-gray-100 hover:bg-orange-100 border border-gray-300 hover:border-orange-300 px-4 py-2 rounded text-center transition-colors text-gray-900">
+              <button className="bg-gray-100 hover:bg-orange-100 border border-gray-300 hover:border-orange-300 px-4 py-2 rounded text-center transition-colors text-[#3E2723]">
                 ₵1,800
               </button>
             </div>
@@ -55,7 +55,7 @@ export default function Donate() {
             <div className="mb-4">
               <label
                 htmlFor="amount"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-medium text-[#3E2723] mb-2"
               >
                 Custom Amount
               </label>

@@ -11,6 +11,7 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Route } from "./+types/root";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import SocialMediaFixed from "./components/SocialMediaFixed";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
@@ -77,6 +78,7 @@ export default function App() {
         <Outlet />
       </main>
       <Footer />
+      <SocialMediaFixed />
       <Analytics />
     </>
   );

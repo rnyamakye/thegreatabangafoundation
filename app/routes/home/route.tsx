@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import ImageSlider from "../../components/ImageSlider";
 import LeadershipDesign from "../../components/LeadershipDesign";
@@ -51,9 +51,69 @@ function useRevealOnScroll() {
   return addToRefs;
 }
 
+// Custom hook for counter animation
+function useCountUp(endValue: number, duration: number = 2000) {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let startTime: number;
+    const startValue = 0;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Easing function for smooth animation
+      const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+      const easedProgress = easeOutCubic(progress);
+
+      const currentCount = Math.floor(
+        startValue + (endValue - startValue) * easedProgress
+      );
+      setCount(currentCount);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [isVisible, endValue, duration]);
+
+  return { count, elementRef };
+}
+
 // Default export component
 export default function Home() {
   const addToRefs = useRevealOnScroll();
+
+  // Initialize counters for stats
+  const programsCounter = useCountUp(3);
+  const investmentCounter = useCountUp(25000);
+  const partnersCounter = useCountUp(1);
+  const yearsCounter = useCountUp(2);
 
   return (
     <>
@@ -227,43 +287,63 @@ export default function Home() {
         <section id="commitment-section" style={{ backgroundColor: "#F7F2ED" }}>
           <div className="px-4 py-16 mx-auto md:py-20 md:px-6 md:max-w-6xl">
             {/* Stats Section */}
-            {/* <div
-              className="grid grid-cols-1 gap-8 mb-20 md:grid-cols-4 reveal-fade-in"
+            <div
+              className="grid grid-cols-1 gap-8 mb-20 md:grid-cols-3 reveal-fade-in"
               ref={addToRefs}
             >
               <div
-                className="p-6 text-center rounded-lg bg-gray-200/50 reveal-slide-up"
+                className="p-6 text-center bg-white border border-orange-500 rounded-lg reveal-slide-up"
                 ref={addToRefs}
               >
-                <div className="mb-2 text-4xl font-bold tgaf-orange">3+</div>
+                <div
+                  className="mb-2 text-4xl font-bold tgaf-orange"
+                  ref={programsCounter.elementRef}
+                >
+                  {programsCounter.count}+
+                </div>
                 <div className="font-medium text-black">Community Programs</div>
               </div>
               <div
-                className="p-6 text-center rounded-lg bg-gray-200/50 reveal-slide-up"
+                className="p-6 text-center bg-white border border-orange-500 rounded-lg reveal-slide-up"
                 ref={addToRefs}
               >
-                <div className="mb-2 text-4xl font-bold tgaf-orange">₵25K+</div>
+                <div
+                  className="mb-2 text-4xl font-bold tgaf-orange"
+                  ref={investmentCounter.elementRef}
+                >
+                  ₵{investmentCounter.count.toLocaleString()}+
+                </div>
                 <div className="font-medium text-black">
                   Community Investment
                 </div>
               </div>
-              <div
-                className="p-6 text-center rounded-lg bg-gray-200/50 reveal-slide-up"
+              {/* <div
+                className="p-6 text-center bg-white rounded-lg reveal-slide-up"
                 ref={addToRefs}
               >
-                <div className="mb-2 text-4xl font-bold tgaf-orange">1</div>
+                <div 
+                  className="mb-2 text-4xl font-bold tgaf-orange"
+                  ref={partnersCounter.elementRef}
+                >
+                  {partnersCounter.count}
+                </div>
                 <div className="font-medium text-black">
                   University Partnered
                 </div>
-              </div>
+              </div> */}
               <div
-                className="p-6 text-center rounded-lg bg-gray-200/50 reveal-slide-up"
+                className="p-6 text-center bg-white border border-orange-500 rounded-lg reveal-slide-up"
                 ref={addToRefs}
               >
-                <div className="mb-2 text-4xl font-bold tgaf-orange">2</div>
+                <div
+                  className="mb-2 text-4xl font-bold tgaf-orange"
+                  ref={yearsCounter.elementRef}
+                >
+                  {yearsCounter.count}
+                </div>
                 <div className="font-medium text-black">Years of Impact</div>
               </div>
-            </div> */}
+            </div>
 
             {/* SUBSECTION 2A: Foundation Goals */}
             <div
@@ -458,7 +538,7 @@ export default function Home() {
                     }}
                   />
                   {/* Main content div with flex layout */}
-                  <div className="p-8 bg-gradient-to-r from-orange-400 to-orange-300 rounded-2xl">
+                  <div className="p-8 bg-black md:bg-gradient-to-r from-orange-400 to-orange-300 rounded-2xl">
                     <div className="flex flex-col items-center gap-8 lg:flex-row">
                       {/* Leadership Design Component */}
                       <div className="flex justify-center flex-1 lg:justify-start">
@@ -479,9 +559,9 @@ export default function Home() {
                         </p>
                         <Link
                           to="/about"
-                          className="relative inline-flex items-center px-6 py-3 overflow-hidden font-semibold text-orange-500 transition-all duration-500 bg-white rounded-lg hover:text-white hover:scale-105 group"
+                          className="relative inline-flex items-center px-6 py-3 overflow-hidden font-semibold text-orange-500 transition-all duration-500 bg-white rounded-lg md:hover:text-white hover:scale-105 group"
                         >
-                          <span className="absolute inset-0 w-0 transition-all duration-500 ease-out bg-black group-hover:w-full"></span>
+                          <span className="absolute inset-0 w-0 transition-all duration-500 ease-out bg-black md:group-hover:w-full"></span>
                           <span className="relative z-10">
                             Meet Our Leaders
                           </span>
@@ -691,89 +771,48 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* SUBSECTION 2E: Social Media Follow Us */}
-            <div
-              id="social-media"
-              className="p-6 text-center md:p-12 bg-gradient-to-br from-gray-50 to-gray-100 "
-            >
-              <h3
-                className="mb-6 text-xl font-extrabold text-gray-700 md:text-3xl md:mb-8 reveal-slide-up"
-                ref={addToRefs}
-              >
-                Follow The great Abanga Foundation
-              </h3>
-
-              <div
-                className="flex flex-wrap items-center justify-center gap-6 reveal-slide-up"
-                ref={addToRefs}
-              >
-                <div className="pt-2">
-                  <div className="flex space-x-3">
-                    <a
-                      href="https://www.facebook.com/abanga.osman.397"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative p-2 overflow-hidden text-white text-gray-600 transition-colors duration-200 bg-orange-500 rounded-full group"
-                      aria-label="Facebook"
-                    >
-                      <span className="absolute inset-0 w-0 h-full transition-all duration-500 ease-out bg-black rounded-full group-hover:w-full"></span>
-                      <span className="relative z-10 flex items-center justify-center">
-                        <svg
-                          className="w-5 h-5 md:w-8 md:h-8"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                        </svg>
-                      </span>
-                    </a>
-                    <a
-                      href="https://www.instagram.com/the_great_abanga_foundation?igsh=MXVwb2VwaTI4bDdqOA=="
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative p-2 overflow-hidden text-white text-gray-600 transition-colors duration-200 bg-orange-500 rounded-full group"
-                      aria-label="Instagram"
-                    >
-                      <span className="absolute inset-0 w-0 h-full transition-all duration-500 ease-out bg-black rounded-full group-hover:w-full"></span>
-                      <span className="relative z-10 flex items-center justify-center">
-                        <svg
-                          className="w-5 h-5 md:w-8 md:h-8"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                        </svg>
-                      </span>
-                    </a>
-                    <a
-                      href="https://www.tiktok.com/@the.great.foundat6?is_from_webapp=1&sender_device=pc"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative p-2 overflow-hidden text-white text-gray-600 transition-colors duration-200 bg-orange-500 rounded-full group"
-                      aria-label="TikTok"
-                    >
-                      <span className="absolute inset-0 w-0 h-full transition-all duration-500 ease-out bg-black rounded-full group-hover:w-full"></span>
-                      <span className="relative z-10 flex items-center justify-center">
-                        <svg
-                          className="w-5 h-5 md:w-8 md:h-8"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <p
-                className="mt-6 text-sm text-gray-500 reveal-slide-up"
-                ref={addToRefs}
-              >
-                Together, we can build a brighter future for our communities.
+        {/* Donation Call-to-Action Section */}
+        <section className="py-16 bg-gradient-to-br from-orange-50 to-orange-100">
+          <div className="max-w-4xl px-6 mx-auto text-center">
+            <div className="reveal-fade-in" ref={addToRefs}>
+              <h2 className="mb-6 text-3xl font-bold text-[#3E2723] md:text-4xl">
+                Ready to Make a Difference?
+              </h2>
+              <p className="mb-8 text-lg leading-relaxed text-[#3E2723] md:text-xl">
+                Your donation can transform lives through education and create
+                lasting change in our communities. Every contribution, no matter
+                the size, helps us reach more students and build brighter
+                futures.
               </p>
+              <div className="flex flex-col items-center gap-4 sm:justify-center">
+                <Link
+                  to="/contact"
+                  className="relative inline-flex items-center px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-500 shadow-lg rounded-xl group bg-gradient-to-r from-orange-500 to-orange-600"
+                >
+                  <span className="absolute inset-0 w-0 transition-all duration-500 ease-out bg-black group-hover:w-full"></span>
+                  <span className="relative z-10">Contact Us to Donate</span>
+                  <svg
+                    className="relative z-10 w-5 h-5 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    />
+                  </svg>
+                </Link>
+                <p className="text-sm text-[#3E2723] opacity-75">
+                  Reach out to learn about donation options and how you can
+                  support our mission
+                </p>
+              </div>
             </div>
           </div>
         </section>
