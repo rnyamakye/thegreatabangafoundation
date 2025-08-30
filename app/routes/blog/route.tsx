@@ -232,7 +232,7 @@ export default function Blog() {
   return (
     <>
       <main className="min-h-screen bg-gray-50">
-        <div className="max-w-6xl px-6 py-8 mx-auto">
+        <div className="max-w-6xl px-6 py-8 mx-auto pt-28">
           {/* Header */}
           <div className="mb-8 text-center">
             <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
@@ -318,6 +318,8 @@ export default function Blog() {
                 </div>
               </div>
             </Link>
+
+            
           )}
 
           {/* Blog Categories */}

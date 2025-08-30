@@ -531,14 +531,9 @@ export default function Home() {
               <div className="reveal-slide-up" ref={addToRefs}>
                 <div className="relative">
                   {/* Rotated black background div */}
-                  <div
-                    className="absolute inset-0 bg-black -z-10 rounded-2xl"
-                    style={{
-                      transform: "rotate(1deg)",
-                    }}
-                  />
+                 
                   {/* Main content div with flex layout */}
-                  <div className="p-8 bg-black md:bg-gradient-to-r from-orange-400 to-orange-300 rounded-2xl">
+                  <div className="p-8 bg-white border border-orange-500 rounded-2xl">
                     <div className="flex flex-col items-center gap-8 lg:flex-row">
                       {/* Leadership Design Component */}
                       <div className="flex justify-center flex-1 lg:justify-start">
@@ -546,22 +541,21 @@ export default function Home() {
                       </div>
 
                       {/* Text Content */}
-                      <div className="flex-1 text-center text-white lg:text-left">
-                        <p className="mb-6 text-lg">
+                      <div className="flex-1 text-sm text-center text-black lg:text-left">
+                        <p className="mb-6 md:text-lg">
                           Under the leadership of CEO Osman Hakim Abdul, along
                           with Manager Amanfo Martha Simaa, PRO Amoah Gideon,
                           and Publicity Ruth, our foundation continues to expand
                           its impact across communities.
                         </p>
-                        <p className="mb-6 text-lg font-medium">
+                        <p className="mb-6 font-medium md:text-lg">
                           Together, we're building bridges of opportunity and
                           hope.
                         </p>
                         <Link
                           to="/about"
-                          className="relative inline-flex items-center px-6 py-3 overflow-hidden font-semibold text-orange-500 transition-all duration-500 bg-white rounded-lg md:hover:text-white hover:scale-105 group"
+                          className="relative inline-flex items-center px-6 py-3 overflow-hidden font-semibold text-white transition-all duration-500 bg-black rounded-lg md:hover:text-white hover:scale-105 group"
                         >
-                          <span className="absolute inset-0 w-0 transition-all duration-500 ease-out bg-black md:group-hover:w-full"></span>
                           <span className="relative z-10">
                             Meet Our Leaders
                           </span>
@@ -589,9 +583,9 @@ export default function Home() {
             {/* SUBSECTION 2C: Education Mission Statement */}
             <section
               id="education-mission"
-              className="w-screen h-[100vh] relative left-1/2 right-1/2 -mx-[50vw]"
+              className="w-screen h-[100vh] md:h-fit py-20 relative left-1/2 right-1/2 -mx-[50vw] bg-gradient-to-br from-gray-50 to-gray-100 "
             >
-              <div className="flex flex-col justify-center h-full p-5 mb-16 md:p-12 bg-gradient-to-br from-gray-50 to-gray-100">
+              <div className="flex flex-col justify-center h-full max-w-6xl p-5 mx-auto my-16 ">
                 <div className="flex flex-col mx-auto md:flex-row md:items-center md:gap-12">
                   {/* Text Content */}
                   <div className="text-center md:w-1/2 md:text-left">
@@ -627,7 +621,7 @@ export default function Home() {
             {/* SUBSECTION 2D: Impact Stories */}
             <div
               id="impact-stories"
-              className="p-4 mb-16 md:p-12 md:mb-20 reveal-fade-in"
+              className="p-4 my-16 md:p-12 md:mb-10 reveal-fade-in"
               ref={addToRefs}
             >
               <h3

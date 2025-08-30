@@ -195,8 +195,8 @@ export default function Impact() {
         }}
       />
       <div
-        className="min-h-screen mx-auto overflow-x-hidden transition-colors duration-200 min-w-screen"
-        style={{ backgroundColor: "#F7F2ED" }}
+        className="min-h-screen mx-auto overflow-x-hidden transition-colors duration-200 bg-gray-100 md:pt-12 min-w-screen"
+        style={{ backgroundColor: "" }}
       >
         <div className="max-w-6xl px-6 pt-24 mx-auto md:py-24">
           {/* Header */}

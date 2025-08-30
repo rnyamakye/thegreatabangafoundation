@@ -102,7 +102,7 @@ export default function ImageSlider({
       {/* Desktop navigation - sides */}
       <button
         onClick={prevSlide}
-        className="absolute hidden p-2 text-white transition-all duration-200 transform -translate-y-1/2 rounded-full md:block left-4 top-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30"
+        className="absolute hidden p-2 text-white transition-all duration-200 transform -translate-y-1/2 rounded-full left-4 top-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30"
         aria-label="Previous slide"
       >
         <svg
@@ -122,7 +122,7 @@ export default function ImageSlider({
 
       <button
         onClick={nextSlide}
-        className="absolute hidden p-2 text-white transition-all duration-200 transform -translate-y-1/2 rounded-full md:block right-4 top-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30"
+        className="absolute hidden p-2 text-white transition-all duration-200 transform -translate-y-1/2 rounded-full right-4 top-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30"
         aria-label="Next slide"
       >
         <svg

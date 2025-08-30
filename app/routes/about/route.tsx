@@ -191,14 +191,14 @@ export default function About() {
         {/* Hero Section with Background Image */}
         <div className="relative min-h-screen">
           {/* Background Image */}
-          <div className="absolute inset-0 bg-center bg-no-repeat bg-cover bg-[url('/dinner_img.jpg')]">
+          <div className="absolute inset-0 bg-no-repeat bg-cover bg-[url('/dinner_img.jpg')] ">
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/80"></div>
           </div>
 
           {/* Hero Content */}
           <div className="relative z-10 max-w-6xl px-6 py-20 mx-auto">
-            <div className="mb-20 text-center reveal-fade-in" ref={addToRefs}>
+            <div className="mb-20 text-center reveal-slide-up" ref={addToRefs}>
               <div
                 className="flex items-center justify-center w-64 h-64 mx-auto mb-12 md:w-80 md:h-80 reveal-scale"
                 ref={addToRefs}
@@ -243,12 +243,12 @@ export default function About() {
         <main className="bg-[#F7F2ED]">
           <div className="max-w-6xl px-6 py-20 mx-auto">
             {/* Foundation Overview */}
-            <div
-              className="p-6 mb-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl sm:p-8 md:p-12 reveal-fade-in"
-              ref={addToRefs}
-            >
-              <div className="grid items-center grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
-                <div>
+            <div className="mb-16" ref={addToRefs}>
+              <div className="grid items-center grid-cols-1 gap-8 bg-white lg:p-10 rounded-2xl lg:grid-cols-2 lg:gap-12">
+                <div
+                  className="p-6 sm:p-8 md:p-12 reveal-slide-left"
+                  ref={addToRefs}
+                >
                   <h2 className="mb-4 text-2xl font-bold text-[#3E2723] sm:text-3xl sm:mb-6">
                     Our Global Presence
                   </h2>
@@ -272,8 +272,8 @@ export default function About() {
                     communities where it's needed most.
                   </p>
                 </div>
-                <div className="text-center">
-                  <div className="flex items-center justify-center w-32 h-32 mx-auto mb-6 rounded-full shadow-2xl md:h-64 md:w-64 bg-gradient-to-br from-orange-500 to-orange-600">
+                <div className="text-center reveal-slide-right" ref={addToRefs}>
+                  <div className="flex items-center justify-center w-32 h-32 mx-auto mb-6 rounded-full shadow-2xl md:h-64 md:w-64 bg-gradient-to-br from-orange-400 to-orange-400">
                     <svg
                       className="w-24 h-24 text-white md:h-32 md:w-32"
                       fill="none"
@@ -300,14 +300,20 @@ export default function About() {
             </div>
 
             {/* Leadership Team */}
-            <div className="mb-16 reveal-fade-in" ref={addToRefs}>
-              <h2 className="mb-8 text-2xl font-bold text-center text-[#3E2723] sm:text-3xl sm:mb-12">
+            <div className="mb-16" ref={addToRefs}>
+              <h2
+                className="mb-8 text-2xl font-bold text-center text-[#3E2723] sm:text-3xl sm:mb-12 reveal-slide-up"
+                ref={addToRefs}
+              >
                 Our Leadership Team
               </h2>
               <div className="space-y-16">
                 {/* CEO */}
                 <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-                  <div className="order-2 lg:order-1">
+                  <div
+                    className="order-2 lg:order-1 reveal-slide-left"
+                    ref={addToRefs}
+                  >
                     <h3 className="mb-4 text-2xl font-bold text-[#3E2723]">
                       Osman Abdul Hakim Abanga
                     </h3>
@@ -327,7 +333,10 @@ export default function About() {
                       opportunities for growth and resilience.
                     </p>
                   </div>
-                  <div className="order-1 lg:order-2">
+                  <div
+                    className="order-1 lg:order-2 reveal-slide-right"
+                    ref={addToRefs}
+                  >
                     <div className="relative overflow-hidden rounded-lg h-80">
                       <img
                         src="/abanga_img.jpg"
@@ -348,7 +357,10 @@ export default function About() {
 
                 {/* Manager */}
                 <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-                  <div className="order-1 lg:order-1">
+                  <div
+                    className="order-1 lg:order-1 reveal-slide-left"
+                    ref={addToRefs}
+                  >
                     <div className="relative overflow-hidden rounded-lg h-80">
                       <img
                         src="/giden_img.jpg"
@@ -365,7 +377,10 @@ export default function About() {
                       </div> */}
                     </div>
                   </div>
-                  <div className="order-2 lg:order-2">
+                  <div
+                    className="order-2 lg:order-2 reveal-slide-right"
+                    ref={addToRefs}
+                  >
                     <h3 className="mb-4 text-2xl font-bold text-[#3E2723]">
                       Amoah Gideon
                     </h3>
@@ -386,7 +401,10 @@ export default function About() {
 
                 {/* PRO */}
                 <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-                  <div className="order-2 lg:order-1">
+                  <div
+                    className="order-2 lg:order-1 reveal-slide-left"
+                    ref={addToRefs}
+                  >
                     <h3 className="mb-4 text-2xl font-bold text-[#3E2723]">
                       Amanfo Martha Simaa
                     </h3>
@@ -407,7 +425,10 @@ export default function About() {
                       educational needs and community development.
                     </p>
                   </div>
-                  <div className="order-1 lg:order-2">
+                  <div
+                    className="order-1 lg:order-2 reveal-slide-right"
+                    ref={addToRefs}
+                  >
                     <div className="relative overflow-hidden rounded-lg h-80">
                       <img
                         src="/martha_img.jpg"
@@ -428,7 +449,10 @@ export default function About() {
 
                 {/* Publicity */}
                 <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-                  <div className="relative flex items-center justify-center overflow-hidden rounded-lg h-80 bg-gradient-to-br from-orange-500 to-orange-600">
+                  <div
+                    className="relative flex items-center justify-center overflow-hidden rounded-lg h-80 bg-gradient-to-br from-orange-500 to-orange-600 reveal-slide-left"
+                    ref={addToRefs}
+                  >
                     <img
                       src="/ruth_img.jpg"
                       alt="Ruth Abena Amankwah - Publicity"
@@ -443,7 +467,7 @@ export default function About() {
                       </p>
                     </div> */}
                   </div>
-                  <div>
+                  <div className="reveal-slide-right" ref={addToRefs}>
                     <h3 className="mb-4 text-2xl font-bold text-[#3E2723]">
                       Ruth Abena Amankwah
                     </h3>
@@ -509,7 +533,7 @@ export default function About() {
                     }}
                   />
                   {/* Orange foreground */}
-                  <div className="relative z-10 p-6 text-white rounded-lg shadow-lg bg-gradient-to-r from-orange-600 to-orange-500">
+                  <div className="relative z-10 p-6 text-white rounded-lg shadow-lg bg-gradient-to-r from-orange-400 to-orange-400">
                     <p className="mb-4 text-lg italic font-medium">
                       "Creating a future where no one is left behind —
                       empowered, uplifted, and cared for."
@@ -527,7 +551,7 @@ export default function About() {
 
             {/* Foundation Objectives */}
             <div
-              className="p-8 mb-16 bg-gray-200/50 rounded-2xl reveal-fade-in"
+              className="p-8 mb-16 bg-gray-200/50 rounded-2xl reveal-slide-up"
               ref={addToRefs}
             >
               <h2 className="mb-8 text-3xl font-bold text-center text-[#3E2723]">
@@ -601,7 +625,7 @@ export default function About() {
 
             {/* Our Impact Stats */}
             <div
-              className="p-6 mb-16 bg-gray-200/50 rounded-2xl sm:p-8 md:p-12 reveal-fade-in"
+              className="p-6 mb-16 bg-gray-200/50 rounded-2xl sm:p-8 md:p-12 reveal-slide-left"
               ref={addToRefs}
             >
               <h2 className="mb-8 text-2xl font-bold text-center text-[#3E2723] sm:text-3xl sm:mb-12">
@@ -660,7 +684,7 @@ export default function About() {
             </div>
 
             {/* Core Focus Areas */}
-            <div className="mb-16 reveal-fade-in" ref={addToRefs}>
+            <div className="mb-16 reveal-slide-right" ref={addToRefs}>
               <h2 className="mb-8 text-2xl font-bold text-center text-[#3E2723] sm:text-3xl sm:mb-12">
                 Our Core Focus Areas
               </h2>
@@ -744,12 +768,15 @@ export default function About() {
             </div>
 
             {/* Governance & Operations */}
-            <div className="mb-16 reveal-fade-in" ref={addToRefs}>
+            <div className="mb-16 reveal-slide-up" ref={addToRefs}>
               <h2 className="mb-8 text-2xl font-bold text-center text-[#3E2723] sm:text-3xl sm:mb-12">
                 Our Governance & Operations
               </h2>
               <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-                <div className="p-6 bg-gray-200/50 rounded-xl">
+                <div
+                  className="p-6 bg-gray-200/50 rounded-xl reveal-slide-left"
+                  ref={addToRefs}
+                >
                   <h3 className="flex items-center mb-4 text-xl font-bold text-[#3E2723]">
                     <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                       <svg
@@ -782,7 +809,10 @@ export default function About() {
                     </p>
                   </div>
                 </div>
-                <div className="p-6 bg-gray-200/50 rounded-xl">
+                <div
+                  className="p-6 bg-gray-200/50 rounded-xl reveal-slide-right"
+                  ref={addToRefs}
+                >
                   <h3 className="flex items-center mb-4 text-xl font-bold text-[#3E2723]">
                     <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                       <svg
@@ -812,7 +842,10 @@ export default function About() {
               </div>
 
               <div className="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-2">
-                <div className="p-6 bg-gray-200/50 rounded-xl">
+                <div
+                  className="p-6 bg-gray-200/50 rounded-xl reveal-slide-left"
+                  ref={addToRefs}
+                >
                   <h3 className="flex items-center mb-4 text-xl font-bold text-[#3E2723]">
                     <div className="flex items-center justify-center w-8 h-8 mr-3 bg-orange-500 rounded-full">
                       <svg
@@ -984,18 +1017,18 @@ export default function About() {
               </div>
 
               {/* Foundation Establishment */}
-              <div className="relative mt-20 reveal-fade-in" ref={addToRefs}>
+              <div className="relative mt-20 reveal-slide-up" ref={addToRefs}>
                 {/* Black rotated background */}
-                <div
+                {/* <div
                   className="absolute inset-0 rounded-2xl"
                   style={{
                     background: "black",
                     transform: "rotate(1deg)",
                     zIndex: 0,
                   }}
-                />
+                /> */}
                 {/* Orange foreground */}
-                <div className="relative z-10 p-8 text-center text-white bg-gradient-to-r from-orange-600 to-orange-500 rounded-2xl">
+                <div className="relative z-10 p-8 text-center text-white bg-gradient-to-r from-orange-300 to-orange-400 rounded-2xl">
                   <h2 className="mb-4 text-2xl font-bold">
                     Foundation Establishment
                   </h2>

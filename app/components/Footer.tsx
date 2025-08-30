@@ -33,7 +33,7 @@ export function Footer() {
             <h3 className="mb-4 text-lg font-semibold text-orange-500">
               Quick Links
             </h3>
-            <ul className="space-y-2">
+            <ul className="grid space-y-2 ">
               <li>
                 <Link
                   to="/"
@@ -58,6 +58,14 @@ export function Footer() {
                   Impact
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/blog"
+                  className="text-gray-600 transition-colors duration-200 hover:text-orange-500"
+                >
+                  Blog
+                </Link>
+              </li>
               {/* <li>
                 <Link
                   to="/donate"
@@ -72,14 +80,6 @@ export function Footer() {
                   className="text-gray-600 transition-colors duration-200 hover:text-orange-500"
                 >
                   Contact
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/blog"
-                  className="text-gray-600 transition-colors duration-200 hover:text-orange-500"
-                >
-                  Blog
                 </Link>
               </li>
             </ul>

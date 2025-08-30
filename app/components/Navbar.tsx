@@ -137,7 +137,7 @@ export function Navbar() {
             </NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/impact">Impact</NavLink>
-            {/* <NavLink to="/blog">Blog</NavLink> */}
+            <NavLink to="/blog">Stories</NavLink>
             <NavLink to="/contact">Contact</NavLink>
             {/* <Link
               to="/donate"

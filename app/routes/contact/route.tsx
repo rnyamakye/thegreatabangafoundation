@@ -201,8 +201,8 @@ export default function Contact() {
         `,
         }}
       />
-      <main className="min-h-screen transition-colors duration-200 bg-[#F7F2ED]">
-        <div className="max-w-4xl px-6 py-16 mx-auto md:py-24">
+      <main className="min-h-screen transition-colors duration-200 bg-gray-50">
+        <div className="max-w-6xl px-6 py-16 mx-auto md:py-24">
           {/* Header */}
           <div className="mb-16 text-center reveal-fade-in" ref={addToRefs}>
             {/* Logo and Heading Container */}
