@@ -119,7 +119,7 @@ export default function Leadership() {
               <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
                 Osman Abdul Hakim Abanga
               </h3>
-              <p className="mb-4 text-lg font-semibold text-orange-600">
+              <p className="mb-4 text-lg font-semibold text-[#374A5C]">
                 Chief Executive Officer
               </p>
               <p className="mb-6 leading-relaxed text-[#3E2723]">
@@ -133,8 +133,8 @@ export default function Leadership() {
                 uplifting underprivileged individuals and fostering
                 opportunities for growth and resilience.
               </p>
-              <div className="p-4 border-l-4 border-orange-500 bg-orange-50">
-                <p className="text-sm font-medium text-orange-800">
+              <div className="p-4 border-l-4 border-orange-300 bg-orange-50/50">
+                <p className="text-sm font-medium text-[#374A5C]">
                   "Our mission is to create lasting change that empowers
                   individuals and transforms communities for generations to
                   come."
@@ -172,7 +172,7 @@ export default function Leadership() {
               <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
                 Amoah Gideon
               </h3>
-              <p className="mb-4 text-lg font-semibold text-orange-600">
+              <p className="mb-4 text-lg font-semibold text-[#374A5C]">
                 Public Relations Officer
               </p>
               <p className="mb-6 leading-relaxed text-[#3E2723]">
@@ -201,7 +201,7 @@ export default function Leadership() {
               <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
                 Amanfo Martha Simaa
               </h3>
-              <p className="mb-4 text-lg font-semibold text-orange-600">
+              <p className="mb-4 text-lg font-semibold text-[#374A5C]">
                 Manager
               </p>
               <p className="mb-6 leading-relaxed text-[#3E2723]">
@@ -258,7 +258,7 @@ export default function Leadership() {
               <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
                 Ruth Abena Amankwah
               </h3>
-              <p className="mb-4 text-lg font-semibold text-orange-600">
+              <p className="mb-4 text-lg font-semibold text-[#374A5C]">
                 Publicity Officer
               </p>
               <p className="mb-6 leading-relaxed text-[#3E2723]">
@@ -295,7 +295,7 @@ export default function Leadership() {
 
         {/* Call to Action */}
         <div className="mt-16 text-center" ref={addToRefs}>
-          <div className="p-8 rounded-2xl bg-gradient-to-r from-orange-600 to-orange-800 reveal-fade-in">
+          <div className="p-8 rounded-2xl bg-gradient-to-r from-[#374A5C] to-[#374A5C] reveal-fade-in">
             <h3 className="mb-4 text-2xl font-bold text-white">
               Join Our Mission
             </h3>
@@ -305,7 +305,7 @@ export default function Leadership() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center px-6 py-3 text-lg font-medium text-orange-600 transition-colors bg-white rounded-lg hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+              className="inline-flex items-center px-6 py-3 text-lg font-medium tran-[#374A5C]sition-colors bg-white rounded-lg text hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
             >
               Get In Touch
               <svg

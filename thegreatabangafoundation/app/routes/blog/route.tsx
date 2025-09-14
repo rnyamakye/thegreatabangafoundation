@@ -167,11 +167,11 @@ export default function Blog() {
   // Categories for filtering
   const categories = [
     { id: "all", name: "All Stories" },
-    { id: "education", name: "Education" },
-    { id: "community", name: "Community" },
-    { id: "sports", name: "Sports" },
-    { id: "healthcare", name: "Healthcare" },
-    { id: "empowerment", name: "Empowerment" },
+    // { id: "education", name: "Education" },
+    // { id: "community", name: "Community" },
+    // { id: "sports", name: "Sports" },
+    // { id: "healthcare", name: "Healthcare" },
+    // { id: "empowerment", name: "Empowerment" },
   ];
 
   // Load data from backend API
@@ -180,7 +180,7 @@ export default function Blog() {
       try {
         const endpoint = `${config?.baseURL}/blogs`;
         const data = await getData(endpoint);
-        
+
         // Simulate minimum loading time of 1000ms
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
@@ -202,9 +202,7 @@ export default function Blog() {
       const filtered =
         selectedCategory === "all"
           ? blogsData
-          : blogsData.filter(
-              (story: any) => story._base === selectedCategory
-            );
+          : blogsData.filter((story: any) => story._base === selectedCategory);
       setFilteredStories(filtered);
     }
   }, [selectedCategory, blogsData]);
@@ -232,7 +230,7 @@ export default function Blog() {
           </div>
 
           {/* Hero Content */}
-          <div className="relative z-10 flex items-center justify-center h-[100vh] px-6 py-20 mx-auto">
+          <div className="relative z-10 flex flex-col items-center justify-center h-[80vh] px-6 py-20 mx-auto">
             <div className="flex flex-col items-center justify-center text-center">
               <h1 className="mb-6 text-6xl font-extrabold leading-tight text-gray-100 md:text-7xl drop-shadow-lg">
                 Stories & Updates
@@ -240,7 +238,7 @@ export default function Blog() {
             </div>
 
             {/* Quote positioned at bottom */}
-            <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-full max-w-4xl px-6">
+            <div className="">
               <div className="relative z-10 flex flex-col text-center">
                 <blockquote className="text-lg italic font-medium text-gray-100 font-quicksand md:text-xl">
                   "Giving is not just about making a donation, it's about making
@@ -295,7 +293,7 @@ export default function Blog() {
 
             {/* Blog Categories */}
             <div className="mb-8">
-              <div className="grid justify-center grid-cols-3 gap-2 ">
+              <div className="flex justify-center gap-2 ">
                 {categories.map((category) => (
                   <button
                     key={category.id}

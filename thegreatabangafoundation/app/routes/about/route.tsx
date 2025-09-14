@@ -123,12 +123,12 @@ export default function About() {
     <>
       <div className="min-h-screen transition-colors duration-200">
         {/* Hero Section with Background Image */}
-        <div className="relative h-screen">
+        <div className="relative h-[80vh]">
           {/* SVG Background Fallback */}
           <div className="absolute inset-0 hero-svg-background" />
 
           {/* Background Image */}
-          <div className="absolute inset-0 bg-no-repeat bg-top bg-cover bg-[url('/dinner_img.jpg')] ">
+          <div className="absolute inset-0 bg-no-repeat bg-top bg-cover bg-[url('/leadership_img1.jpg')] ">
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/80" />
           </div>
@@ -206,7 +206,7 @@ export default function About() {
                       <img
                         src="/communitydevelopment_img.jpg"
                         alt="The Great Abanga Foundation Team"
-                        className="object-cover w-full h-80"
+                        className="object-cover w-full h-80 md:h-120"
                       />
                     </div>
 
