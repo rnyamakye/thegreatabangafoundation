@@ -128,7 +128,7 @@ export default function Home() {
           {/* Content */}
         </section>
 
-        <section className="max-w-screen bg-[#374a5c] relative h-[1000px]">
+        <section className="max-w-screen bg-blue-500 relative h-[1000px]">
           <div className="relative max-w-6xl px-5 pb-5 mx-auto pt-15">
             <h2 className="text-3xl font-bold text-white font-cursive md:text-4xl lg:text-5xl">
               Our Focus Areas
