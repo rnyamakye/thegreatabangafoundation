@@ -24,6 +24,10 @@ export default function Mission() {
 
           {/* Background Color */}
           <div className="absolute inset-0 "></div>
+
+          {/* Black Overlay for better text readability */}
+          <div className="absolute inset-0 bg-opacity-50 bg-black/50"></div>
+
           <div className="absolute text-center text-white transform -translate-x-1/2 left-1/2 md:max-w-6xl md:px-6 md:mx-auto">
             <h1 className="mt-20 text-3xl font-bold md:text-6xl">
               Our Mission

@@ -97,33 +97,6 @@ export default function Gallery() {
       {/* Gallery Section */}
       <section className="py-16 bg-white">
         <div className="px-5 mx-auto md:max-w-7xl lg:px-8">
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
-                  selectedCategory === category
-                    ? "bg-[#374a5c] text-white shadow-lg"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200 border border-gray-200"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
-          {/* Results Count */}
-          {galleryData.length > 0 && (
-            <div className="mb-8 text-center">
-              <p className="text-gray-600">
-                Showing {filteredImages.length} of {galleryData.length} images
-                {selectedCategory !== "All" && ` in ${selectedCategory}`}
-              </p>
-            </div>
-          )}
-
           {/* Gallery Grid */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {galleryData.length === 0 ? (
@@ -225,27 +198,12 @@ export default function Gallery() {
 
             {/* Modal content */}
             <div className="flex flex-col md:flex-row">
-              <div className="md:w-2/3">
+              <div className="w-full h-[60vh]">
                 <img
                   src={selectedImage.src}
                   alt={selectedImage.alt}
-                  className="object-cover w-full h-64 md:h-96"
+                  className="object-cover w-full h-full md:h-96"
                 />
-              </div>
-              <div className="p-6 md:w-1/3">
-                <div className="mb-3">
-                  <span className="inline-block px-3 py-1 text-sm font-medium text-gray-600 bg-gray-100 rounded-full">
-                    {selectedImage.category}
-                  </span>
-                </div>
-                <h3 className="mb-4 text-xl font-bold text-gray-900">
-                  {selectedImage.title}
-                </h3>
-                {selectedImage.description && (
-                  <p className="leading-relaxed text-gray-600">
-                    {selectedImage.description}
-                  </p>
-                )}
               </div>
             </div>
           </div>

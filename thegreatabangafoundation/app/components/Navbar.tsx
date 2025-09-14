@@ -197,7 +197,7 @@ export function Navbar() {
       className={`absolute left-0 right-0 z-50 transition-all duration-300 ease-in-out  ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       } ${isScrolled ? "shadow-lg py-2 top-0" : "bg-transparent py-2 -top-1"}
-      ${isMenuOpen ? "bg-[#F8F8F8] backdrop-blur-lg shadow-lg py-2" : ""}`}
+      ${isMenuOpen ? "bg-white backdrop-blur-lg shadow-lg py-2" : ""}`}
     >
       <div className="px-6 mx-auto max-w-screen">
         <div
@@ -331,11 +331,13 @@ export function Navbar() {
               type="button"
               onClick={toggleMenu}
               className={`relative p-2 overflow-hidden transition-all duration-300 ${
-                isMissionPage
-                  ? "text-white"
-                  : isScrolled
-                    ? "text-black"
-                    : "text-white"
+                isMenuOpen
+                  ? "text-black"
+                  : isMissionPage
+                    ? "text-white"
+                    : isScrolled
+                      ? "text-black"
+                      : "text-white"
               }`}
               aria-controls="mobile-menu"
             >

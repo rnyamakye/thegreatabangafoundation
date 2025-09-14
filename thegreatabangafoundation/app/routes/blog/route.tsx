@@ -323,12 +323,12 @@ export default function Blog() {
               </div>
 
               {/* Stories List */}
-              <div className="grid grid-cols-1 gap-10 pb-10 md:grid-cols-3">
+              <div className="grid grid-cols-1 gap-10 pb-10 md:gap-5 md:grid-cols-3">
                 {filteredStories.map((story) => (
                   <article key={story._id} className="group">
                     <a
                       href={`/blog/${story.slug}`}
-                      className="block py-5 md:w-100"
+                      className="block py-5 md:max-w-100"
                     >
                       <div className="flex flex-col space-x-4 space-y-5 ">
                         <div className="flex-shrink-0">

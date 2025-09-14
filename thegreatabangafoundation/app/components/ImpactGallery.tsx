@@ -42,7 +42,7 @@ export default function ImpactGallery() {
       : galleryData.filter((img) => img.category === selectedCategory);
 
   // Limit to 6 images for the impact page preview
-  const previewImages = filteredImages.slice(0, 6);
+  const previewImages = filteredImages.slice(5, 11);
 
   return (
     <section className="py-16 bg-[#374a5c]">

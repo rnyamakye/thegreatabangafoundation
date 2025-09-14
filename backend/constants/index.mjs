@@ -1,7 +1,7 @@
 export const blogsData = [
   {
     _id: "foundation_introduction_20240912",
-    image: "/recognition_img.jpg",
+    image: "https://tgafbucket.s3.eu-north-1.amazonaws.com/recognition_img.jpg",
     title: "The Great Abanga Foundation: A New Chapter in Community Service",
     _base: "community",
     description:
@@ -16,7 +16,8 @@ export const blogsData = [
   },
   {
     _id: "biossa_week_celebration_20240715",
-    image: "/biossasponserflyer_img.jpg",
+    image:
+      "https://tgafbucket.s3.eu-north-1.amazonaws.com/biossasponserflyer_img.jpg",
     title: "BIOSSA Week Celebration Success",
     _base: "education",
     description:
@@ -31,7 +32,7 @@ export const blogsData = [
   },
   {
     _id: "biossa_aponkye_cup_20240628",
-    image: "/soboloparty_img.jpg",
+    image: "https://tgafbucket.s3.eu-north-1.amazonaws.com/soboloparty_img.jpg",
     title: "Biossa Aponkye Cup: Unity Through Sports",
     _base: "sports",
     description:
@@ -48,76 +49,113 @@ export const blogsData = [
 
 export const galleryData = [
   {
-    id: "1",
-    src: "/education_img.jpg",
-    alt: "Education initiatives",
-    title: "Education Support Program",
-    category: "Education",
-    description:
-      "Supporting students with educational resources and scholarships",
-  },
-  {
-    id: "2",
-    src: "/graduation_img.jpg",
-    alt: "Graduation ceremony",
-    title: "Graduation Celebration",
-    category: "Education",
-    description: "Celebrating academic achievements in our community",
-  },
-  {
-    id: "3",
-    src: "/healthcare.jpg",
-    alt: "Healthcare support",
-    title: "Healthcare Initiative",
-    category: "Health",
-    description: "Providing healthcare support to underserved communities",
-  },
-  {
-    id: "4",
-    src: "/communitydevelopment_img.jpg",
-    alt: "Community development",
-    title: "Community Development",
-    category: "Community",
-    description: "Building stronger, more resilient communities",
-  },
-  {
     id: "5",
-    src: "/financial_aid_img.jpg",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/financial_aid_img.jpg",
     alt: "Financial aid program",
-    title: "Financial Aid Support",
-    category: "Finance",
-    description: "Providing financial assistance to families in need",
   },
-  {
-    id: "6",
-    src: "/School_event_img.jpg",
-    alt: "School event",
-    title: "School Community Event",
-    category: "Education",
-    description: "Bringing together students, families, and educators",
-  },
+
   {
     id: "7",
-    src: "/soboloparty_img.jpg",
-    alt: "Community celebration",
-    title: "Community Celebration",
-    category: "Community",
-    description: "Celebrating achievements and fostering community spirit",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/soboloparty_img.jpg",
   },
-  {
-    id: "8",
-    src: "/biossasponserflyer_img.jpg",
-    alt: "BIOSSA sponsorship",
-    title: "BIOSSA Partnership",
-    category: "Education",
-    description: "Supporting scientific education and excellence",
-  },
+
   {
     id: "9",
-    src: "/dinner_img.jpg",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/dinner_img.jpg",
     alt: "Community dinner",
-    title: "Community Dinner",
-    category: "Community",
-    description: "Bringing people together through shared meals",
+  },
+
+  {
+    id: "11",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/acceptance_img1.jpg",
+    alt: "Acceptance ceremony",
+  },
+  {
+    id: "12",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/acceptance_img2.jpg",
+    alt: "Acceptance ceremony continued",
+  },
+
+  {
+    id: "14",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img.jpg",
+    alt: "Donation drive",
+  },
+  {
+    id: "15",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img1.jpg",
+    alt: "Donation event 1",
+  },
+  {
+    id: "16",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img2.jpg",
+    alt: "Donation event 2",
+  },
+  {
+    id: "17",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img3.jpg",
+    alt: "Donation event 3",
+  },
+  {
+    id: "18",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img4.jpg",
+    alt: "Donation event 4",
+  },
+  {
+    id: "19",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img5.jpg",
+    alt: "Donation event 5",
+  },
+  {
+    id: "20",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img6.jpg",
+    alt: "Donation event 6",
+  },
+  {
+    id: "21",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img7.jpg",
+    alt: "Donation event 7",
+  },
+  {
+    id: "22",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img8.jpg",
+    alt: "Donation event 8",
+  },
+  {
+    id: "23",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/financial_aid_img1.jpg",
+    alt: "Financial aid program 1",
+  },
+  {
+    id: "24",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/financial_aid_img2.jpg",
+    alt: "Financial aid program 2",
+  },
+  {
+    id: "25",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/financial_aid_img3.jpg",
+    alt: "Financial aid program 3",
+  },
+  {
+    id: "26",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/financial_aid_img4.jpg",
+    alt: "Financial aid program 4",
+  },
+
+  {
+    id: "33",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/leadership_img.jpg",
+    alt: "Foundation leadership",
+  },
+
+  {
+    id: "38",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/recognition_img.jpg",
+    alt: "Recognition ceremony",
+  },
+  {
+    id: "40",
+    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/women_empowerment_img.jpg",
+    alt: "Women empowerment",
   },
 ];
