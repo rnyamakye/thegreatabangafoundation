@@ -167,7 +167,7 @@ export default function ImpactGallery() {
                   <img
                     src={selectedImage.src}
                     alt={selectedImage.alt}
-                    className="object-cover w-full h-64 h-full"
+                    className="object-cover w-full h-full"
                   />
                 </div>
               </div>

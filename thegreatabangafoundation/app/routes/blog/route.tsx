@@ -230,7 +230,7 @@ export default function Blog() {
           </div>
 
           {/* Hero Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-[80vh] px-6 py-20 mx-auto">
+          <div className="relative z-10 flex flex-col items-center justify-center h-[100vh] px-6 py-20 mx-auto">
             <div className="flex flex-col items-center justify-center text-center">
               <h1 className="mb-6 text-6xl font-extrabold leading-tight text-gray-100 md:text-7xl drop-shadow-lg">
                 Stories & Updates

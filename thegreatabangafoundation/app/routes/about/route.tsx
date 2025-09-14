@@ -123,7 +123,7 @@ export default function About() {
     <>
       <div className="min-h-screen transition-colors duration-200">
         {/* Hero Section with Background Image */}
-        <div className="relative h-[80vh]">
+        <div className="relative h-[100vh]">
           {/* SVG Background Fallback */}
           <div className="absolute inset-0 hero-svg-background" />
 

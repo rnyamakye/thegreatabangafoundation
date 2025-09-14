@@ -53,7 +53,7 @@ export default function Gallery() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-[url('/gallery_img.jpg')] bg-cover bg-center bg-no-repeat h-[80vh]">
+      <section className="relative py-20 bg-[url('/gallery_img.jpg')] bg-cover bg-center bg-no-repeat h-[100vh]">
         <div className="px-5 mx-auto md:max-w-7xl lg:px-8">
           <div className="text-center mt-30">
             <h1 className="mb-6 text-4xl font-bold text-white md:text-6xl">

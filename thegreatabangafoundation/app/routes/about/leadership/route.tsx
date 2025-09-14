@@ -61,7 +61,7 @@ export default function Leadership() {
   return (
     <div className="min-h-screen ">
       {/* Hero Section */}
-      <div className="relative overflow-hidden h-[70vh] md:h-[80vh] flex items-center justify-center">
+      <div className="relative overflow-hidden h-[90vh] md:h-[100vh] flex items-center justify-center">
         {/* SVG Background Fallback */}
         <div className="absolute inset-0 hero-svg-background" />
 

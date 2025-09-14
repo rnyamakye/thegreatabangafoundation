@@ -44,10 +44,11 @@ const LeadershipDesign: React.FC = () => {
           </h2>
           <div className="w-16 h-1 mb-8 bg-orange-300 md:w-20"></div>
         </div>
-        <Link to="/about">
-          <button className="px-4 pb-2 font-semibold text-gray-800 underline cursor-pointer md:text-lg hover:text-black ">
-            Learn More...
-          </button>
+        <Link
+          className="px-4 pb-2 font-semibold text-gray-800 underline cursor-pointer md:text-lg hover:text-black "
+          to="/about/leadership"
+        >
+          Learn More..
         </Link>
       </div>
       <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 lg:grid-cols-4">
