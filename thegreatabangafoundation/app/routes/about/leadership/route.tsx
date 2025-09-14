@@ -291,6 +291,56 @@ export default function Leadership() {
               </div>
             </div>
           </div>
+
+          {/* Emmanuel Gasu */}
+          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+            <div className="order-2 lg:order-1 ">
+              <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
+                Gasu Emmanuel
+              </h3>
+              <p className="mb-4 text-lg font-semibold text-[#374A5C]">
+                Graphic Designer & Volunteer / Trustee
+              </p>
+              <p className="mb-6 leading-relaxed text-[#3E2723]">
+                Gasu Emmanuel is an undergraduate degree student at the
+                University of Energy and Natural Resources, currently in Level
+                300. His motivation stems from a desire for selfless service,
+                and he is focused on developing his skills in leadership and
+                research. In his free time, he enjoys graphic design, writing,
+                and public speaking. Culturally, he is multi-tribal, with his
+                maternal heritage from Asante and his patrilineal heritage from
+                Volta, while he was born and nurtured in Nzema.
+              </p>
+              <div className="space-y-2 text-[#3E2723]">
+                <p>
+                  <strong>Education:</strong> Level 300, University of Energy
+                  and Natural Resources
+                </p>
+                <p>
+                  <strong>Skills:</strong> Graphic Design, Writing, Public
+                  Speaking
+                </p>
+                <p>
+                  <strong>Heritage:</strong> Multi-tribal (Asante, Volta, Nzema)
+                </p>
+                <p>
+                  <strong>Focus:</strong> Leadership and Research Development
+                </p>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2 ">
+              <div className="relative overflow-hidden shadow-2xl h-96">
+                <img
+                  src="/emmanuel_img.jpg"
+                  alt="Gasu Emmanuel - Research & Development Officer"
+                  className="object-cover object-top w-full h-full"
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Call to Action */}
