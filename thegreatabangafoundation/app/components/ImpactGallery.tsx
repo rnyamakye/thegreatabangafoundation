@@ -163,22 +163,12 @@ export default function ImpactGallery() {
 
               {/* Modal content */}
               <div className="flex flex-col md:flex-row">
-                <div className="md:w-2/3">
+                <div className="w-full h-[80vh]">
                   <img
                     src={selectedImage.src}
                     alt={selectedImage.alt}
-                    className="object-cover w-full h-64 md:h-96"
+                    className="object-cover w-full h-64 h-full"
                   />
-                </div>
-                <div className="p-6 md:w-1/3">
-                  <h3 className="mb-3 text-xl font-bold text-gray-900">
-                    {selectedImage.title}
-                  </h3>
-                  {selectedImage.description && (
-                    <p className="leading-relaxed text-gray-600">
-                      {selectedImage.description}
-                    </p>
-                  )}
                 </div>
               </div>
             </div>
