@@ -132,75 +132,6 @@ export default function Contact() {
 
   return (
     <>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-          .reveal-element {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-          }
-          
-          .reveal-visible {
-            opacity: 1;
-            transform: translateY(0);
-          }
-          
-          . {
-            opacity: 0;
-            transition: opacity 1s ease-out;
-          }
-          
-          ..reveal-visible {
-            opacity: 1;
-          }
-          
-          . {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
-          }
-          
-          ..reveal-visible {
-            opacity: 1;
-            transform: translateY(0);
-          }
-          
-          . {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s ease-out;
-          }
-          
-          ..reveal-visible {
-            opacity: 1;
-            transform: translateX(0);
-          }
-          
-          .reveal-slide-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s ease-out;
-          }
-          
-          .reveal-slide-right.reveal-visible {
-            opacity: 1;
-            transform: translateX(0);
-          }
-          
-          . {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.8s ease-out;
-          }
-          
-          ..reveal-visible {
-            opacity: 1;
-            transform: scale(1);
-          }
-        `,
-        }}
-      />
       <main className="min-h-screen transition-colors duration-200 bg-gray-50">
         <div className="relative overflow-hidden h-[70vh] md:h-[100vh] flex items-center justify-center">
           {/* SVG Background Fallback */}
@@ -237,18 +168,18 @@ export default function Contact() {
           </div>
 
           {/* Scroll Down Arrow */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce">
             <div
               className="flex flex-col items-center text-white cursor-pointer"
               onClick={() =>
                 window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
               }
             >
-              <span className="text-sm font-medium mb-2 opacity-80">
+              <span className="mb-2 text-sm font-medium opacity-80">
                 Scroll Down
               </span>
               <svg
-                className="w-6 h-6 opacity-80 hover:opacity-100 transition-opacity duration-300"
+                className="w-6 h-6 transition-opacity duration-300 opacity-80 hover:opacity-100"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

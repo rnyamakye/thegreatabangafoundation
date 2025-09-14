@@ -7,8 +7,7 @@ const checkConfig = (server: string): Config | {} => {
   switch (server) {
     case "production":
       config = {
-        baseURL:
-          "https://ecommercebackend--ecommerce-tutorial-817f2.asia-east1.hosted.app",
+        baseURL: "https://tgaf-backup-backend.vercel.app",
       };
       break;
     case "local":
@@ -22,5 +21,5 @@ const checkConfig = (server: string): Config | {} => {
   return config;
 };
 
-export const selectServer = "local";
+export const selectServer = "production"; // Change to 'local' for local development
 export const config = checkConfig(selectServer) as Config;
