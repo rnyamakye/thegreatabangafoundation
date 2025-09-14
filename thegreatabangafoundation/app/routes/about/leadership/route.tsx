@@ -185,9 +185,12 @@ export default function Leadership() {
               </p>
               <div className="space-y-2 text-[#3E2723]">
                 <p>
-                  <strong>Education:</strong> Diploma in Basic Education (DBE)
+                  <strong>Education:</strong> BSc. Biological Sciences,
+                  University of Energy and Natural Resources
                 </p>
-
+                <p>
+                  <strong>Business:</strong> Manager of Mike Logistics
+                </p>
                 <p>
                   <strong>Role:</strong> Community Outreach & Public Relations
                 </p>
