@@ -214,7 +214,7 @@ export default function Impact() {
               <div className="text-center bg-white shadow-lg ">
                 <div className="w-full h-40">
                   <img
-                    src="/public/donation_img2.jpg"
+                    src="/donation_img2.jpg"
                     alt="Community Investment"
                     className="object-cover object-top w-full h-full"
                   />
