@@ -59,53 +59,26 @@ export default function Leadership() {
   const addToRefs = useRevealOnScroll();
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100">
       {/* Hero Section */}
-      <div className="relative overflow-hidden h-[90vh] md:h-[100vh] flex items-center justify-center">
+      <div className="relative overflow-hidden">
         {/* SVG Background Fallback */}
         <div className="absolute inset-0 hero-svg-background" />
 
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-[url('/leadership_img.jpg')] bg-cover bg-center md:bg-top bg-no-repeat">
-          <div className="absolute inset-0 bg-black/80"></div>
+        {/* Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-800">
+          <div className="absolute inset-0 bg-black opacity-20"></div>
         </div>
         <div className="relative px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="mb-6 text-4xl font-bold text-white md:text-6xl">
               Our Leadership Team
             </h1>
-            <p className="max-w-3xl mx-auto text-xl text-white md:text-2xl">
+            <p className="max-w-3xl mx-auto text-xl text-orange-100 md:text-2xl">
               Meet the dedicated individuals who lead our mission to create
               positive change through education, healthcare, and community
               development.
             </p>
-          </div>
-        </div>
-
-        {/* Scroll Down Arrow */}
-        <div className="absolute transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce">
-          <div
-            className="flex flex-col items-center text-white cursor-pointer"
-            onClick={() =>
-              window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-            }
-          >
-            <span className="mb-2 text-sm font-medium opacity-80">
-              Scroll Down
-            </span>
-            <svg
-              className="w-6 h-6 transition-opacity duration-300 opacity-80 hover:opacity-100"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
           </div>
         </div>
       </div>
@@ -114,12 +87,15 @@ export default function Leadership() {
       <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="space-y-16">
           {/* CEO */}
-          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-            <div className="order-2 lg:order-1 ">
+          <div
+            className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2"
+            ref={addToRefs}
+          >
+            <div className="order-2 lg:order-1 reveal-slide-left">
               <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
                 Osman Abdul Hakim Abanga
               </h3>
-              <p className="mb-4 text-lg font-semibold text-[#374A5C]">
+              <p className="mb-4 text-lg font-semibold text-orange-600">
                 Chief Executive Officer
               </p>
               <p className="mb-6 leading-relaxed text-[#3E2723]">
@@ -133,16 +109,16 @@ export default function Leadership() {
                 uplifting underprivileged individuals and fostering
                 opportunities for growth and resilience.
               </p>
-              <div className="p-4 border-l-4 border-orange-300 bg-orange-50/50">
-                <p className="text-sm font-medium text-[#374A5C]">
+              <div className="p-4 border-l-4 border-orange-500 ">
+                <p className="text-sm font-medium ">
                   "Our mission is to create lasting change that empowers
                   individuals and transforms communities for generations to
                   come."
                 </p>
               </div>
             </div>
-            <div className="order-1 lg:order-2 ">
-              <div className="relative overflow-hidden shadow-2xl h-96">
+            <div className="order-1 lg:order-2 reveal-slide-right">
+              <div className="relative overflow-hidden shadow-2xl rounded-2xl h-96">
                 <img
                   src="/abanga_img.jpg"
                   alt="Osman Hakim Abdul - Chief Executive Officer"
@@ -151,60 +127,42 @@ export default function Leadership() {
                   decoding="async"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
+                <div className="absolute px-4 py-2 rounded-lg shadow-lg bottom-4 left-4 bg-white/90 backdrop-blur-sm">
+                  <p className="text-sm font-semibold text-[#3E2723]">
+                    CEO & Founder
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-            <div className="order-1 lg:order-1 ">
-              <div className="relative overflow-hidden shadow-2xl h-96">
+          {/* Manager */}
+          <div
+            className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2"
+            ref={addToRefs}
+          >
+            <div className="order-1 lg:order-1 reveal-slide-left">
+              <div className="relative overflow-hidden shadow-2xl rounded-2xl h-96">
                 <img
-                  src="/giden_img.jpg"
-                  alt="Amoah Gideon - PRO"
+                  src="/martha_img.jpg"
+                  alt="Amanfo Martha Simaa - Manager"
                   className="object-cover object-top w-full h-full"
                   loading="lazy"
                   decoding="async"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
+                <div className="absolute px-4 py-2 rounded-lg shadow-lg bottom-4 right-4 bg-white/90 backdrop-blur-sm">
+                  <p className="text-sm font-semibold text-[#3E2723]">
+                    Manager
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="order-2 lg:order-2 ">
-              <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
-                Amoah Gideon
-              </h3>
-              <p className="mb-4 text-lg font-semibold text-[#374A5C]">
-                Public Relations Officer
-              </p>
-              <p className="mb-6 leading-relaxed text-[#3E2723]">
-                Gideon Amoah is a dedicated philanthropist, passionate
-                entrepreneur, and a committed student currently pursuing his
-                studies at the University of Energy and Natural Resources.
-                Through his philanthropic efforts, he strives to make a positive
-                impact on communities by supporting initiatives that promote
-                education, healthcare, and sustainable development.
-              </p>
-              <div className="space-y-2 text-[#3E2723]">
-                <p>
-                  <strong>Education:</strong> BSc. Biological Sciences,
-                  University of Energy and Natural Resources
-                </p>
-                <p>
-                  <strong>Business:</strong> Manager of Mike Logistics
-                </p>
-                <p>
-                  <strong>Role:</strong> Community Outreach & Public Relations
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* PRO */}
-          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-            <div className="order-2 lg:order-1 ">
+            <div className="order-2 lg:order-2 reveal-slide-right">
               <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
                 Amanfo Martha Simaa
               </h3>
-              <p className="mb-4 text-lg font-semibold text-[#374A5C]">
+              <p className="mb-4 text-lg font-semibold text-orange-600">
                 Manager
               </p>
               <p className="mb-6 leading-relaxed text-[#3E2723]">
@@ -221,39 +179,69 @@ export default function Leadership() {
               </p>
               <div className="space-y-2 text-[#3E2723]">
                 <p>
-                  <strong>Education:</strong>
-                </p>
-                <p className="ml-4">
-                  {" "}
-                  Diploma in Basic Education at Ada College of Education
-                </p>
-                <p className="ml-4">
-                  BSc Biological Science student at University of Energy and
-                  Natural Resources
+                  <strong>Education:</strong> Diploma in Basic Education (DBE)
                 </p>
                 <p>
                   <strong>Background:</strong> Former Teacher
                 </p>
               </div>
             </div>
-            <div className="order-1 lg:order-2 ">
-              <div className="relative overflow-hidden shadow-2xl h-96">
+          </div>
+
+          {/* PRO */}
+          <div
+            className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2"
+            ref={addToRefs}
+          >
+            <div className="order-2 lg:order-1 reveal-slide-left">
+              <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
+                Amoah Gideon
+              </h3>
+              <p className="mb-4 text-lg font-semibold text-orange-600">
+                Public Relations Officer
+              </p>
+              <p className="mb-6 leading-relaxed text-[#3E2723]">
+                Gideon Amoah is a dedicated philanthropist, passionate
+                entrepreneur, and a committed student currently pursuing his
+                studies at the University of Energy and Natural Resources.
+                Through his philanthropic efforts, he strives to make a positive
+                impact on communities by supporting initiatives that promote
+                education, healthcare, and sustainable development.
+              </p>
+              <div className="space-y-2 text-[#3E2723]">
+                <p>
+                  <strong>Education:</strong> University of Energy and Natural
+                  Resources
+                </p>
+                <p>
+                  <strong>Role:</strong> Community Outreach & Public Relations
+                </p>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2 reveal-slide-right">
+              <div className="relative overflow-hidden shadow-2xl rounded-2xl h-96">
                 <img
-                  src="/martha_img.jpg"
+                  src="/giden_img.jpg"
                   alt="Amoah Gideon - Public Relations Officer"
                   className="object-cover object-top w-full h-full"
                   loading="lazy"
                   decoding="async"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
+                <div className="absolute px-4 py-2 rounded-lg shadow-lg bottom-4 left-4 bg-white/90 backdrop-blur-sm">
+                  <p className="text-sm font-semibold text-[#3E2723]">PRO</p>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Publicity */}
-          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-            <div className="order-1 lg:order-1 ">
-              <div className="relative overflow-hidden shadow-2xl h-96">
+          <div
+            className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2"
+            ref={addToRefs}
+          >
+            <div className="order-1 lg:order-1 reveal-slide-left">
+              <div className="relative overflow-hidden shadow-2xl rounded-2xl h-96">
                 <img
                   src="/ruth_img.jpg"
                   alt="Ruth Abena Amankwah - Publicity"
@@ -262,13 +250,18 @@ export default function Leadership() {
                   decoding="async"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
+                <div className="absolute px-4 py-2 rounded-lg shadow-lg bottom-4 right-4 bg-white/90 backdrop-blur-sm">
+                  <p className="text-sm font-semibold text-[#3E2723]">
+                    Publicity
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="order-2 lg:order-2 ">
+            <div className="order-2 lg:order-2 reveal-slide-right">
               <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
                 Ruth Abena Amankwah
               </h3>
-              <p className="mb-4 text-lg font-semibold text-[#374A5C]">
+              <p className="mb-4 text-lg font-semibold text-orange-600">
                 Publicity Officer
               </p>
               <p className="mb-6 leading-relaxed text-[#3E2723]">
@@ -301,61 +294,11 @@ export default function Leadership() {
               </div>
             </div>
           </div>
-
-          {/* Emmanuel Gasu */}
-          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-            <div className="order-2 lg:order-1 ">
-              <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
-                Gasu Emmanuel
-              </h3>
-              <p className="mb-4 text-lg font-semibold text-[#374A5C]">
-                Graphic Designer & Volunteer / Trustee
-              </p>
-              <p className="mb-6 leading-relaxed text-[#3E2723]">
-                Gasu Emmanuel is an undergraduate degree student at the
-                University of Energy and Natural Resources, currently in Level
-                300. His motivation stems from a desire for selfless service,
-                and he is focused on developing his skills in leadership and
-                research. In his free time, he enjoys graphic design, writing,
-                and public speaking. Culturally, he is multi-tribal, with his
-                maternal heritage from Asante and his patrilineal heritage from
-                Volta, while he was born and nurtured in Nzema.
-              </p>
-              <div className="space-y-2 text-[#3E2723]">
-                <p>
-                  <strong>Education:</strong> Student at University of Energy
-                  and Natural Resources
-                </p>
-                <p>
-                  <strong>Skills:</strong> Graphic Design, Writing, Public
-                  Speaking
-                </p>
-                <p>
-                  <strong>Heritage:</strong> Multi-tribal (Asante, Volta, Nzema)
-                </p>
-                <p>
-                  <strong>Focus:</strong> Leadership and Research Development
-                </p>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2 ">
-              <div className="relative overflow-hidden shadow-2xl h-96">
-                <img
-                  src="/emmanuel_img.jpg"
-                  alt="Gasu Emmanuel - Research & Development Officer"
-                  className="object-cover object-top w-full h-full"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center" ref={addToRefs}>
-          <div className="p-8 rounded-2xl bg-gradient-to-r from-[#374A5C] to-[#374A5C] reveal-fade-in">
+        <div className="mt-16 text-center">
+          <div className="p-8 rounded-2xl ">
             <h3 className="mb-4 text-2xl font-bold text-white">
               Join Our Mission
             </h3>
@@ -365,7 +308,7 @@ export default function Leadership() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center px-6 py-3 text-lg font-medium tran-[#374A5C]sition-colors bg-white rounded-lg text hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+              className="inline-flex items-center px-6 py-3 text-lg font-medium text-orange-600 transition-colors bg-white rounded-lg hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
             >
               Get In Touch
               <svg

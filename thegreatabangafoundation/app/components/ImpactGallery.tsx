@@ -49,10 +49,7 @@ export default function ImpactGallery() {
       <div className="px-5 mx-auto md:max-w-7xl lg:px-8">
         {/* Header */}
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-gray-50 font-cursive md:text-4xl">
-            Impact Gallery
-          </h2>
-          <p className="max-w-3xl mx-auto text-lg text-gray-100">
+          <p className="max-w-3xl mx-auto text-2xl text-gray-100 md:text-4xl">
             Visual stories of transformation, hope, and community impact through
             our various initiatives
           </p>

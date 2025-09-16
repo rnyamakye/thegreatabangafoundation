@@ -29,7 +29,7 @@ const sliderData: SliderItem[] = [
       "Direct financial assistance to families in need, helping cover essential expenses like tuition fees, medical bills, and basic living costs during challenging times. ",
     buttonText: "View Program",
     buttonLink: "/impact",
-    image: "/financial_aid_img.jpg",
+    image: "/financial_aid_img3.jpg",
     imageAlt: "Community investment and development",
   },
   {
