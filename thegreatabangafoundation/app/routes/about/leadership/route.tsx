@@ -181,17 +181,16 @@ export default function Leadership() {
                 variants={scaleIn}
               >
                 <p>
-                  <strong className="text-orange-600">Education:</strong> BSc.
-                  Biological Sciences, University of Energy and Natural
-                  Resources
+                  <strong className="">Education:</strong> BSc. Biological
+                  Sciences, University of Energy and Natural Resources
                 </p>
                 <p>
-                  <strong className="text-orange-600">Business:</strong> Manager
-                  of Mike Logistics
+                  <strong className="">Business:</strong> Manager of Mike
+                  Logistics
                 </p>
                 <p>
-                  <strong className="text-orange-600">Role:</strong> Community
-                  Outreach & Public Relations
+                  <strong className="">Role:</strong> Community Outreach &
+                  Public Relations
                 </p>
               </motion.div>
             </motion.div>
@@ -226,16 +225,19 @@ export default function Leadership() {
                 variants={scaleIn}
               >
                 <p>
-                  <strong className="text-orange-600">Education:</strong>
+                  <strong className="">Education:</strong>
                 </p>
                 <p className="ml-4">
-                  {" "}
-                  Diploma in Basic Education at Ada College of Education,
+                  Diploma in Basic Education at Ada College of Education
                 </p>
                 <p className="ml-4">
-                  BSc Biological Science student at University of Energy and
+                  Bsc Biological Science student at University of Energy and
                   Natural Resources
                 </p>
+                <p className="mt-4">
+                  <strong className="">Experience:</strong>
+                </p>
+                <p className="ml-4">Former Volunteer SoDIA Ghana</p>
               </motion.div>
             </motion.div>
             <motion.div className="order-1 lg:order-2" variants={fadeInRight}>
