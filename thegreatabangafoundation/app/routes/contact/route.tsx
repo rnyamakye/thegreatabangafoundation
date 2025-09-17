@@ -1,5 +1,16 @@
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import MotionWrapper from "~/components/MotionWrapper";
+import {
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer,
+  staggerItem,
+  scaleIn,
+  viewportOptions,
+} from "~/utils/motion";
 
 export function meta() {
   return [
@@ -133,7 +144,10 @@ export default function Contact() {
   return (
     <>
       <main className="min-h-screen transition-colors duration-200 bg-gray-50">
-        <div className="relative overflow-hidden h-[70vh] md:h-[100vh] flex items-center justify-center">
+        <MotionWrapper
+          variants={fadeInUp}
+          className="relative overflow-hidden h-[70vh] md:h-[100vh] flex items-center justify-center"
+        >
           {/* SVG Background Fallback */}
           <div className="absolute inset-0 hero-svg-background" />
 
@@ -193,13 +207,16 @@ export default function Contact() {
               </svg>
             </div>
           </div>
-        </div>
-        <div className="max-w-6xl px-6 py-16 mx-auto md:py-24">
+        </MotionWrapper>
+        <MotionWrapper
+          variants={fadeInUp}
+          className="max-w-6xl px-6 py-16 mx-auto md:py-24"
+        >
           {/* Header */}
 
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Contact Information */}
-            <div className="space-y-8 ">
+            <MotionWrapper variants={fadeInLeft} className="space-y-8 ">
               <div className="">
                 <h2 className="mb-6 text-2xl font-bold text-[#3E2723] ">
                   Get in Touch
@@ -289,10 +306,10 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-            </div>
+            </MotionWrapper>
 
             {/* Contact Form */}
-            <div>
+            <MotionWrapper variants={fadeInRight}>
               <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 {/* Hidden field for reply-to functionality */}
                 <input type="hidden" name="reply_to" value="" />
@@ -386,9 +403,9 @@ export default function Contact() {
                   )}
                 </button>
               </form>
-            </div>
+            </MotionWrapper>
           </div>
-        </div>
+        </MotionWrapper>
       </main>
     </>
   );

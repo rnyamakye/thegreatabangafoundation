@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { getData } from "~/lib";
 import { config } from "~/config";
+import MotionWrapper from "../../components/MotionWrapper";
+import { fadeInUp, fadeInLeft, fadeInRight } from "../../utils/motion";
 
 export function meta() {
   return [
@@ -219,7 +221,7 @@ export default function Blog() {
     <>
       <div className="min-h-screen transition-colors duration-200">
         {/* Hero Section with Background Image */}
-        <div className="relative min-h-100">
+        <MotionWrapper variants={fadeInUp} className="relative min-h-100">
           {/* SVG Background Fallback */}
           <div className="absolute inset-0 hero-svg-background" />
 
@@ -277,7 +279,7 @@ export default function Blog() {
               </svg>
             </div>
           </div>
-        </div>
+        </MotionWrapper>
 
         {/* Main Content */}
         <main className="min-h-screen ">

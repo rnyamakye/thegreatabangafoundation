@@ -2,6 +2,8 @@ import { useParams, Link, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import { getData } from "~/lib";
 import { config } from "~/config";
+import MotionWrapper from "../components/MotionWrapper";
+import { fadeInUp, fadeInLeft, fadeInRight } from "../utils/motion";
 
 // Category color helper function
 const getCategoryColor = (category: string) => {
@@ -386,7 +388,10 @@ export default function BlogDetail() {
       />
 
       <main className="min-h-screen bg-gray-50">
-        <div className="px-6 py-10 mx-auto max-w-7xl">
+        <MotionWrapper
+          variants={fadeInUp}
+          className="px-6 py-10 mx-auto max-w-7xl"
+        >
           {/* Back Navigation */}
           <div className="mb-8">
             <button
@@ -568,7 +573,7 @@ export default function BlogDetail() {
             currentStoryId={story._id}
             currentCategory={story._base}
           />
-        </div>
+        </MotionWrapper>
       </main>
     </>
   );

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import ImpactStories from "~/components/ImpactStories";
 import ImpactGallery from "~/components/ImpactGallery";
+import MotionWrapper from "../../components/MotionWrapper";
+import { fadeInUp, fadeInLeft, fadeInRight } from "../../utils/motion";
 
 export function meta() {
   return [
@@ -129,7 +131,7 @@ export default function Impact() {
     <>
       <div className="min-h-screen transition-colors duration-200">
         {/* Hero Section with Background Image */}
-        <div className="relative min-h-100">
+        <MotionWrapper variants={fadeInUp} className="relative min-h-100">
           {/* SVG Background Fallback */}
           <div className="absolute inset-0 hero-svg-background" />
 
@@ -192,7 +194,7 @@ export default function Impact() {
               </svg>
             </div>
           </div>
-        </div>
+        </MotionWrapper>
 
         {/* Main Content */}
         <div

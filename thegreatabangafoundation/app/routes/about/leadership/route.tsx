@@ -1,5 +1,14 @@
-import { useEffect, useRef } from "react";
 import { Link } from "react-router";
+import { motion } from "framer-motion";
+import MotionWrapper from "../../../components/MotionWrapper";
+import {
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer,
+  staggerItem,
+  scaleIn,
+} from "../../../utils/motion";
 
 export function meta() {
   return [
@@ -12,52 +21,7 @@ export function meta() {
   ];
 }
 
-// Custom hook for reveal on scroll animation
-function useRevealOnScroll() {
-  const elementsRef = useRef<(HTMLElement | null)[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-visible");
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      }
-    );
-
-    elementsRef.current.forEach((element) => {
-      if (element) {
-        observer.observe(element);
-      }
-    });
-
-    return () => {
-      elementsRef.current.forEach((element) => {
-        if (element) {
-          observer.unobserve(element);
-        }
-      });
-    };
-  }, []);
-
-  const addToRefs = (el: HTMLElement | null) => {
-    if (el && !elementsRef.current.includes(el)) {
-      elementsRef.current.push(el);
-    }
-  };
-
-  return addToRefs;
-}
-
 export default function Leadership() {
-  const addToRefs = useRevealOnScroll();
-
   return (
     <div className="min-h-screen ">
       {/* Hero Section */}
@@ -69,21 +33,35 @@ export default function Leadership() {
         <div className="absolute inset-0 bg-[url('/leadership_img.jpg')] bg-cover bg-center md:bg-top bg-no-repeat">
           <div className="absolute inset-0 bg-black/80"></div>
         </div>
-        <div className="relative px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="mb-6 text-4xl font-bold text-white md:text-6xl">
+        <motion.div
+          className="relative px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.div className="text-center" variants={staggerItem}>
+            <motion.h1
+              className="mb-6 text-4xl font-bold text-white md:text-6xl"
+              variants={fadeInUp}
+            >
               Our Leadership Team
-            </h1>
-            <p className="max-w-3xl mx-auto text-xl text-white md:text-2xl">
+            </motion.h1>
+            <motion.p
+              className="max-w-3xl mx-auto text-xl text-white md:text-2xl"
+              variants={fadeInUp}
+            >
               Meet the dedicated individuals who lead our mission to create
               positive change through education, healthcare, and community
               development.
-            </p>
-          </div>
-        </div>
+            </motion.p>
+          </motion.div>
+        </motion.div>
 
         {/* Scroll Down Arrow */}
-        <div className="absolute transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce">
+        <MotionWrapper
+          variants={fadeInUp}
+          className="absolute transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce"
+        >
           <div
             className="flex flex-col items-center text-white cursor-pointer"
             onClick={() =>
@@ -107,15 +85,24 @@ export default function Leadership() {
               />
             </svg>
           </div>
-        </div>
+        </MotionWrapper>
       </div>
 
       {/* Leadership Team Section */}
-      <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="space-y-16">
+      <motion.div
+        className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={staggerContainer}
+      >
+        <motion.div className="space-y-16" variants={staggerItem}>
           {/* CEO */}
-          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-            <div className="order-2 lg:order-1 ">
+          <MotionWrapper
+            variants={fadeInLeft}
+            className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2"
+          >
+            <motion.div className="order-2 lg:order-1" variants={fadeInUp}>
               <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
                 Osman Abdul Hakim Abanga
               </h3>
@@ -133,15 +120,18 @@ export default function Leadership() {
                 uplifting underprivileged individuals and fostering
                 opportunities for growth and resilience.
               </p>
-              <div className="p-4 border-l-4 border-orange-300 bg-orange-50/50">
+              <motion.div
+                className="p-4 border-l-4 border-orange-300 bg-orange-50/50"
+                variants={scaleIn}
+              >
                 <p className="text-sm font-medium text-[#374A5C]">
                   "Our mission is to create lasting change that empowers
                   individuals and transforms communities for generations to
                   come."
                 </p>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2 ">
+              </motion.div>
+            </motion.div>
+            <motion.div className="order-1 lg:order-2" variants={fadeInRight}>
               <div className="relative overflow-hidden shadow-2xl h-96">
                 <img
                   src="/abanga_img.jpg"
@@ -152,11 +142,14 @@ export default function Leadership() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </MotionWrapper>
 
-          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-            <div className="order-1 lg:order-1 ">
+          <MotionWrapper
+            variants={fadeInRight}
+            className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2"
+          >
+            <motion.div className="order-1 lg:order-1" variants={fadeInLeft}>
               <div className="relative overflow-hidden shadow-2xl h-96">
                 <img
                   src="/giden_img.jpg"
@@ -167,8 +160,8 @@ export default function Leadership() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
-            </div>
-            <div className="order-2 lg:order-2 ">
+            </motion.div>
+            <motion.div className="order-2 lg:order-2" variants={fadeInRight}>
               <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
                 Amoah Gideon
               </h3>
@@ -183,24 +176,33 @@ export default function Leadership() {
                 impact on communities by supporting initiatives that promote
                 education, healthcare, and sustainable development.
               </p>
-              <div className="space-y-2 text-[#3E2723]">
+              <motion.div
+                className="space-y-2 text-[#3E2723]"
+                variants={scaleIn}
+              >
                 <p>
-                  <strong>Education:</strong> BSc. Biological Sciences,
-                  University of Energy and Natural Resources
+                  <strong className="text-orange-600">Education:</strong> BSc.
+                  Biological Sciences, University of Energy and Natural
+                  Resources
                 </p>
                 <p>
-                  <strong>Business:</strong> Manager of Mike Logistics
+                  <strong className="text-orange-600">Business:</strong> Manager
+                  of Mike Logistics
                 </p>
                 <p>
-                  <strong>Role:</strong> Community Outreach & Public Relations
+                  <strong className="text-orange-600">Role:</strong> Community
+                  Outreach & Public Relations
                 </p>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </MotionWrapper>
 
-          {/* PRO */}
-          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-            <div className="order-2 lg:order-1 ">
+          {/* Manager */}
+          <MotionWrapper
+            variants={fadeInLeft}
+            className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2"
+          >
+            <motion.div className="order-2 lg:order-1" variants={fadeInUp}>
               <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
                 Amanfo Martha Simaa
               </h3>
@@ -219,24 +221,24 @@ export default function Leadership() {
                 Diploma in Basic Education (DBE), which enhances her
                 understanding of educational needs and community development.
               </p>
-              <div className="space-y-2 text-[#3E2723]">
+              <motion.div
+                className="space-y-2 text-[#3E2723]"
+                variants={scaleIn}
+              >
                 <p>
-                  <strong>Education:</strong>
+                  <strong className="text-orange-600">Education:</strong>
                 </p>
                 <p className="ml-4">
                   {" "}
-                  Diploma in Basic Education at Ada College of Education
+                  Diploma in Basic Education at Ada College of Education,
                 </p>
                 <p className="ml-4">
                   BSc Biological Science student at University of Energy and
                   Natural Resources
                 </p>
-                <p>
-                  <strong>Background:</strong> Former Teacher
-                </p>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2 ">
+              </motion.div>
+            </motion.div>
+            <motion.div className="order-1 lg:order-2" variants={fadeInRight}>
               <div className="relative overflow-hidden shadow-2xl h-96">
                 <img
                   src="/martha_img.jpg"
@@ -247,8 +249,8 @@ export default function Leadership() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </MotionWrapper>
 
           {/* Publicity */}
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
@@ -351,11 +353,11 @@ export default function Leadership() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center" ref={addToRefs}>
-          <div className="p-8 rounded-2xl bg-gradient-to-r from-[#374A5C] to-[#374A5C] reveal-fade-in">
+        <MotionWrapper variants={fadeInUp} className="mt-16 text-center">
+          <div className="p-8 rounded-2xl bg-gradient-to-r from-[#374A5C] to-[#374A5C]">
             <h3 className="mb-4 text-2xl font-bold text-white">
               Join Our Mission
             </h3>
@@ -383,8 +385,8 @@ export default function Leadership() {
               </svg>
             </Link>
           </div>
-        </div>
-      </div>
+        </MotionWrapper>
+      </motion.div>
     </div>
   );
 }

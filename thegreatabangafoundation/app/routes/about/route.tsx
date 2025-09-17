@@ -1,7 +1,18 @@
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router";
 import LeadershipDesign from "~/components/LeadershipDesign";
 import LatestNews from "~/components/LatestNews";
+import MotionWrapper from "~/components/MotionWrapper";
+import {
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer,
+  staggerItem,
+  scaleIn,
+  viewportOptions,
+} from "~/utils/motion";
 
 export function meta() {
   return [
@@ -123,7 +134,7 @@ export default function About() {
     <>
       <div className="min-h-screen transition-colors duration-200">
         {/* Hero Section with Background Image */}
-        <div className="relative h-[100vh]">
+        <MotionWrapper variants={fadeInUp} className="relative h-[100vh]">
           {/* SVG Background Fallback */}
           <div className="absolute inset-0 hero-svg-background" />
 
@@ -181,14 +192,14 @@ export default function About() {
               </svg>
             </div>
           </div>
-        </div>
+        </MotionWrapper>
 
         {/* Mission Section with Team Photo */}
         <section className="py-20 bg-white">
           <div className="px-6 mx-auto max-w-7xl">
             <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
               {/* Left Side - Team Photo with Decorative Elements */}
-              <div className="relative">
+              <MotionWrapper variants={fadeInLeft} className="relative">
                 <div className="">
                   {/* Background Decorative Shapes */}
                   <div className="absolute w-64 h-64 rounded-full -top-8 -left-8 bg-gradient-to-br from-pink-400 via-orange-500 to-orange-600 opacity-20 blur-3xl"></div>
@@ -215,10 +226,10 @@ export default function About() {
                     <div className="absolute w-16 h-16 border-4 border-orange-300 rounded-full top-8 -left-4 opacity-40"></div>
                   </div>
                 </div>
-              </div>
+              </MotionWrapper>
 
               {/* Right Side - Mission Content */}
-              <div className="">
+              <MotionWrapper variants={fadeInRight} className="">
                 <div className="space-y-8">
                   <div>
                     <h2 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl font-quicksand">
@@ -264,7 +275,7 @@ export default function About() {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </MotionWrapper>
             </div>
           </div>
         </section>

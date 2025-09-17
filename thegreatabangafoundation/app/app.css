@@ -8,7 +8,7 @@
   --color-background-alt: #f7f2ed; /* Alternative background */
   --color-white: #ffffff; /* Pure white */
   --color-black: #000000; /* Pure black */
-
+  overflow-x: hidden;
   /* Status Colors */
   --color-orange-accent: #fb923c; /* Orange accents */
   --color-gray-text: #6b7280; /* Muted text */

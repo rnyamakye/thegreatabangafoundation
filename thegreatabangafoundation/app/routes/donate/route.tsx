@@ -1,5 +1,7 @@
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import MotionWrapper from "../../components/MotionWrapper";
+import { fadeInUp, fadeInLeft, fadeInRight } from "../../utils/motion";
 
 // Paystack type definitions
 declare global {
@@ -188,7 +190,7 @@ export default function Donate() {
           <div className="absolute inset-0 bg-[#F7F2ED]"></div>
           <div className="container px-4 mx-auto">
             <div className="grid items-center gap-12 lg:grid-cols-2">
-              <div className="space-y-6">
+              <MotionWrapper variants={fadeInLeft} className="space-y-6">
                 <h1 className="text-4xl lg:text-5xl font-bold text-[#3E2723] leading-tight">
                   Support Our Mission to
                   <span className="text-transparent bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text">
@@ -202,9 +204,9 @@ export default function Donate() {
                   in education, healthcare, and community development. Together,
                   we can create lasting change and build a brighter future.
                 </p>
-              </div>
+              </MotionWrapper>
 
-              <div className="relative">
+              <MotionWrapper variants={fadeInRight} className="relative">
                 <div className="relative overflow-hidden transition-transform duration-300 transform shadow-2xl rounded-2xl hover:scale-105">
                   <img
                     src="/donation_img.jpg"
@@ -217,7 +219,7 @@ export default function Donate() {
                     <p className="text-sm opacity-90">This Year Alone</p>
                   </div>
                 </div>
-              </div>
+              </MotionWrapper>
             </div>
           </div>
 
