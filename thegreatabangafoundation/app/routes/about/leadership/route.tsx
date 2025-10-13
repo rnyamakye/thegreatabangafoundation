@@ -60,7 +60,7 @@ export default function Leadership() {
         {/* Scroll Down Arrow */}
         <MotionWrapper
           variants={fadeInUp}
-          className="absolute transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce"
+          className="absolute transform -translate-x-1/2 bottom-8 left-1/2"
         >
           <div
             className="flex flex-col items-center text-white cursor-pointer"

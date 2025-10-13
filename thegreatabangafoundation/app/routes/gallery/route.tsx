@@ -67,7 +67,7 @@ export default function Gallery() {
           </div>
         </div>
         {/* Scroll Down Arrow */}
-        <div className="absolute transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce">
+        <div className="absolute transform -translate-x-1/2 bottom-8 left-1/2">
           <div
             className="flex flex-col items-center text-white cursor-pointer"
             onClick={() =>

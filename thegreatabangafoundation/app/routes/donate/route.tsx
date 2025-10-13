@@ -224,7 +224,7 @@ export default function Donate() {
           </div>
 
           {/* Scroll Down Arrow */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
             <div
               className="flex flex-col items-center text-[#3E2723] cursor-pointer"
               onClick={() =>

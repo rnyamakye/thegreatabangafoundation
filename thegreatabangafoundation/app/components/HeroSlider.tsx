@@ -112,7 +112,7 @@ export default function HeroSlider() {
       )}
 
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/50"></div>
       {/* Winston Churchill Quote */}
       <div className="flex flex-col items-center justify-center h-full p-5 text-start">
         <div className="z-10 flex flex-col mx-auto my-3 space-y-5 lg:px-10 text-start md:w-full md:mt-0">
@@ -125,7 +125,7 @@ export default function HeroSlider() {
           <h2 className="text-lg italic font-bold text-gray-50 font-cursive md:text-4xl">
             Helping Hands, Brighter Tomorrow
           </h2>
-          <p className="mt-4 italic text-gray-100 transition-all duration-500 text-md font-quicksand md:text-3xl lg:w-200 w-70 md:w-120">
+          <p className="mt-4 italic text-gray-100 transition-all duration-500 text-md font-quicksand md:text-2xl lg:w-200 w-70 md:w-120">
             Creating a future where no one is left behind — empowered, uplifted,
             and cared for. Empowering communities across Ghana and Canada
             through comprehensive programs in education, healthcare, and
@@ -211,7 +211,7 @@ export default function HeroSlider() {
         </div>
       </div>
       {/* Scroll Down Arrow */}
-      <div className="absolute transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce">
+      <div className="absolute transform -translate-x-1/2 bottom-8 left-1/2">
         <div
           className="flex flex-col items-center text-white cursor-pointer"
           onClick={() =>
