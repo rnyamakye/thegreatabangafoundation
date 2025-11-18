@@ -153,7 +153,7 @@ export default function Contact() {
 
           {/* Background Image */}
           <div className="absolute inset-0 bg-[url('/dinner_img.jpg')] bg-cover bg-center md:bg-top bg-no-repeat">
-            <div className="absolute inset-0 bg-black/80"></div>
+            <div className="absolute inset-0 bg-black/50"></div>
           </div>
           <div className="relative px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="mb-16 text-center ">

@@ -136,7 +136,7 @@ export default function Home() {
 
         {/* Impact Statistics Section */}
         <motion.section
-          className="py-20 bg-gray-900"
+          className="py-20 bg-gradient-to-r from-[#374A5C] to-[#374A5C]"
           initial="hidden"
           whileInView="visible"
           viewport={viewportOptions}
@@ -173,7 +173,6 @@ export default function Home() {
                 <h3 className="mb-2 text-xl font-semibold text-white">
                   Programs
                 </h3>
-                <p className="text-gray-400">Active community programs</p>
               </motion.div>
 
               <motion.div
@@ -186,7 +185,6 @@ export default function Home() {
                 <h3 className="mb-2 text-xl font-semibold text-white">
                   Investment
                 </h3>
-                <p className="text-gray-400">Total investment (GHS)</p>
               </motion.div>
 
               <motion.div
@@ -197,7 +195,6 @@ export default function Home() {
                   <AnimatedCounter end={2} suffix="+" />
                 </div>
                 <h3 className="mb-2 text-xl font-semibold text-white">Years</h3>
-                <p className="text-gray-400">Years of service</p>
               </motion.div>
             </motion.div>
           </div>

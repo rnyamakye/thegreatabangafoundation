@@ -89,7 +89,7 @@ export default function ImageSlider({
               alt={slide.title}
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-black/50"></div>
             <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 className="mb-2 font-bold md:text-2xl">{slide.title}</h3>
               <p className="md:text-lg opacity-90">{slide.description}</p>

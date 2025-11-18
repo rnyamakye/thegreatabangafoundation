@@ -141,7 +141,7 @@ export default function About() {
           {/* Background Image */}
           <div className="absolute inset-0 bg-no-repeat bg-top bg-cover bg-[url('/leadership_img1.jpg')] ">
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/80" />
+            <div className="absolute inset-0 bg-black/50" />
           </div>
 
           {/* Hero Content */}
@@ -290,16 +290,16 @@ export default function About() {
             {/* Governance & Operations */}
             <div className="flex flex-col items-center pb-16 mx-auto bg-white min-w-screen">
               <div className="py-16 max-w-7xl">
-                <div className="flex items-center justify-between ">
-                  <div className="px-6 mb-2">
-                    <h2 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl font-quicksand">
+                <div className="flex items-center justify-center">
+                  <div className="px-6 mb-2 text-center">
+                    <h2 className="relative inline-block mb-6 text-4xl font-bold text-gray-900 md:text-5xl font-quicksand">
                       Our Governance & Operations
+                      <div className="absolute left-0 w-12 h-1 bg-orange-300 -bottom-2"></div>
                     </h2>
-                    <div className="w-20 h-1 mb-8 bg-orange-300"></div>
                   </div>
                 </div>
-                <div className="p-6 ">
-                  <p className="max-w-3xl text-lg text-gray-900 text-start">
+                <div className="flex items-center justify-center p-6">
+                  <p className="max-w-3xl text-lg text-center text-gray-900">
                     The Great Abanga Foundation operates as a charitable
                     non-profit organization. Helping to bring equality in
                     education and healthcare access for all. Maintaining

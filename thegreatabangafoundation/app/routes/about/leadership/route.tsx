@@ -31,7 +31,7 @@ export default function Leadership() {
 
         {/* Background Image */}
         <div className="absolute inset-0 bg-[url('/leadership_img.jpg')] bg-cover bg-center md:bg-top bg-no-repeat">
-          <div className="absolute inset-0 bg-black/80"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
         <motion.div
           className="relative px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8"
@@ -254,7 +254,7 @@ export default function Leadership() {
             </motion.div>
           </MotionWrapper>
 
-          {/* Publicity */}
+          {/* Publicity
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div className="order-1 lg:order-1 ">
               <div className="relative overflow-hidden shadow-2xl h-96">
@@ -304,7 +304,7 @@ export default function Leadership() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Emmanuel Gasu */}
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
@@ -363,7 +363,7 @@ export default function Leadership() {
             <h3 className="mb-4 text-2xl font-bold text-white">
               Join Our Mission
             </h3>
-            <p className="mb-6 text-orange-100">
+            <p className="mb-6 text-white">
               Our leadership team is always looking for passionate individuals
               who share our vision.
             </p>

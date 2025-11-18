@@ -138,7 +138,7 @@ export default function Impact() {
           {/* Background Image */}
           <div className="absolute inset-0 bg-no-repeat bg-center bg-cover bg-[url('/impact_hero_img.jpg')] ">
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/80" />
+            <div className="absolute inset-0 bg-black/50" />
           </div>
 
           {/* Hero Content */}
