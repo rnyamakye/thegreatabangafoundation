@@ -77,7 +77,7 @@ export default function Home() {
         </section>
 
         <motion.section
-          className="max-w-screen bg-blue-500 relative h-[1000px]"
+          className="max-w-screen bg-gradient-to-r from-[#374A5C] to-[#374A5C] relative h-[1000px]"
           initial="hidden"
           whileInView="visible"
           viewport={viewportOptions}
