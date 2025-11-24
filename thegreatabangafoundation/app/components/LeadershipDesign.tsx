@@ -21,12 +21,12 @@ const LeadershipDesign: React.FC = () => {
       image: "/giden_img.jpg",
       alt: "Amoah Gideon - PRO",
     },
-    {
-      name: "Ruth Abena Amankwah",
-      position: "Publicity Officer",
-      image: "/ruth_img.jpg",
-      alt: "Ruth Abena Amankwah - Publicity",
-    },
+    // {
+    //   name: "Ruth Abena Amankwah",
+    //   position: "Publicity Officer",
+    //   image: "/ruth_img.jpg",
+    //   alt: "Ruth Abena Amankwah - Publicity",
+    // },
     {
       name: "Gasu Emmanuel",
       position: "Graphic Designer & Volunteer / Trustee",

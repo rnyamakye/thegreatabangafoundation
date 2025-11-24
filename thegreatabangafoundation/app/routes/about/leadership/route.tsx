@@ -308,7 +308,7 @@ export default function Leadership() {
 
           {/* Emmanuel Gasu */}
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-            <div className="order-2 lg:order-1 ">
+            <div className="order-1 lg:order-2 ">
               <h3 className="mb-4 text-3xl font-bold text-[#3E2723]">
                 Gasu Emmanuel
               </h3>
@@ -342,7 +342,7 @@ export default function Leadership() {
                 </p>
               </div>
             </div>
-            <div className="order-1 lg:order-2 ">
+            <div className="order-2 lg:order-1 ">
               <div className="relative overflow-hidden shadow-2xl h-96">
                 <img
                   src="/emmanuel_img.jpg"
