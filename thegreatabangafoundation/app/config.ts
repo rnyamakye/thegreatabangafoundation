@@ -7,7 +7,7 @@ const checkConfig = (server: string): Config | {} => {
   switch (server) {
     case "production":
       config = {
-        baseURL: "https://tgaf-backup-backend.vercel.app",
+        baseURL: "https://thegreatabangafoundation-backend.vercel.app",
       };
       break;
     case "local":
