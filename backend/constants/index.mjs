@@ -1,7 +1,7 @@
 export const blogsData = [
   {
     _id: "foundation_introduction_20240912",
-    image: "https://tgafbucket.s3.eu-north-1.amazonaws.com/recognition_img.jpg",
+    image: "https://images2.imgbox.com/a3/b1/JiLswN9c_o.jpg",
     title: "The Great Abanga Foundation: A New Chapter in Community Service",
     _base: "community",
     description:
@@ -16,8 +16,7 @@ export const blogsData = [
   },
   {
     _id: "biossa_week_celebration_20240715",
-    image:
-      "https://tgafbucket.s3.eu-north-1.amazonaws.com/biossasponserflyer_img.jpg",
+    image: "https://images2.imgbox.com/4c/23/ZFENDdeM_o.jpg",
     title: "BIOSSA Week Celebration Success",
     _base: "education",
     description:
@@ -32,7 +31,7 @@ export const blogsData = [
   },
   {
     _id: "biossa_aponkye_cup_20240628",
-    image: "https://tgafbucket.s3.eu-north-1.amazonaws.com/soboloparty_img.jpg",
+    image: "https://images2.imgbox.com/78/b6/f1VlA4WF_o.jpg",
     title: "Biossa Aponkye Cup: Unity Through Sports",
     _base: "sports",
     description:
@@ -50,112 +49,92 @@ export const blogsData = [
 export const galleryData = [
   {
     id: "5",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/financial_aid_img.jpg",
-    alt: "Financial aid program",
+    src: "https://images2.imgbox.com/e4/a3/WEZk3i03_o.jpg",
   },
 
   {
     id: "7",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/soboloparty_img.jpg",
+    src: "https://images2.imgbox.com/d0/bf/hshz12xR_o.jpg",
   },
 
   {
     id: "9",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/dinner_img.jpg",
-    alt: "Community dinner",
+    src: "https://images2.imgbox.com/73/c1/FrCbP4rT_o.jpg",
   },
 
   {
     id: "11",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/acceptance_img1.jpg",
-    alt: "Acceptance ceremony",
+    src: "https://images2.imgbox.com/36/f6/sOqQl60v_o.jpg",
   },
   {
     id: "12",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/acceptance_img2.jpg",
-    alt: "Acceptance ceremony continued",
+    src: "https://images2.imgbox.com/ad/26/NyFWG9lc_o.jpg",
   },
 
   {
     id: "14",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img.jpg",
-    alt: "Donation drive",
+    src: "https://images2.imgbox.com/90/d1/IuKz0iwB_o.jpg",
   },
   {
     id: "15",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img1.jpg",
-    alt: "Donation event 1",
+    src: "https://images2.imgbox.com/10/d0/91enmpzV_o.jpg",
   },
   {
     id: "16",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img2.jpg",
-    alt: "Donation event 2",
+    src: "https://images2.imgbox.com/1f/d6/3MLBFbG2_o.jpg",
   },
   {
     id: "17",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img3.jpg",
-    alt: "Donation event 3",
+    src: "https://images2.imgbox.com/84/03/RFXm97QA_o.jpg",
   },
   {
     id: "18",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img4.jpg",
-    alt: "Donation event 4",
+    src: "https://images2.imgbox.com/5d/25/yfRO7AE5_o.jpg",
   },
   {
     id: "19",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img5.jpg",
-    alt: "Donation event 5",
+    src: "https://images2.imgbox.com/16/b6/P9PaouwC_o.jpg",
   },
   {
     id: "20",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img6.jpg",
-    alt: "Donation event 6",
+    src: "https://images2.imgbox.com/4c/3f/dsNBl6JZ_o.jpg",
   },
   {
     id: "21",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img7.jpg",
-    alt: "Donation event 7",
+    src: "https://images2.imgbox.com/58/c9/TNHl8uQx_o.jpg",
   },
   {
     id: "22",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/donation_img8.jpg",
-    alt: "Donation event 8",
+    src: "https://images2.imgbox.com/4c/23/ZFENDdeM_o.jpg",
   },
   {
     id: "23",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/financial_aid_img1.jpg",
-    alt: "Financial aid program 1",
+    src: "https://thumbs2.imgbox.com/d0/e7/FZSiFv7n_b.jpg",
   },
   {
     id: "24",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/financial_aid_img2.jpg",
-    alt: "Financial aid program 2",
+    src: "https://images2.imgbox.com/e8/83/4oQRSEoO_o.jpg",
   },
   {
     id: "25",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/financial_aid_img3.jpg",
-    alt: "Financial aid program 3",
+    src: "https://images2.imgbox.com/70/87/wiINxgS7_o.jpg",
   },
   {
     id: "26",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/financial_aid_img4.jpg",
-    alt: "Financial aid program 4",
+    src: "https://images2.imgbox.com/d1/44/1YMzyAFZ_o.jpg",
   },
 
   {
     id: "33",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/leadership_img.jpg",
-    alt: "Foundation leadership",
+    src: "https://images2.imgbox.com/a3/b1/JiLswN9c_o.jpg",
   },
 
   {
     id: "38",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/recognition_img.jpg",
-    alt: "Recognition ceremony",
+    src: "https://thumbs2.imgbox.com/a3/b1/JiLswN9c_b.jpg",
   },
   {
     id: "40",
-    src: "https://tgafbucket.s3.eu-north-1.amazonaws.com/women_empowerment_img.jpg",
-    alt: "Women empowerment",
+    src: "https://images2.imgbox.com/92/de/Cf64wlSH_o.jpg",
   },
 ];
